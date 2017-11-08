@@ -1,0 +1,336 @@
+\begin{thebibliography}{55}
+\newcommand{\enquote}[1]{``#1''}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[\protect\citeauthoryear{Abrishami and Varahrami}{Abrishami and
+  Varahrami}{2011}]{abrishami_different_2011}
+\textsc{Abrishami, H. and V.~Varahrami} (2011): \enquote{Different methods for
+  gas price forecasting,} \emph{Cuadernos de economía}, 34, 137--144.
+
+\bibitem[\protect\citeauthoryear{Alizadeh and Mafinezhad}{Alizadeh and
+  Mafinezhad}{2010}]{alizadeh_monthly_2010}
+\textsc{Alizadeh, A. and K.~Mafinezhad} (2010): \enquote{Monthly {Brent} oil
+  price forecasting using artificial neural networks and a crisis index,} in
+  \emph{2010 {International} {Conference} on {Electronics} and {Information}
+  {Engineering}}, vol.~2, V2--465--V2--468.
+
+\bibitem[\protect\citeauthoryear{Amin-Naseri and Gharacheh}{Amin-Naseri and
+  Gharacheh}{2007}]{amin-naseri_hybrid_2007}
+\textsc{Amin-Naseri, M.~R. and E.~A. Gharacheh} (2007): \enquote{A hybrid
+  artificial intelligence approach to monthly forecasting of crude oil price
+  time series,} in \emph{The {Proceedings} of the 10th {International}
+  {Conference} on {Engineering} {Applications} of {Neural} {Networks},
+  {CEUR}-{WS}284}, 160--167.
+
+\bibitem[\protect\citeauthoryear{Anbazhagan and Kumarappan}{Anbazhagan and
+  Kumarappan}{2013}]{anbazhagan_day-ahead_2013}
+\textsc{Anbazhagan, S. and N.~Kumarappan} (2013): \enquote{Day-ahead
+  deregulated electricity market price forecasting using recurrent neural
+  network,} \emph{IEEE Systems Journal}, 7, 866--872.
+
+\bibitem[\protect\citeauthoryear{Bu}{Bu}{2011}]{bu_price_2011}
+\textsc{Bu, H.} (2011): \enquote{Price dynamics and speculators in crude oil
+  futures market,} \emph{Systems Engineering Procedia}, 2, 114--121.
+
+\bibitem[\protect\citeauthoryear{Buchanan, Hodges, and Theis}{Buchanan
+  et~al.}{2001}]{buchanan_which_2001}
+\textsc{Buchanan, W.~K., P.~Hodges, and J.~Theis} (2001): \enquote{Which way
+  the natural gas price: an attempt to predict the direction of natural gas
+  spot price movements using trader positions,} \emph{Energy Economics}, 23,
+  279--293.
+
+\bibitem[\protect\citeauthoryear{Busse, Helmholz, and Weinmann}{Busse
+  et~al.}{2012}]{busse_forecasting_2012}
+\textsc{Busse, S., P.~Helmholz, and M.~Weinmann} (2012): \enquote{Forecasting
+  day ahead spot price movements of natural gas–{An} analysis of potential
+  influence factors on basis of a {NARX} neural network,} \emph{Paper Presented
+  by the Multikonferenz Wirtschaftsinformatik, Braunschweig, Germany}.
+
+\bibitem[\protect\citeauthoryear{Caporin and Fontini}{Caporin and
+  Fontini}{2017}]{caporin_long-run_2017}
+\textsc{Caporin, M. and F.~Fontini} (2017): \enquote{The long-run oil–natural
+  gas price relationship and the shale gas revolution,} \emph{Energy
+  Economics}, 64, 511--519.
+
+\bibitem[\protect\citeauthoryear{Chinn and Coibion}{Chinn and
+  Coibion}{2014}]{chinn_predictive_2014}
+\textsc{Chinn, M.~D. and O.~Coibion} (2014): \enquote{The predictive content of
+  commodity futures,} \emph{Journal of Futures Markets}, 34, 607--636.
+
+\bibitem[\protect\citeauthoryear{Contreras, Espinola, Nogales, and
+  Conejo}{Contreras et~al.}{2003}]{contreras_arima_2003}
+\textsc{Contreras, J., R.~Espinola, F.~J. Nogales, and A.~J. Conejo} (2003):
+  \enquote{{ARIMA} models to predict next-day electricity prices,} \emph{IEEE
+  transactions on power systems}, 18, 1014--1020.
+
+\bibitem[\protect\citeauthoryear{Crespo~Cuaresma, Hlouskova, Kossmeier, and
+  Obersteiner}{Crespo~Cuaresma et~al.}{2004}]{crespo_cuaresma_forecasting_2004}
+\textsc{Crespo~Cuaresma, J., J.~Hlouskova, S.~Kossmeier, and M.~Obersteiner}
+  (2004): \enquote{Forecasting electricity spot-prices using linear univariate
+  time-series models,} \emph{Applied Energy}, 77, 87--106.
+
+\bibitem[\protect\citeauthoryear{Cruz, Muñoz, Zamora, and Espínola}{Cruz
+  et~al.}{2011}]{cruz_effect_2011}
+\textsc{Cruz, A., A.~Muñoz, J.~L. Zamora, and R.~Espínola} (2011):
+  \enquote{The effect of wind generation and weekday on {Spanish} electricity
+  spot price forecasting,} \emph{Electric Power Systems Research}, 81,
+  1924--1935.
+
+\bibitem[\protect\citeauthoryear{Dées, Gasteuil, Kaufmann, and Mann}{Dées
+  et~al.}{2008}]{dees_assessing_2008}
+\textsc{Dées, S., A.~Gasteuil, R.~Kaufmann, and M.~Mann} (2008):
+  \enquote{Assessing the factors behind oil price changes,} .
+
+\bibitem[\protect\citeauthoryear{Gareta, Romeo, and Gil}{Gareta
+  et~al.}{2006}]{gareta_forecasting_2006}
+\textsc{Gareta, R., L.~M. Romeo, and A.~Gil} (2006): \enquote{Forecasting of
+  electricity prices with neural networks,} \emph{Energy Conversion and
+  Management}, 47, 1770--1778.
+
+\bibitem[\protect\citeauthoryear{Geng, Ji, and Fan}{Geng
+  et~al.}{2016}]{geng_how_2016}
+\textsc{Geng, J.-B., Q.~Ji, and Y.~Fan} (2016): \enquote{How regional natural
+  gas markets have reacted to oil price shocks before and since the shale gas
+  revolution: {A} multi-scale perspective,} \emph{Journal of Natural Gas
+  Science and Engineering}, 36, 734--746.
+
+\bibitem[\protect\citeauthoryear{Haidar, Kulkarni, and Pan}{Haidar
+  et~al.}{2008}]{haidar_forecasting_2008}
+\textsc{Haidar, I., S.~Kulkarni, and H.~Pan} (2008): \enquote{Forecasting model
+  for crude oil prices based on artificial neural networks,} in
+  \emph{Intelligent {Sensors}, {Sensor} {Networks} and {Information}
+  {Processing}, 2008. {ISSNIP} 2008. {International} {Conference} on}, IEEE,
+  103--108.
+
+\bibitem[\protect\citeauthoryear{Hartley, Medlock~III, and Rosthal}{Hartley
+  et~al.}{2008}]{hartley_relationship_2008}
+\textsc{Hartley, P.~R., K.~B. Medlock~III, and J.~E. Rosthal} (2008):
+  \enquote{The relationship of natural gas to oil prices,} \emph{The Energy
+  Journal}, 47--65.
+
+\bibitem[\protect\citeauthoryear{He, Yu, and Lai}{He
+  et~al.}{2012}]{he_crude_2012}
+\textsc{He, K., L.~Yu, and K.~K. Lai} (2012): \enquote{Crude oil price analysis
+  and forecasting using wavelet decomposed ensemble model,} \emph{Energy}, 46,
+  564--574.
+
+\bibitem[\protect\citeauthoryear{Heather}{Heather}{2015}]{heather_evolution_2015}
+\textsc{Heather, P.} (2015): \emph{The evolution of {European} traded gas
+  hubs}, Oxford Institute for Energy Studies.
+
+\bibitem[\protect\citeauthoryear{Herbert}{Herbert}{1993}]{herbert_relation_1993}
+\textsc{Herbert, J.~H.} (1993): \enquote{The relation of monthly spot to
+  futures prices for natural gas,} \emph{Energy}, 18, 1119--1124.
+
+\bibitem[\protect\citeauthoryear{Kim, Yu, and Song}{Kim
+  et~al.}{2002}]{kim_prediction_2002}
+\textsc{Kim, C.-i., I.-K. Yu, and Y.~H. Song} (2002): \enquote{Prediction of
+  system marginal price of electricity using wavelet transform analysis,}
+  \emph{Energy Conversion and Management}, 43, 1839--1851.
+
+\bibitem[\protect\citeauthoryear{Knittel and Roberts}{Knittel and
+  Roberts}{2005}]{knittel_empirical_2005}
+\textsc{Knittel, C.~R. and M.~R. Roberts} (2005): \enquote{An empirical
+  examination of restructured electricity prices,} \emph{Energy Economics}, 27,
+  791--817.
+
+\bibitem[\protect\citeauthoryear{Kristiansen}{Kristiansen}{2012}]{kristiansen_forecasting_2012}
+\textsc{Kristiansen, T.} (2012): \enquote{Forecasting {Nord} {Pool} day-ahead
+  prices with an autoregressive model,} \emph{Energy Policy}, 49, 328--332.
+
+\bibitem[\protect\citeauthoryear{Lira, Munoz, Nunez, and Cipriano}{Lira
+  et~al.}{2009}]{lira_short-term_2009}
+\textsc{Lira, F., C.~Munoz, F.~Nunez, and A.~Cipriano} (2009):
+  \enquote{Short-term forecasting of electricity prices in the {Colombian}
+  electricity market,} \emph{IET generation, transmission \& distribution}, 3,
+  980--986.
+
+\bibitem[\protect\citeauthoryear{Malliaris and Malliaris}{Malliaris and
+  Malliaris}{2008}]{malliaris_forecasting_2008}
+\textsc{Malliaris, M.~E. and S.~G. Malliaris} (2008): \enquote{Forecasting
+  inter-related energy product prices,} \emph{The European Journal of Finance},
+  14, 453--468.
+
+\bibitem[\protect\citeauthoryear{Mingming and Jinliang}{Mingming and
+  Jinliang}{2012}]{mingming_multiple_2012}
+\textsc{Mingming, T. and Z.~Jinliang} (2012): \enquote{A multiple adaptive
+  wavelet recurrent neural network model to analyze crude oil prices,}
+  \emph{Journal of Economics and Business}, 64, 275--286.
+
+\bibitem[\protect\citeauthoryear{Mirikitani and Nikolaev}{Mirikitani and
+  Nikolaev}{2011}]{mirikitani_nonlinear_2011}
+\textsc{Mirikitani, D. and N.~Nikolaev} (2011): \enquote{Nonlinear maximum
+  likelihood estimation of electricity spot prices using recurrent neural
+  networks,} \emph{Neural Computing and Applications}, 20, 79--89.
+
+\bibitem[\protect\citeauthoryear{Mishra and Smyth}{Mishra and
+  Smyth}{2016}]{mishra_are_2016}
+\textsc{Mishra, V. and R.~Smyth} (2016): \enquote{Are natural gas spot and
+  futures prices predictable?} \emph{Economic Modelling}, 54, 178--186.
+
+\bibitem[\protect\citeauthoryear{Misiorek, Trueck, and Weron}{Misiorek
+  et~al.}{2006}]{misiorek_point_2006}
+\textsc{Misiorek, A., S.~Trueck, and R.~Weron} (2006): \enquote{Point and
+  interval forecasting of spot electricity prices: {Linear} vs. non-linear time
+  series models,} \emph{Studies in Nonlinear Dynamics \& Econometrics}, 10.
+
+\bibitem[\protect\citeauthoryear{Moshiri and Foroutan}{Moshiri and
+  Foroutan}{2006}]{moshiri_forecasting_2006}
+\textsc{Moshiri, S. and F.~Foroutan} (2006): \enquote{Forecasting nonlinear
+  crude oil futures prices,} \emph{The Energy Journal}, 81--95.
+
+\bibitem[\protect\citeauthoryear{Mu}{Mu}{2007}]{mu_weather_2007}
+\textsc{Mu, X.} (2007): \enquote{Weather, storage, and natural gas price
+  dynamics: {Fundamentals} and volatility,} \emph{Energy Economics}, 29,
+  46--63.
+
+\bibitem[\protect\citeauthoryear{Nguyen and Nabney}{Nguyen and
+  Nabney}{2008}]{nguyen_combining_2008}
+\textsc{Nguyen, H.~T. and I.~T. Nabney} (2008): \enquote{Combining the wavelet
+  transform and forecasting models to predict gas forward prices,} in
+  \emph{Machine {Learning} and {Applications}, 2008. {ICMLA}'08. {Seventh}
+  {International} {Conference} on}, IEEE, 311--317.
+
+\bibitem[\protect\citeauthoryear{Nguyen and Nabney}{Nguyen and
+  Nabney}{2010}]{nguyen_short-term_2010}
+---\hspace{-.1pt}---\hspace{-.1pt}--- (2010): \enquote{Short-term electricity
+  demand and gas price forecasts using wavelet transforms and adaptive models,}
+  \emph{Energy}, 35, 3674--3685.
+
+\bibitem[\protect\citeauthoryear{Nick and Thoenes}{Nick and
+  Thoenes}{2014}]{nick_what_2014}
+\textsc{Nick, S. and S.~Thoenes} (2014): \enquote{What drives natural gas
+  prices?—{A} structural {VAR} approach,} \emph{Energy Economics}, 45,
+  517--527.
+
+\bibitem[\protect\citeauthoryear{Nogales and Conejo}{Nogales and
+  Conejo}{2006}]{nogales_electricity_2006}
+\textsc{Nogales, F.~J. and A.~J. Conejo} (2006): \enquote{Electricity price
+  forecasting through transfer function models,} \emph{Journal of the
+  Operational Research Society}, 57, 350--356.
+
+\bibitem[\protect\citeauthoryear{Nogales, Contreras, Conejo, and
+  Espínola}{Nogales et~al.}{2002}]{nogales_forecasting_2002}
+\textsc{Nogales, F.~J., J.~Contreras, A.~J. Conejo, and R.~Espínola} (2002):
+  \enquote{Forecasting next-day electricity prices by time series models,}
+  \emph{IEEE Transactions on power systems}, 17, 342--348.
+
+\bibitem[\protect\citeauthoryear{Panapakidis and Dagoumas}{Panapakidis and
+  Dagoumas}{2016}]{panapakidis_day-ahead_2016}
+\textsc{Panapakidis, I.~P. and A.~S. Dagoumas} (2016): \enquote{Day-ahead
+  electricity price forecasting via the application of artificial neural
+  network based models,} \emph{Applied Energy}, 172, 132--151.
+
+\bibitem[\protect\citeauthoryear{Panella, Barcellona, and D'ecclesia}{Panella
+  et~al.}{2012}]{panella_forecasting_2012}
+\textsc{Panella, M., F.~Barcellona, and R.~L. D'ecclesia} (2012):
+  \enquote{Forecasting energy commodity prices using neural networks,}
+  \emph{Advances in Decision Sciences}, 2012.
+
+\bibitem[\protect\citeauthoryear{Pang, Xu, Yu, Ma, Lai, Wang, and Xu}{Pang
+  et~al.}{2011}]{pang_forecasting_2011}
+\textsc{Pang, Y., W.~Xu, L.~Yu, J.~Ma, K.~K. Lai, S.~Wang, and S.~Xu} (2011):
+  \enquote{Forecasting the crude oil spot price by wavelet neural networks
+  using {OECD} petroleum inventory levels,} \emph{New Mathematics and Natural
+  Computation}, 7, 281--297.
+
+\bibitem[\protect\citeauthoryear{Salehnia, Falahi, Seifi, and Adeli}{Salehnia
+  et~al.}{2013}]{salehnia_forecasting_2013}
+\textsc{Salehnia, N., M.~A. Falahi, A.~Seifi, and M.~H.~M. Adeli} (2013):
+  \enquote{Forecasting natural gas spot prices with nonlinear modeling using
+  {Gamma} test analysis,} \emph{Journal of Natural Gas Science and
+  Engineering}, 14, 238--249.
+
+\bibitem[\protect\citeauthoryear{Schmutz and Elkuch}{Schmutz and
+  Elkuch}{2004}]{schmutz_electricity_2004}
+\textsc{Schmutz, A. and P.~Elkuch} (2004): \enquote{Electricity price
+  forecasting: {Application} and experience in the {European} power markets,}
+  in \emph{Proceedings of the 6th {IAEE} {European} {Conference}, {Zürich}}.
+
+\bibitem[\protect\citeauthoryear{Shafie-khah, Moghaddam, and
+  Sheikh-El-Eslami}{Shafie-khah et~al.}{2011}]{shafie-khah_price_2011}
+\textsc{Shafie-khah, M., M.~P. Moghaddam, and M.~K. Sheikh-El-Eslami} (2011):
+  \enquote{Price forecasting of day-ahead electricity markets using a hybrid
+  forecast method,} \emph{Energy Conversion and Management}, 52, 2165--2169.
+
+\bibitem[\protect\citeauthoryear{Shambora and Rossiter}{Shambora and
+  Rossiter}{2007}]{shambora_are_2007}
+\textsc{Shambora, W.~E. and R.~Rossiter} (2007): \enquote{Are there exploitable
+  inefficiencies in the futures market for oil?} \emph{Energy Economics}, 29,
+  18--27.
+
+\bibitem[\protect\citeauthoryear{Sharma and Srinivasan}{Sharma and
+  Srinivasan}{2013}]{sharma_hybrid_2013}
+\textsc{Sharma, V. and D.~Srinivasan} (2013): \enquote{A hybrid intelligent
+  model based on recurrent neural networks and excitable dynamics for price
+  prediction in deregulated electricity market,} \emph{Engineering Applications
+  of Artificial Intelligence}, 26, 1562--1574.
+
+\bibitem[\protect\citeauthoryear{Villar and Joutz}{Villar and
+  Joutz}{2006}]{villar_relationship_2006}
+\textsc{Villar, J.~A. and F.~L. Joutz} (2006): \enquote{The relationship
+  between crude oil and natural gas prices,} \emph{Energy Information
+  Administration, Office of Oil and Gas}, 1--43.
+
+\bibitem[\protect\citeauthoryear{Wang and Wang}{Wang and
+  Wang}{2016}]{wang_forecasting_2016}
+\textsc{Wang, J. and J.~Wang} (2016): \enquote{Forecasting energy market
+  indices with recurrent neural networks: {Case} study of crude oil price
+  fluctuations,} \emph{Energy}, 102, 365--374.
+
+\bibitem[\protect\citeauthoryear{Weron}{Weron}{2014}]{weron_electricity_2014}
+\textsc{Weron, R.} (2014): \enquote{Electricity price forecasting: {A} review
+  of the state-of-the-art with a look into the future,} \emph{International
+  journal of forecasting}, 30, 1030--1081.
+
+\bibitem[\protect\citeauthoryear{Weron and Misiorek}{Weron and
+  Misiorek}{2008}]{weron_forecasting_2008}
+\textsc{Weron, R. and A.~Misiorek} (2008): \enquote{Forecasting spot
+  electricity prices: {A} comparison of parametric and semiparametric time
+  series models,} \emph{International journal of forecasting}, 24, 744--763.
+
+\bibitem[\protect\citeauthoryear{Weron, Misiorek, and {others}}{Weron
+  et~al.}{2005}]{weron_forecasting_2005}
+\textsc{Weron, R., A.~Misiorek, and {others}} (2005): \enquote{Forecasting spot
+  electricity prices with time series models,} in \emph{Proceedings of the
+  {European} {Electricity} {Market} {EEM}-05 {Conference}}, 133--141.
+
+\bibitem[\protect\citeauthoryear{Woo, Olson, and Horowitz}{Woo
+  et~al.}{2006}]{woo_market_2006}
+\textsc{Woo, C.-K., A.~Olson, and I.~Horowitz} (2006): \enquote{Market
+  efficiency, cross hedging and price forecasts: {California}'s natural-gas
+  markets,} \emph{Energy}, 31, 1290--1304.
+
+\bibitem[\protect\citeauthoryear{Yamin, Shahidehpour, and Li}{Yamin
+  et~al.}{2004}]{yamin_adaptive_2004}
+\textsc{Yamin, H.~Y., S.~M. Shahidehpour, and Z.~Li} (2004): \enquote{Adaptive
+  short-term electricity price forecasting using artificial neural networks in
+  the restructured power markets,} \emph{International journal of electrical
+  power \& energy systems}, 26, 571--581.
+
+\bibitem[\protect\citeauthoryear{Ye, Zyren, and Shore}{Ye
+  et~al.}{2002}]{ye_forecasting_2002}
+\textsc{Ye, M., J.~Zyren, and J.~Shore} (2002): \enquote{Forecasting crude oil
+  spot price using {OECD} petroleum inventory levels,} \emph{International
+  Advances in Economic Research}, 8, 324--333.
+
+\bibitem[\protect\citeauthoryear{Ye, Zyren, and Shore}{Ye
+  et~al.}{2005}]{ye_monthly_2005}
+---\hspace{-.1pt}---\hspace{-.1pt}--- (2005): \enquote{A monthly crude oil spot
+  price forecasting model using relative inventories,} \emph{International
+  Journal of Forecasting}, 21, 491--501.
+
+\bibitem[\protect\citeauthoryear{Ye, Zyren, and Shore}{Ye
+  et~al.}{2006}]{ye_forecasting_2006}
+---\hspace{-.1pt}---\hspace{-.1pt}--- (2006): \enquote{Forecasting short-run
+  crude oil price using high-and low-inventory variables,} \emph{Energy
+  Policy}, 34, 2736--2743.
+
+\bibitem[\protect\citeauthoryear{Zareipour, Cañizares, Bhattacharya, and
+  Thomson}{Zareipour et~al.}{2006}]{zareipour_application_2006}
+\textsc{Zareipour, H., C.~A. Cañizares, K.~Bhattacharya, and J.~Thomson}
+  (2006): \enquote{Application of public-domain market information to forecast
+  {Ontario}'s wholesale electricity prices,} \emph{IEEE Transactions on Power
+  Systems}, 21, 1707--1717.
+
+\end{thebibliography}

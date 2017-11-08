@@ -1,0 +1,159 @@
+\section{Data}\label{Sec:Data}
+The data used for this analysis is downloaded from the \textit{Thomson Reuters Eikon} database. For this purpose I have implemented a Python script that downloads all necessary time series through the \textit{Eikon Web and Scripting APIs}. In the following I will give an overview over the structure and content of the data both on the target variable as well as the input variables used for the model. 
+\subsection{Target Variable}
+\subsubsection{Data Structure}
+The target variable to be predicted in this thesis is the closing price for the TTF gas future with delivery in the next month, referred to as Front Month from here on. An advantage of this specification of the target variable is, that one gets one continuous time series for which data can be downloaded for a long period of time. However this definition also poses a significant challenge. The challenge lies in the fact that the product which is traded effectively changes at the change of the month. For example the Front Month price quoted on September 30 refers to natural gas delivered in the month of October, wheras on October 1 it refers to delivery in November. This leads to structural breaks and large price changes at the end of each month. To illustrate this we have plotted both the Front Month price as well as the price of each months future as traded before it becomes the Front Month for the second half of 2016 in Figure \ref{fig:ttf_monthly_level_2016_02}. As one can see the price of the Front Month jumps at the end of each month to the level at which the next month was traded previously. An alternative would be to model each month separately, to avoid these structural breaks. However, since each month is only traded with sufficient liquidity for about 2 months prior to its delivery this would seriously limit the amount of training data on each variable. How we address this trade off will be illustrated in Section \ref{Sec:Results}. 
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/ttf_monthly_level_2016_02\string".png}
+  \caption{TTF Front Month vs. Individual Months}\label{fig:ttf_monthly_level_2016_02}
+\end{figure}
+\subsubsection{Price level}
+Overall price data was downloaded for all trading days starting from beginning of 2010. The long term trend of daily closing prices are is visualised in Figure \ref{fig:ttf_fm_level}. As one can see there have been significant price changes over time ranging from a minimum of 10.7 Euro on August 19, 2016 and a Maximum of 29.35 Euro on March 28, 2013. In general one can observe a general trend of rising prices in the time prior to 2014 and falling prices since. This change in price behaviour coincides with the oil price shock in 2014 (more on this relationship can be found in Section \ref{Sec:Input}). A first step to evaluate inter-temporal dependencies is to look at Auto Correlations and Partial Auto Correlations of the time series. As shown in Figure \ref{fig:acf_ttf_fm_level} the autocorrelations are very close to one and decrease rather slowly. On the other hand the Partial Autocorrelations displayed in Figure \ref{fig:pacf_ttf_fm_level} is almost $1.0$ for the first lag but very close to zero for all others. These results strongly suggest that the time series follows an $AR(1)$ process. This should not be surprising however given the rather low daily price changes relative to the total price level as well as economic theory regarding efficient capital markets.
+
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/ttf_fm_level\string".png}
+  \caption{TTF Front Month Closing Prices}\label{fig:ttf_fm_level}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/acf_ttf_fm_level\string".png}
+  \caption{Auto Correlations TTF Front Month Closing Prices}\label{fig:acf_ttf_fm_level}
+\end{figure}
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/pacf_ttf_fm_level\string".png}
+  \caption{Partial Auto Correlations TTF Front Month Closing Prices}\label{fig:pacf_ttf_fm_level}
+\end{figure}
+
+\subsubsection{First Differences}
+Judging from the results of the previous section it seems reasonable to suggest that the price level on any given day is highly determined by the price level observed one day before. Therefore it might be of interest to analyse the daily price changes or return instead. The price change $C_t$ for timepoint $t$ is defined as:
+$$C_t = P_t - P_{t-1}$$
+In Figure \ref{fig:ttf_fm_diff} these changes are plotted for the same time frame as that of Figure \ref{fig:pacf_ttf_fm_level}. As can be seen the mean of this time series is zero supporting the hypothesis of an efficient market and the stationary of the price process.
+When we look at the (Partial) Auto Correlations for this time series in Figures \ref{fig:acf_ttf_fm_diff} and \ref{fig:pacf_ttf_fm_diff} we see that all coefficients are close to zero indicating a lack of intertemporal correlation among price changes, which is often observed with price series of exchange traded financial products.
+The same analysis has been done on the daily returns in Figures \ref{fig:ttf_fm_return} - \ref{fig:pacf_ttf_fm_return} . With the return being defined as:
+$$R_t = log(\frac{P_t}{P_{t-1}})$$
+The results mirror those of the Price Changes almost exactly but are scaled differently.
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/ttf_fm_diff\string".png}
+  \caption{Daily Change TTF Front Month Closing Prices}\label{fig:ttf_fm_diff}
+\end{figure}
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/acf_ttf_fm_diff\string".png}
+  \caption{Auto Correlations TTF Front Month Daily Changes}\label{fig:acf_ttf_fm_diff}
+\end{figure}
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/pacf_ttf_fm_diff\string".png}
+  \caption{Partial Auto Correlations TTF Front Month Daily Changes}\label{fig:pacf_ttf_fm_diff}
+\end{figure}
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/ttf_fm_return\string".png}
+  \caption{Daily returns TTF Front Month Closing Prices}\label{fig:ttf_fm_return}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/acf_ttf_fm_return\string".png}
+  \caption{Auto Correlations TTF Front Month Daily Returns}\label{fig:acf_ttf_fm_return}
+\end{figure}
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/pacf_ttf_fm_return\string".png}
+  \caption{Partial Auto Correlations TTF Front Month Daily Returns}\label{fig:pacf_ttf_fm_return}
+\end{figure}
+
+
+\subsection{Input Variables}\label{Sec:Input}
+
+\subsubsection{Data Structure}
+\subsubsection{Other Energy Commodities}
+The variables most closely related to the TTF Gas Price are surely the prices for the equivalent futures on other European Virtual Trading Points. Another important continental European VTP is the German \textit{Gaspool}. Since the Dutch and German markets are integrated quite well it is not surprising that when we plot the prices of both VTP's in Figure \ref{fig:gp_ttf_level} they seem to follow each other very closely. However when we plot the price difference between both markets, defined as:
+$$D_t = P^{GP}_t - P^{TTF}_t$$. We see in Figure \ref{fig:gp_ttf_price_diff} that these prices can differ quite significantly in the short term. A similar picture emerges when we compare the daily price changes (Figure \ref{fig:gp_ttf_diff}) and returns (Figure \ref{fig:gp_ttf_return}) with a relatively low correlation between the two markets and prices moving in different directions around 30 percent of the time. In general while price levels are similar, the Gaspool prices seem to be more volatile than those on the TTF, which could be due to a higher liquidity on TTF.
+Another time series which might be considered connected to the TTF gas price, would be the price for the equivalent future on the oil market (Brent). In Figure \ref{fig:oil_ttf_level} the relative developments of both prices are plotted with a normalisation to the price of January 2010. While the overall correlation of price levels is relatively low it does change quite significantly over the years since 2010. As we can see in table \ref{tab:oil_ttf_level_corr_annual} the price level correlation has actually risen over the past few years. A similar picture emerges when we look at the respective data for the daily returns of oil and gas prices in Figure \ref{fig:oil_ttf_return} and Table \ref{tab:oil_ttf_return_corr_annual}.
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/gp_ttf_level\string".png}
+  \caption{Closing Prices for Gaspool and TTF Front Month Futures}\label{fig:gp_ttf_level}
+\end{figure}
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/gp_ttf_diff\string".png}
+  \caption{Daily Changes for Gaspool and TTF Front Month Futures}\label{fig:gp_ttf_diff}
+\end{figure}
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/gp_ttf_return\string".png}
+  \caption{Daily Returns for Gaspool and TTF Front Month Futures}\label{fig:gp_ttf_return}
+\end{figure}
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/gp_ttf_price_diff\string".png}
+  \caption{Daily Price Difference GP - TTF}\label{fig:gp_ttf_price_diff}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/nbp_ttf_level\string".png}
+  \caption{Closing Prices for NBP and TTF Front Month Futures}\label{fig:nbp_ttf_level}
+\end{figure}
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/nbp_ttf_diff\string".png}
+  \caption{Daily Changes for NBP and TTF Front Month Futures}\label{fig:nbp_ttf_diff}
+\end{figure}
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/nbp_ttf_return\string".png}
+  \caption{Daily Returns for NBP and TTF Front Month Futures}\label{fig:nbp_ttf_return}
+\end{figure}
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/nbp_ttf_price_diff\string".png}
+  \caption{Daily Price Difference NBP - TTF}\label{fig:nbp_ttf_price_diff}
+\end{figure}
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/nbp_ttf_level_rel\string".png}
+  \caption{Relative  development of Closing Prices for NBP and TTF Front Month Futures}\label{fig:nbp_ttf_level_rel}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/oil_ttf_level\string".png}
+  \caption{Relative  development of Closing Prices for Oil(Brent) and TTF Front Month Futures}\label{fig:oil_ttf_level}
+\end{figure}
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/oil_ttf_return\string".png}
+  \caption{Daily returns for Oil(Brent) and TTF Front Month Futures}\label{fig:oil_ttf_return}
+\end{figure}
+
+\subsubsection{Gas Market Fundamentals}
+\subsubsection{Financial Data}
+\subsubsection{Correlation Analysis}
+\subsubsection{Variable Selection}

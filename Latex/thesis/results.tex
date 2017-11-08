@@ -1,0 +1,164 @@
+\section{Experimental Design}
+Designing an experiment to evaluate the performance of the LSTM model in comparison to reference models one has to solve several problems:
+\begin{enumerate}
+\item Reference Models\begin{itemize}
+	\item Selecting reference models
+\end{itemize}
+\item Parameter Tuning \begin{itemize}
+	\item Defining Parameter Tuning process
+	\item Selecting hyper parameters to tune and choosing tuning grid
+\end{itemize}
+\item Variable Selection \begin{itemize}
+	\item Defining variable selection process
+	\item Selecting candidate variables
+\end{itemize}
+\item Model Evaluation \begin{itemize}
+\item Selecting hold out data to exclude from parameter tuning and variable selection.
+\item Defining Testing Scenario
+\end{itemize}	
+\end{enumerate}
+
+A major challenge arising from this problem is the interdependence between the parameter tuning and the variable selection steps. To tune the parameters we have to have selected a certain set of input variables and vice versa. One way to solve this problem would be to view the subset of selected input variables as just another tuning parameter and integrate both steps. However in this process the number of training iterations that would have to be performed would increase significantly to the product of the iterations in both steps. To avoid excessive computational costs the following alternative approach was chosen:
+
+\begin{enumerate}
+\item Perform parameter tuning on \textit{purely autoregressive} models
+\item Perform variable selection using parameter values determined in step 1.
+\item Tune parameters again for models using input variables determined in step 2.
+\item Evaluate both the tuned autoregressive models from step 1 as well as multivariate models from step 3. 
+\end{enumerate}
+Each of these steps is executed both for the LSTM model as well as for each reference model for which it is applicable.
+A \textit{purely autoregressive} in this context is a model trained using only past observations of the target variable as input. In the following paragraphs the selected approach for each of the above mentioned decision problems is outlined.
+
+\subsection{Reference Models}
+The prediction results of the LSTM model are compared to each of the following reference models.
+\begin{description}
+\item[Simple Recurrent Neural Network (RNN):] This model is the implementation of the above outlined simple RNN architecture where the hidden layer output of the past time step is used as another input variable.
+\item[Feed Forward Neural Network (FFNN):] The FFNN model is an implementation of the classical Neural Network without any recurrent connection modelling  a static input output mapping. Regarding the input variables I use both a \textit{short} and \textit{long} version of the FFNN. Whereas the \textit{short FFNN} only takes in the last observation of each input variable the \textit{long FFNN} takes as input a larger number of values based on the \textit{length} hyper-parameter (see below).
+\item[Regression Models:] In the case of the price level prediction this reference model consists of a standard OLS estimation. In the autoregressive case it is an AR(1) model whereas in the multivariate case it is a linear regression on the last available value for each variable. For the binary prediction problem a logistic regression on the same set of variables is applied using maximum likelihood estimation.
+\end{description}
+
+
+\subsection{Parameter Tuning}
+The detailed structure of each model as well as the training process is controlled by a number of hyper parameters. The selection of parameters that are considered in this paragraph as well as the terminology is inspired by the \textit{Tensorflow} and \textit{Keras} Python packages which were used to implement the neural network based models. Theoretically the models could be tuned on all of these parameters. However using the standard grid search used in this tuning approach the total number of parameter combinations would grow exponentially. Since each of the models have to be retrained on every parameter combination this would generate excessive computational costs. To avoid these costs the parameters are separated into a set of fixed hyper-parameters which are set to constant values derived from experience and literature and a complimentary set of tuning parameters.
+\subsubsection{Fixed Hyper-Parameters}
+In the following I will give a brief description of each hyper-parameter that was excluded from the tuning process. This selection was done based on observations from literature as well as the online machine learning community. Except for the \textit{length} parameter none of these parameters alter the actual structure of the respective model but are limited to the training process. The \textit{length} and \textit{batchsize} parameters can be considered features of the \textit{Tensorflow} package and are not necessarily present in the theoretical work on neural networks or alternative implementations.
+\begin{description}
+\item[Length:] From the definition of a recurrent neural network there is no theoretic limit on the length of inter temporal dependencies that the model can learn. This is due to the fact the gradient as well as the layer activations can flow infinitely far through the network. However this would also mean that there is no limit on the amount of calculations that would have to be done to determine the gradient based updates to the network weights. Therefore the \textit{Tensorflow} implementation of recurrent neural networks requires the user to pass a length argument which limits the number of time steps that are included in the calculation of the gradients for observation. This length thereby also limits the maximum length of inter temporal dependencies that the model can learn.
+
+\item[Batchsize:] The \textit{Tensorflow} package processes the training data in batches. In practice that means that at a given training epoch the gradients are calculated for a certain subset of training observations. Then the weights are updated using the gradients calculated from this subset. The \textit{batchsize} parameter controls the size of this subset. Therefore in each training step the weights are updated $\frac{n_{obs}}{batchsize}$ times (rounded up to the next integer). Given the same number of training steps a larger \textit{batchsize} therefore means less frequent weight updates, slower learning and less computational complexity.
+
+\item[Epochs:] The \textit{epochs} parameter controls the number of training steps, which is the number of times the weight updates are repeated for each training batch. Therefore the total number of weight updates is $epochs * \frac{n_{obs}}{batchsize}$. 
+
+\item[Loss:] The \textit{loss} parameter determines the loss-function that is minimized during the training of the model. In this work the \textit{Mean Squared Error} is used as loss for the price level prediction whereas \textit{binary cross entropy} is used for the binary prediction problem.
+
+\item[Optimizer:] The \textit{optimizer} chooses an optimization algorithm to use when minimizing the loss function on the training set. Following practice and advice from the machine learning community the \textit{Stochastic Gradient Descent} optimizer is used for the FFNN models. Following the advice in the \textit{Keras} documentation the \textit{RMSProp} optimizer is used for recurrent models.
+\end{description}
+\subsubsection{Tuning Parameters}
+In the parameter tuning stage each model was tuned over the following parameters
+\begin{description}
+\item[Learning Rate:] The learning rate is the value by which the gradient values in each iteration are multiplied to get the weight updates. This means that the weight value at epoch $n+1$ ($W_{ij, n+1}$ is calculated as $W_{ij, n+1} = W_{ij, n} - learningrate * \frac{dl(W_{ij, n})}{dW_{ij, n}}$. A lower learning rate slows down the learning process and increases the number of training epochs necessary to converge on a local minimum of the loss function. If the learning rate is too high on the other hand the gradient descent algorithm might not converge at all, constantly "over-shooting" the minimum.
+\item[Dropout:] One way to avoid the issue of over-fitting is to randomly drop different input variables at each time step. Using this approach the value of the dropout tuning parameter sets the probability with witch any individual input variable is dropped For recurrent networks this is applied to both external inputs as well as past hidden layer outputs. Although the dropout values for both types could be set independently they are always set to the same level in the tuning process to limit the dimensionality of the tuning grid. Dropout is only used in multivariate models.
+\item[Architecture:] The architecture tuning parameter sets the number of neurons in the hidden layer. In the case of the LSTM network it sets the number of neurons for every trainable layer in all gates. Therefore the total number of neurons in the hidden layer of the LSTM is four times that number.
+\end{description}
+\subsubsection{Tuning Process}
+\section{Evaluation}\label{Sec:Results}
+The following section will describe both the experimental design used to evaluate the performance of the LSTM model and the results of that evaluation. The experimental design contains explanations on the chosen reference methods, the error measure, variable selection, the data preprocessing and the testing scenario. 
+\subsection{Experimental Design}
+Overall the evaluation of LSTM models is separated in two parts. In the first part the LSTM is used as a purely autoregressive model. That means that the only input variables used for the forecasting are past values of the target variable. In the second part we extend the model to the multivariate case where past values of some of the other variables described above are included as inputs. 
+\subsubsection{Reference Methods}
+The aim of this work is to evaluate the relative merit of the LSTM method for time series predictions. Therefore  any reference model should use the same set of input variables as the LSTM network so that differences in accuracy can be attributed solely to the forecasting method and not difference in predictive values of the inputs.
+For both evaluation scenarios we use a linear model as well as a feed forward neural network as reference models. In the autoregressive case the linear model would be an AR-model whose order would have to be specified. Whoever both the analysis of (Partial) Auto Correlations in the explanatory analysis as well as the experimental application of various order selection methods strongly suggest a model of order one. Fitting these kind of models to various subsets of the data all produced estimates of the only regression coefficient very close to one. Instead of refitting the AR model on every new train/test split the coefficient is instead held constant at a value of one. This is equivalent to just using the current value of the target variable as a prediction for the next value. Apart from the reduction in complexity this also produces a reference model that can be seen as a representation of the hypothesis of an efficient market where all information about future prices is incorporated in the current price. In the multivariate case the linear reference models consist of both this lagged value as well as a linear regression on the same variables that are used by the LSTM. The non-linear reference model for comparison with the LSTM is a feed forward neural network with the same number of layers as the LSTM. In the univariate case this model only takes the last value as an input where as in the multivariate case it again uses the same variables as the LSTM.
+\subsubsection{Error Measures}
+The following error measures are used to compare the predictive quality of different models:
+\begin{description}
+\item[Mean Squared Error]
+\begin{align*}
+MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - \tilde{y_i})^2
+\end{align*}
+\item[Mean Absolute Error]
+\begin{align*}
+MAE = \frac{1}{n}\sum_{i=1}^{n}|y_i - \tilde{y_i}|
+\end{align*}
+\item[Mean Absolute Percentage Error]
+\begin{align*}
+MAPE = 100 * \frac{1}{n}\sum_{i=1}^{n}\frac{|y_i - \tilde{y_i}|}{|y_i|}
+\end{align*}
+\end{description}
+\subsubsection{Preprocessing}
+Before applying the different modelling techniques two preprocessing steps are applied to the data. In the first step missing values of both the target as well as the input variables are replaced using a forward filling procedure. This means that for each missing value the last available value from that time series is filled in. Only in the case that the missing value occurs at the beginning of the respective time series the whole observation is deleted. This procedure preserves the overall temporal structure of the data ensuring that the previous value in the data in fact represents the data point one time step (trading day) in the past. Additionally this forward filling procedure is in line with the observation that especially for market prices a missing value usually means that the asset was not traded on that day. Therefore it is somewhat natural to continue using the closing price of the previous trading day as the current price.
+For training and testing the neural network models both input and target variables have additionally been scaled using a \textit{Min-Max-Scaler} as implemented in the \textit{scikit-learn} Python-package. This method converts the original value $x_i$ into a scaled value $\tilde{x}_i$ which lies in the range of $[a,b]$ using the following formula:
+\begin{align*}
+\tilde{x}_i = \frac{x_i - min_{i = 1,...,N}(x_i)}{max_{i = 1,...,N}(x_i) - min_{i = 1,...,N}(x_i)}(a - b) + b
+\end{align*}
+To support the use of a $tanh$ activation function in the output layer as well as following good practice observed in the literature the target range is set to $[-1,1]$. After having trained the models on scaled data and generated predictions in the scaled range the respective backward transformation is applied to the predictions to get values in the original range. 
+
+\subsubsection{Variable Selection}
+
+
+\subsubsection{Network Architecture}
+
+
+\subsubsection{Training Method}
+For the training of LSTM models using the \textit{Keras} and \textit{Tensorflow} packages the training procedure is characterised by a number parameters.
+
+
+
+\subsubsection{Testing Scenario}
+As testing method a self implemented month-wise leave-one-out cross validation is employed. That means in each step one month of data is selected as test data and the model trained on all remaining months. To limit the number of validation steps and thereby computational complexity the months to be selected as test data are limited to the time frame 01/2016 - 07/2017. However as training data the whole data set beginning in 01/2014 is used.
+\subsection{Results}
+In the following paragraphs I will illustrate the results that the FFNN and LSTM achieved in the univariate and multivariate cases. In each case the models will be compared among each other as well as with the respective linear reference model.
+\subsubsection{Univariate Models}
+In the univariate or autoregressive case the linear reference which in this case consist of the price value of the last day proves to be a very strong benchmark. In fact both the Feed Forward Neural Network as well as the Long Short Term Memory model after training result in predictions that resemble this benchmark very closely. When looking at the predictions over the whole testing period displayed in figures (\ref{fig:lstm_val_sep_l20_b10_e100_n32_predictions} and \ref{fig:mlp_val_sep_l1_b10_e100_n32_predictions}) the actual value of the target variable becomes indistinguishable from the model predictions as well as the reference predictions. When one looks at a close up of these time series for the front month contract for delivery in July 2016 (figures \ref{fig:lstm_val_sep_l20_b10_e100_n32_TTF0716_predictions}
+ and \ref{fig:mlp_val_sep_l1_b10_e100_n32_TTF0716_predictions})
+one can see a slight difference between the model predictions and the lagged value. However this difference seems to result mostly from an overall shift in the level, while the relative movement over time seems to be almost identical in both cases. Overall the FFNN predictions seem to resemble the lagged value reference even more closely than those of the LSTM. This picture is relatively constant across the whole time frame. The strength of the current price as a predictor of tomorrows price becomes especially apparent when looking at the evaluation metrics in tables \ref{tab:mape_monthly}, \ref{tab:mae_monthly}, \ref{tab:mse_monthly} and \ref{tab:results_mean}. Neither of the neural network models is able to outperform the reference in any metric, a picture that is constant across the time frame. Again the performance of the FFNN  is close to the reference model due to the fact that the predictions coincide more closely. To determine weather this performance might be due to under- or over-fitting one might look at the behaviour of training and test loss across training steps. Since the training process is restarted for each test month in the cross validation, one would get a different curve for each month such as those pictured in figures \ref{fig:lstm_val_sep_l20_b10_e100_n32_TTF0716_histories} and \ref{fig:mlp_val_sep_l20_b10_e100_n32_TTF0716_histories}
+. To get a picture for the whole time frame and remove some of the volatility of the test error the data was averaged across test months for both model types and the results plotted in figures \ref{fig:lstm_val_sep_l20_b10_e100_n32_histories} and \ref{fig:mlp_val_sep_l20_b10_e100_n32_histories}. The fact that in all cases there seems to be no visible additional loss reduction for the second half of the training process suggests that there is no under-fitting and performance of these models. Additionally the low difference between training and test error as well as the relative constant test error towards the end of the process speak against the possibility of over fitting. 
+
+
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/lstm_val_sep_l20_b10_e100_n32_predictions\string".png}
+  \caption{LSTM Predictions vs. Actual and Lagged Values for TTF Front Month 2016-17}\label{fig:lstm_val_sep_l20_b10_e100_n32_predictions}
+\end{figure}
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/mlp_val_sep_l1_b10_e100_n32_predictions\string".png}
+  \caption{FFN Predictions vs. Actual and Lagged Values for TTF Front Month 2016-17}\label{fig:mlp_val_sep_l1_b10_e100_n32_predictions}
+\end{figure}
+
+%Training history averaged across test months
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/lstm_val_sep_l20_b10_e100_n32_histories\string".png}
+  \caption{MSE along training steps averaged across Test Months - LSTM Model}\label{fig:lstm_val_sep_l20_b10_e100_n32_histories}
+\end{figure}
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/mlp_val_sep_l1_b10_e100_n32_histories\string".png}
+  \caption{MSE along training steps averaged across Test Months - FFNN Model}\label{fig:mlp_val_sep_l20_b10_e100_n32_histories}
+\end{figure}
+
+
+%Predictions for July 2016
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/lstm_val_sep_l20_b10_e100_n32_TTF0716_predictions\string".png}
+  \caption{LSTM Predictions vs. Actual and Lagged Values for TTF July 2016 delivery}\label{fig:lstm_val_sep_l20_b10_e100_n32_TTF0716_predictions}
+\end{figure}
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/mlp_val_sep_l1_b10_e100_n32_TTF0716_predictions\string".png}
+  \caption{FFN Predictions vs. Actual and Lagged Values for TTF July 2016 delivery}\label{fig:mlp_val_sep_l1_b10_e100_n32_TTF0716_predictions}
+\end{figure}
+
+%Training histories for July 2016
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/lstm_val_sep_l20_b10_e100_n32_TTF0716_histories\string".png}
+  \caption{MSE along training steps for Test Month delivery July 2016 - LSTM Model}\label{fig:lstm_val_sep_l20_b10_e100_n32_TTF0716_histories}
+\end{figure}
+\begin{figure}
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/mlp_val_sep_l1_b10_e100_n32_TTF0716_histories\string".png}
+  \caption{MSE along training steps for Test Month delivery July 2016 - FFNN Model}\label{fig:mlp_val_sep_l20_b10_e100_n32_TTF0716_histories}
+\end{figure}
+

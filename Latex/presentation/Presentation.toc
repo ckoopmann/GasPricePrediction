@@ -1,0 +1,9 @@
+\select@language {english}
+\beamer@sectionintoc {1}{Motivation}{3}{0}{1}
+\beamer@sectionintoc {2}{Natural Gas Market}{2}{0}{2}
+\beamer@sectionintoc {3}{Methodology}{4}{0}{3}
+\beamer@sectionintoc {4}{Input Data}{9}{0}{4}
+\beamer@sectionintoc {5}{Training / Tuning Approach}{2}{0}{5}
+\beamer@sectionintoc {6}{Price Level Prediction}{2}{0}{6}
+\beamer@sectionintoc {7}{Binary Prediction}{3}{0}{7}
+\beamer@sectionintoc {8}{Conclusions / Outlook / Comments}{4}{0}{8}

@@ -1,0 +1,14 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces Selected European Gas Hubs. Primary Focus: TTF, Secondary Focus: NBP, GP}}{4}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Types of Natural Gas Trading}}{5}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Simplified RNN Architecture}}{17}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Hidden Layer of Elman Network}}{18}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Hidden Layer of LSTM Network}}{20}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces LSTM Predictions vs. Actual and Lagged Values for TTF Front Month 2016-17}}{28}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces FFN Predictions vs. Actual and Lagged Values for TTF Front Month 2016-17}}{28}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces MSE along training steps averaged across Test Months - LSTM Model}}{29}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces MSE along training steps averaged across Test Months - FFNN Model}}{29}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces LSTM Predictions vs. Actual and Lagged Values for TTF July 2016 delivery}}{30}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces FFN Predictions vs. Actual and Lagged Values for TTF July 2016 delivery}}{30}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces MSE along training steps for Test Month delivery July 2016 - LSTM Model}}{31}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces MSE along training steps for Test Month delivery July 2016 - FFNN Model}}{31}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Estimated residuals (2) from model XXX. ...}}{38}{figure.14}
