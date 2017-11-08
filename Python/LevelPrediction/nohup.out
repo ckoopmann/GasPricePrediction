@@ -339,3 +339,38 @@ Traceback (most recent call last):
     " or a value too large for %r." % X.dtype)
 ValueError: Input contains NaN, infinity or a value too large for dtype('float32').
 Already up-to-date.
+[master 7434d98] New AWS results - Level Par Tuning
+ Committer: EC2 Default User <ec2-user@ip-172-31-22-156.us-west-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 341 insertions(+)
+ create mode 100644 Python/LevelPrediction/nohup.out
+To https://github.com/ckoopmann/GasPricePrediction.git
+   2386f1d..7434d98  master -> master
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "level_var_selection_nocv.py", line 39, in <module>
+    par_selection_df = read_csv(parameter_selection_path,header=0)
+  File "/usr/lib64/python3.4/dist-packages/pandas/io/parsers.py", line 655, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/lib64/python3.4/dist-packages/pandas/io/parsers.py", line 405, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/usr/lib64/python3.4/dist-packages/pandas/io/parsers.py", line 764, in __init__
+    self._make_engine(self.engine)
+  File "/usr/lib64/python3.4/dist-packages/pandas/io/parsers.py", line 985, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/lib64/python3.4/dist-packages/pandas/io/parsers.py", line 1605, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 394, in pandas._libs.parsers.TextReader.__cinit__ (pandas/_libs/parsers.c:4209)
+  File "pandas/_libs/parsers.pyx", line 710, in pandas._libs.parsers.TextReader._setup_parser_source (pandas/_libs/parsers.c:8873)
+FileNotFoundError: File b'../../Data/Output/LevelPrediction/level_par_tuning/evaluation.csv' does not exist
+Already up-to-date.
