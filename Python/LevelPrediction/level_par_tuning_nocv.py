@@ -16,7 +16,7 @@ from keras.optimizers import RMSprop, SGD
 from sklearn.metrics import mean_absolute_error, mean_squared_error, log_loss, roc_auc_score
 
 loss_functions_dict = {'mae':mean_absolute_error,  'mse': mean_squared_error, 'binary_crossentropy': log_loss, 'auc' : roc_auc_score}
-output_path = "../../Data/Output/LevelPrediction/level_par_tuning_test"
+output_path = "../../Data/Output/LevelPrediction/level_par_tuning"
 data_path = '../../Data/Input/InputData.csv'
 length_passed = 20
 n_epochs = 300
@@ -108,56 +108,59 @@ for model_name in models:
     months_test = concatenate(months_test_list)
 
     for (learningrate, dropout, architecture) in par_combs:
-
-            # Create the model
-            if model_name == 'lstm':
-                model = create_model_LSTM(architecture, y_sep[0], X_sep[0], output_activation=output_activation, loss=loss,
-                                     recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate), use_bias=False)
-            elif model_name == 'rnn':
-                model = create_model_simpleRNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
-                                               loss=loss, recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate))
-            elif model_name == 'ffnn':
-                model = create_model_FFNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
-                                         loss=loss,
-                                         dropout=dropout, optimizer=SGD(lr=learningrate))
-            elif model_name == 'ffnn_regression':
-                if architecture == architectures[0]:
-                    architecture = [0]
+            try:
+                # Create the model
+                if model_name == 'lstm':
+                    model = create_model_LSTM(architecture, y_sep[0], X_sep[0], output_activation=output_activation, loss=loss,
+                                         recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate), use_bias=False)
+                elif model_name == 'rnn':
+                    model = create_model_simpleRNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
+                                                   loss=loss, recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate))
+                elif model_name == 'ffnn':
                     model = create_model_FFNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
-                                         loss=loss,
-                                         dropout=dropout, optimizer=SGD(lr=learningrate))
-                else:
-                    continue
-            #Train model
-            history = model.fit(X_train, y_train, batch_size=batch, epochs=n_epochs,
-                                validation_data=(X_test, y_test), verbose=verbosity)
+                                             loss=loss,
+                                             dropout=dropout, optimizer=SGD(lr=learningrate))
+                elif model_name == 'ffnn_regression':
+                    if architecture == architectures[0]:
+                        architecture = [0]
+                        model = create_model_FFNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
+                                             loss=loss,
+                                             dropout=dropout, optimizer=SGD(lr=learningrate))
+                    else:
+                        continue
+                #Train model
+                history = model.fit(X_train, y_train, batch_size=batch, epochs=n_epochs,
+                                    validation_data=(X_test, y_test), verbose=verbosity)
 
-            #Create predictions and reshape into one dimensional arrays
-            y_hat_test = model.predict(X_test)
-            y_hat_test  = y_hat_test.reshape(y_hat_test.shape[0])
-            #Reshape actuals into one dimensional arrays
-            y_test = y_test.reshape(-1)
+                #Create predictions and reshape into one dimensional arrays
+                y_hat_test = model.predict(X_test)
+                y_hat_test  = y_hat_test.reshape(y_hat_test.shape[0])
+                #Reshape actuals into one dimensional arrays
+                y_test = y_test.reshape(-1)
 
-            #Save predictions and actuals
-            new_predictions = DataFrame(
-                {'Model': model_name, 'Month_Traded': months_test, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length,  'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(int(i)) for i in architecture),
-                 'Prediction': y_hat_test, 'Actual': y_test, 'Reference': reference_test},
-                index=reference_test.index)
-            pred_df_list.append(new_predictions)
+                #Save predictions and actuals
+                new_predictions = DataFrame(
+                    {'Model': model_name, 'Month_Traded': months_test, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length,  'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(int(i)) for i in architecture),
+                     'Prediction': y_hat_test, 'Actual': y_test, 'Reference': reference_test},
+                    index=reference_test.index)
+                pred_df_list.append(new_predictions)
 
-            #Calculate loss function for this combination and this month
-            mean_loss = loss_function(y_test, y_hat_test)
-            ref_loss = loss_function(y_test, reference_test)
-            new_eval = DataFrame.from_records(
-                [{'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(int(i)) for i in architecture), loss: mean_loss, loss+'ref': ref_loss}])
-            eval_list.append(new_eval)
+                #Calculate loss function for this combination and this month
+                mean_loss = loss_function(y_test, y_hat_test)
+                ref_loss = loss_function(y_test, reference_test)
+                new_eval = DataFrame.from_records(
+                    [{'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(int(i)) for i in architecture), loss: mean_loss, loss+'ref': ref_loss}])
+                eval_list.append(new_eval)
 
-            new_hist = DataFrame(
-                {'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout,
-                 'Architecture': '_'.join(str(int(i)) for i in architecture),
-                 'TrainLoss': history.history['loss'], 'TestLoss': history.history['val_loss'],
-                 'Iteration': [i for i in range(len(history.history['loss']))]})
-            hist_df_list.append(new_hist)
+                new_hist = DataFrame(
+                    {'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout,
+                     'Architecture': '_'.join(str(int(i)) for i in architecture),
+                     'TrainLoss': history.history['loss'], 'TestLoss': history.history['val_loss'],
+                     'Iteration': [i for i in range(len(history.history['loss']))]})
+                hist_df_list.append(new_hist)
+            except:
+                print('No training possible for parameter combination: ' + '_'.join([str(learningrate), str(dropout), '_'.join(str(int(i)) for i in architecture)]))
+                continue
 
 
 #Collapse list of prediction data and evaluation data in single dataframes

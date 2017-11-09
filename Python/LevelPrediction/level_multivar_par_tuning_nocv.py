@@ -120,26 +120,30 @@ for model_name in models:
     months_test = concatenate(months_test_list)
 
     for (learningrate, dropout, architecture) in par_combs:
-
-        # Create the model
-        if model_name == 'lstm':
-            model = create_model_LSTM(architecture, y_sep[0], X_sep[0], output_activation=output_activation, loss=loss,
-                                      recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate), use_bias=False)
-        elif model_name == 'rnn':
-            model = create_model_simpleRNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
-                                           loss=loss, recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate))
-        elif model_name == 'ffn':
-            model = create_model_FFNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
-                                      loss=loss,
-                                      dropout=dropout, optimizer=SGD(lr=learningrate))
-        elif model_name == 'ffn_regression':
-            if architecture == architectures[0]:
-                architecture = [0]
+        try:
+            # Create the model
+            if model_name == 'lstm':
+                model = create_model_LSTM(architecture, y_sep[0], X_sep[0], output_activation=output_activation, loss=loss,
+                                          recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate), use_bias=False)
+            elif model_name == 'rnn':
+                model = create_model_simpleRNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
+                                               loss=loss, recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate))
+            elif model_name == 'ffnn':
                 model = create_model_FFNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
                                           loss=loss,
                                           dropout=dropout, optimizer=SGD(lr=learningrate))
-            else:
-                continue
+            elif model_name == 'ffnn_regression':
+                if architecture == architectures[0]:
+                    architecture = [0]
+                    model = create_model_FFNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
+                                              loss=loss,
+                                              dropout=dropout, optimizer=SGD(lr=learningrate))
+                else:
+                    continue
+
+            #Train model
+            history = model.fit(X_train, y_train, batch_size=batch, epochs=n_epochs,
+                                validation_data=(X_test, y_test), verbose=verbosity)
             #Create predictions and reshape into one dimensional arrays
             y_hat_test = model.predict(X_test)
             y_hat_test  = y_hat_test.reshape(y_hat_test.shape[0])
@@ -166,6 +170,10 @@ for model_name in models:
                  'TrainLoss': history.history['loss'], 'TestLoss': history.history['val_loss'],
                  'Iteration': [i for i in range(len(history.history['loss']))]})
             hist_df_list.append(new_hist)
+        except:
+            print('No training possible for parameter combination: ' + '_'.join(
+                [str(learningrate), str(dropout), '_'.join(str(int(i)) for i in architecture)]))
+            continue
 
 
 #Collapse list of prediction data and evaluation data in single dataframes
