@@ -3341,3 +3341,40 @@ Fast-forward
  .../binary_var_selection/predictions.csv           | 86304 +++++++++----------
  Python/BinaryPrediction/nohup.out                  |  1492 +
  4 files changed, 79559 insertions(+), 43384 deletions(-)
+[master 30e633b] New AWS results - Level Var Selection
+ Committer: EC2 Default User <ec2-user@ip-172-31-22-156.us-west-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 4 files changed, 79536 insertions(+), 43387 deletions(-)
+ rewrite Data/Output/LevelPrediction/level_var_selection/evaluation.csv (97%)
+ rewrite Data/Output/LevelPrediction/level_var_selection/history.csv (65%)
+ rewrite Data/Output/LevelPrediction/level_var_selection/predictions.csv (68%)
+To https://github.com/ckoopmann/GasPricePrediction.git
+   2aad6cb..30e633b  master -> master
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "level_multivar_par_tuning_nocv.py", line 36, in <module>
+    var_selection_df = read_csv(variable_selection_path,header=0)
+  File "/usr/lib64/python3.4/dist-packages/pandas/io/parsers.py", line 655, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/lib64/python3.4/dist-packages/pandas/io/parsers.py", line 405, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/usr/lib64/python3.4/dist-packages/pandas/io/parsers.py", line 764, in __init__
+    self._make_engine(self.engine)
+  File "/usr/lib64/python3.4/dist-packages/pandas/io/parsers.py", line 985, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/lib64/python3.4/dist-packages/pandas/io/parsers.py", line 1605, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 394, in pandas._libs.parsers.TextReader.__cinit__ (pandas/_libs/parsers.c:4209)
+  File "pandas/_libs/parsers.pyx", line 710, in pandas._libs.parsers.TextReader._setup_parser_source (pandas/_libs/parsers.c:8873)
+FileNotFoundError: File b'../../Data/Output/levelPrediction/level_var_selection/evaluation.csv' does not exist
+Already up-to-date.
