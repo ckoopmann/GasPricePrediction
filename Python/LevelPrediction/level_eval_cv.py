@@ -23,9 +23,8 @@ data_path = '../../Data/Input/InputData.csv'
 parameter_selection_path_univar = "../../Data/Output/LevelPrediction/level_par_tuning/evaluation.csv"
 parameter_selection_path_multivar = "../../Data/Output/LevelPrediction/level_multivar_par_tuning/evaluation.csv"
 length_passed = 20
-n_epochs = 1
-batch= 100
-
+n_epochs = 300
+batch= 20
 verbosity = 0
 max_days_left_passed=30
 regex_testmonth= '17'

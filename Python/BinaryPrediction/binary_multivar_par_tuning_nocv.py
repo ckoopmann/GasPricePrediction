@@ -6,19 +6,21 @@ import signal
 if hasattr(signal, 'SIGPIPE'):
     signal.signal(signal.SIGPIPE,signal.SIG_DFL)
 from numpy import  concatenate, repeat
+import numpy as np
 from pandas import read_csv,  DataFrame, concat
 import re
 from pickle import dump
 from functions import *
 import sys
 from keras.optimizers import RMSprop, SGD
+from keras import backend as K
 
 from sklearn.metrics import mean_absolute_error, mean_squared_error, log_loss, roc_auc_score
 
 loss_functions_dict = {'mae':mean_absolute_error,  'mse': mean_squared_error, 'binary_crossentropy': log_loss, 'auc' : roc_auc_score}
-output_path = "../../Data/Output/BinaryPrediction/binary_multivar_par_tuning"
+output_path = "../../Data/Output/binaryPrediction/binary_multivar_par_tuning"
 data_path = '../../Data/Input/InputData.csv'
-variable_selection_path = "../../Data/Output/BinaryPrediction/binary_var_selection/evaluation.csv"
+variable_selection_path = "../../Data/Output/binaryPrediction/binary_var_selection/evaluation.csv"
 
 length_passed = 20
 n_epochs = 300
@@ -27,17 +29,18 @@ batch= 20
 verbosity = 0
 max_days_left_passed=30
 regex_testmonth= '16'
+regex_trainmonths= '16|17'
 output_activation= 'sigmoid'
 loss='binary_crossentropy'
 
-var_selection_df = read_csv(variable_selection_path,header=0)
+var_selection_df = read_csv(variable_selection_path,header=0).dropna(axis = 0)
 models = list(var_selection_df.Model.unique())
 additional_input_vars_dict  = {model_name: var_selection_df.iloc[var_selection_df.loc[var_selection_df.Model == model_name, loss].idxmin()].Vars.split('_') for model_name in models}
 target_type  = 'TTF'
 
-learningrates = [0.001, 0.01, 0.1]#, 0.004]
+learningrates = [0.0001,0.001, 0.01, 0.1]
 dropouts = [0, 0.25, 0.5]
-architectures = [[8],[16], [32]]#, [8,8], [16,8], [16,16], [32,8], [32, 16]]
+architectures = [[8],[16], [32]]
 
 
 
@@ -62,6 +65,7 @@ for model_name in models:
 
     months = [var for var in df.name.unique() if re.search(regex, var) is not None]
     test_months = [month for month in months if re.search(regex_testmonth, month) is not None]
+    train_months_candidates = [month for month in months if re.search(regex_trainmonths, month) is None]
     train_months = []
 
     if 'ffnn' in model_name:
@@ -93,13 +97,13 @@ for model_name in models:
             all_data_list.append(all_data)
             train_months.append(target_var)
         except Exception as e:
-            # print('No Data for: ' + target_var)
-            # print('Original Error Message:' + str(e))
+            print('No Data for: ' + target_var)
+            print(e)
             pass
 
     #Create lists to seperate test and train data
     test_selection = [i for i in range(len(train_months)) if train_months[i] in test_months]
-    train_selection = [i for i in range(len(train_months)) if train_months[i] not in test_months]
+    train_selection = [i for i in range(len(train_months)) if train_months[i] in train_months_candidates]
 
     #Divide data in train and test
     X_train_list = [X_sep[i] for i in train_selection]
@@ -120,57 +124,63 @@ for model_name in models:
     months_test = concatenate(months_test_list)
 
     for (learningrate, dropout, architecture) in par_combs:
-
-        # Create the model
-        if model_name == 'lstm':
-            model = create_model_LSTM(architecture, y_sep[0], X_sep[0], output_activation=output_activation, loss=loss,
-                                      recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate), use_bias=False)
-        elif model_name == 'rnn':
-            model = create_model_simpleRNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
-                                           loss=loss, recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate))
-        elif model_name == 'ffn':
-            model = create_model_FFNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
-                                      loss=loss,
-                                      dropout=dropout, optimizer=SGD(lr=learningrate))
-        elif model_name == 'ffn_regression':
-            if architecture == architectures[0]:
-                architecture = [0]
+        try:
+            # Create the model
+            if model_name == 'lstm':
+                model = create_model_LSTM(architecture, y_sep[0], X_sep[0], output_activation=output_activation, loss=loss,
+                                          recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate), use_bias=False)
+            elif model_name == 'rnn':
+                model = create_model_simpleRNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
+                                               loss=loss, recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate))
+            elif model_name == 'ffnn':
                 model = create_model_FFNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
                                           loss=loss,
                                           dropout=dropout, optimizer=SGD(lr=learningrate))
-            else:
-                continue
+            elif model_name == 'ffnn_regression':
+                if architecture == architectures[0]:
+                    architecture = [0]
+                    model = create_model_FFNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
+                                              loss=loss,
+                                              dropout=dropout, optimizer=SGD(lr=learningrate))
+                else:
+                    continue
 
-        # Train model
-        history = model.fit(X_train, y_train, batch_size=batch, epochs=n_epochs,
-                                    validation_data=(X_test, y_test), verbose=verbosity)
+            #Train model
+            history = model.fit(X_train, y_train, batch_size=batch, epochs=n_epochs,
+                                validation_data=(X_test, y_test), verbose=verbosity)
+            #Create predictions and reshape into one dimensional arrays
+            y_hat_test = model.predict(X_test)
+            y_hat_test  = y_hat_test.reshape(y_hat_test.shape[0])
+            #Reshape actuals into one dimensional arrays
+            y_test = y_test.reshape(-1)
 
-        #Create predictions and reshape into one dimensional arrays
-        y_hat_test = model.predict(X_test)
-        y_hat_test  = y_hat_test.reshape(y_hat_test.shape[0])
-        #Reshape actuals into one dimensional arrays
-        y_test = y_test.reshape(-1)
+            #Save predictions and actuals
+            new_predictions = DataFrame(
+                {'Model': model_name, 'Month_Traded': months_test, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length,  'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(i) for i in architecture), 'Variables': '_'.join(str(i) for i in additional_input_vars_dict[model_name]),
+                 'Prediction': y_hat_test, 'Actual': y_test, 'Reference': reference_test},
+                index=reference_test.index)
+            pred_df_list.append(new_predictions)
 
-        #Save predictions and actuals
-        new_predictions = DataFrame(
-            {'Model': model_name, 'Month_Traded': months_test, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length,  'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(i) for i in architecture), 'Variables': '_'.join(str(i) for i in additional_input_vars_dict[model_name]),
-             'Prediction': y_hat_test, 'Actual': y_test, 'Reference': reference_test},
-            index=reference_test.index)
-        pred_df_list.append(new_predictions)
+            #Calculate loss function for this combination and this month
+            mean_loss = loss_function(y_test, y_hat_test)
+            ref_loss = loss_function(y_test, reference_test)
+            trainable_count = int(
+                np.sum([K.count_params(p) for p in set(model.trainable_weights)]))
+            new_eval = DataFrame.from_records(
+                [{'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(i) for i in architecture), 'Variables': '_'.join(str(i) for i in additional_input_vars_dict[model_name]), loss: mean_loss, loss+'ref': ref_loss, 'TrainObs': X_train.shape[0], 'TrainableParams': trainable_count}])
+            eval_list.append(new_eval)
 
-        #Calculate loss function for this combination and this month
-        mean_loss = loss_function(y_test, y_hat_test)
-        ref_loss = loss_function(y_test, reference_test)
-        new_eval = DataFrame.from_records(
-            [{'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(i) for i in architecture), 'Variables': '_'.join(str(i) for i in additional_input_vars_dict[model_name]), loss: mean_loss, loss+'ref': ref_loss}])
-        eval_list.append(new_eval)
-
-        new_hist = DataFrame(
-            {'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout,
-             'Architecture': '_'.join(str(i) for i in architecture), 'Variables': '_'.join(str(i) for i in additional_input_vars_dict[model_name]),
-             'TrainLoss': history.history['loss'], 'TestLoss': history.history['val_loss'],
-             'Iteration': [i for i in range(len(history.history['loss']))]})
-        hist_df_list.append(new_hist)
+            new_hist = DataFrame(
+                {'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout,
+                 'Architecture': '_'.join(str(i) for i in architecture), 'Variables': '_'.join(str(i) for i in additional_input_vars_dict[model_name]),
+                 'TrainLoss': history.history['loss'], 'TestLoss': history.history['val_loss'],
+                 'Iteration': [i for i in range(len(history.history['loss']))]})
+            hist_df_list.append(new_hist)
+        except Exception as e:
+            print('No training possible for parameter combination: ' + '_'.join(
+                [str(learningrate), str(dropout), '_'.join(str(int(i)) for i in architecture)]))
+            print(e)
+            continue
 
 
 #Collapse list of prediction data and evaluation data in single dataframes

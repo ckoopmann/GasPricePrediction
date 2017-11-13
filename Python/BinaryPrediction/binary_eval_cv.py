@@ -8,15 +8,17 @@ if hasattr(signal, 'SIGPIPE'):
 from numpy import  concatenate, repeat
 from pandas import read_csv,  DataFrame, concat
 import re
+import numpy as np
 from pickle import dump
 from functions import *
 import sys
 from keras.optimizers import RMSprop, SGD
+from keras import backend as K
 
 from sklearn.metrics import mean_absolute_error, mean_squared_error, log_loss, roc_auc_score
 
 loss_functions_dict = {'mae':mean_absolute_error,  'mse': mean_squared_error, 'binary_crossentropy': log_loss, 'auc' : roc_auc_score}
-output_path = "../../Data/Output/BinaryPrediction/binary_ multivar_par_tuning"
+output_path = "../../Data/Output/BinaryPrediction/binary_multivar_par_tuning"
 data_path = '../../Data/Input/InputData.csv'
 parameter_selection_path_univar = "../../Data/Output/BinaryPrediction/binary_par_tuning/evaluation.csv"
 parameter_selection_path_multivar = "../../Data/Output/BinaryPrediction/binary_multivar_par_tuning/evaluation.csv"
@@ -32,15 +34,15 @@ loss='binary_crossentropy'
 target_type  = 'TTF'
 
 
-par_selection_df_univar= read_csv(parameter_selection_path_univar,header=0)
-models = list(par_selection_df.Model.unique())
+par_selection_df_univar = read_csv(parameter_selection_path_univar,header=0).dropna(axis = 0)
+models = list(par_selection_df_univar.Model.unique())
 #Enter results of parameter tuning here
 architecture_dict_univar = {model_name: [int(s) for s in str(par_selection_df_univar.iloc[par_selection_df_univar.loc[par_selection_df_univar.Model == model_name, loss].idxmin()].Architecture).split('_')] for model_name in models}
 learningrate_dict_univar = {model_name: par_selection_df_univar.iloc[par_selection_df_univar.loc[par_selection_df_univar.Model == model_name, loss].idxmin()].LearningRate for model_name in models}
 dropout_dict_univar = {model_name: par_selection_df_univar.iloc[par_selection_df_univar.loc[par_selection_df_univar.Model == model_name, loss].idxmin()].Dropout for model_name in models}
 
 
-par_selection_df_multivar= read_csv(parameter_selection_path_multivar,header=0)
+par_selection_df_multivar= read_csv(parameter_selection_path_multivar,header=0).dropna(axis = 0)
 #Enter results of parameter tuning here
 architecture_dict_multivar = {model_name: [int(s) for s in str(par_selection_df_multivar.iloc[par_selection_df_multivar.loc[par_selection_df_multivar.Model == model_name, loss].idxmin()].Architecture).split('_')] for model_name in models}
 learningrate_dict_multivar = {model_name: par_selection_df_multivar.iloc[par_selection_df_multivar.loc[par_selection_df_multivar.Model == model_name, loss].idxmin()].LearningRate for model_name in models}
@@ -62,13 +64,13 @@ pred_df_list = []
 hist_df_list = []
 loss_function = loss_functions_dict[loss]
 
-type = 'multivar'
 for type in ['univar', 'multivar']:
     for model_name in models:
 
         months = [var for var in df.name.unique() if re.search(regex, var) is not None]
         test_months = [month for month in months if re.search(regex_testmonth, month) is not None]
         train_months = []
+        train_months_sel = [month for month in months if re.search(regex_testmonth, month) is None]
 
         if 'ffnn' in model_name:
             length = 1
@@ -112,10 +114,10 @@ for type in ['univar', 'multivar']:
                 # print('No Data for: ' + target_var)
                 # print('Original Error Message:' + str(e))
                 pass
-
+        test_months = sorted(test_months)
         for test_month in test_months:
             test_selection = [months.index(test_month)]
-            train_selection = [i for i in range(len(months)) if months[i] != test_month]
+            train_selection = [i for i in range(len(train_months)) if train_months[i] in train_months_sel or months[i] < test_month]
 
             #Divide data in train and test
             X_train_list = [X_sep[i] for i in train_selection]
@@ -138,15 +140,20 @@ for type in ['univar', 'multivar']:
             decay_rate = learningrate/n_epochs
             # Create the model
             if model_name == 'lstm':
-                model = create_model(architecture, y_sep[0], X_sep[0], output_activation=output_activation, loss=loss,
-                                     recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate), use_bias=False)
+                model = create_model_LSTM(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
+                                          loss=loss, recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate),
+                                          use_bias=False)
             elif model_name == 'rnn':
                 model = create_model_simpleRNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
                                                loss=loss, recurrent_dropout=dropout, optimizer=RMSprop(lr=learningrate))
-            elif 'ffnn' in model_name:
-                model = create_model_ffnn(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
-                                         loss=loss,
-                                         dropout=dropout, optimizer=SGD(lr=learningrate))
+            elif model_name == 'ffnn':
+                model = create_model_FFNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
+                                          loss=loss,
+                                          dropout=dropout, optimizer=SGD(lr=learningrate))
+            elif model_name == 'ffnn_regression':
+                model = create_model_FFNN(architecture, y_sep[0], X_sep[0], output_activation=output_activation,
+                                          loss=loss,
+                                          dropout=dropout, optimizer=SGD(lr=learningrate))
             #Train model
             history = model.fit(X_train, y_train, batch_size=batch, epochs=n_epochs,
                                 validation_data=(X_test, y_test), verbose=verbosity)
@@ -167,8 +174,10 @@ for type in ['univar', 'multivar']:
             #Calculate loss function for this combination and this month
             mean_loss = loss_function(y_test, y_hat_test)
             ref_loss = loss_function(y_test, reference_test)
+            trainable_count = int(
+                np.sum([K.count_params(p) for p in set(model.trainable_weights)]))
             new_eval = DataFrame.from_records(
-                [{'Model': model_name, 'TestMonth': test_month, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(i) for i in architecture),'Variables':'_'.join(str(i) for i in additional_input_vars), loss: mean_loss, loss+'ref': ref_loss}])
+                [{'Model': model_name, 'TestMonth': test_month, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(i) for i in architecture),'Variables':'_'.join(str(i) for i in additional_input_vars), loss: mean_loss, loss+'ref': ref_loss, 'TrainObs': X_train.shape[0], 'TrainableParams': trainable_count}])
             eval_list.append(new_eval)
 
             new_hist = DataFrame(
