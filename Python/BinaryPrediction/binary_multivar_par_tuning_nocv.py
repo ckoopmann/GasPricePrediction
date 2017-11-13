@@ -140,32 +140,37 @@ for model_name in models:
                                           dropout=dropout, optimizer=SGD(lr=learningrate))
             else:
                 continue
-            #Create predictions and reshape into one dimensional arrays
-            y_hat_test = model.predict(X_test)
-            y_hat_test  = y_hat_test.reshape(y_hat_test.shape[0])
-            #Reshape actuals into one dimensional arrays
-            y_test = y_test.reshape(-1)
 
-            #Save predictions and actuals
-            new_predictions = DataFrame(
-                {'Model': model_name, 'Month_Traded': months_test, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length,  'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(i) for i in architecture), 'Variables': '_'.join(str(i) for i in additional_input_vars_dict[model_name]),
-                 'Prediction': y_hat_test, 'Actual': y_test, 'Reference': reference_test},
-                index=reference_test.index)
-            pred_df_list.append(new_predictions)
+        # Train model
+        history = model.fit(X_train, y_train, batch_size=batch, epochs=n_epochs,
+                                    validation_data=(X_test, y_test), verbose=verbosity)
 
-            #Calculate loss function for this combination and this month
-            mean_loss = loss_function(y_test, y_hat_test)
-            ref_loss = loss_function(y_test, reference_test)
-            new_eval = DataFrame.from_records(
-                [{'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(i) for i in architecture), 'Variables': '_'.join(str(i) for i in additional_input_vars_dict[model_name]), loss: mean_loss, loss+'ref': ref_loss}])
-            eval_list.append(new_eval)
+        #Create predictions and reshape into one dimensional arrays
+        y_hat_test = model.predict(X_test)
+        y_hat_test  = y_hat_test.reshape(y_hat_test.shape[0])
+        #Reshape actuals into one dimensional arrays
+        y_test = y_test.reshape(-1)
 
-            new_hist = DataFrame(
-                {'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout,
-                 'Architecture': '_'.join(str(i) for i in architecture), 'Variables': '_'.join(str(i) for i in additional_input_vars_dict[model_name]),
-                 'TrainLoss': history.history['loss'], 'TestLoss': history.history['val_loss'],
-                 'Iteration': [i for i in range(len(history.history['loss']))]})
-            hist_df_list.append(new_hist)
+        #Save predictions and actuals
+        new_predictions = DataFrame(
+            {'Model': model_name, 'Month_Traded': months_test, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length,  'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(i) for i in architecture), 'Variables': '_'.join(str(i) for i in additional_input_vars_dict[model_name]),
+             'Prediction': y_hat_test, 'Actual': y_test, 'Reference': reference_test},
+            index=reference_test.index)
+        pred_df_list.append(new_predictions)
+
+        #Calculate loss function for this combination and this month
+        mean_loss = loss_function(y_test, y_hat_test)
+        ref_loss = loss_function(y_test, reference_test)
+        new_eval = DataFrame.from_records(
+            [{'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(i) for i in architecture), 'Variables': '_'.join(str(i) for i in additional_input_vars_dict[model_name]), loss: mean_loss, loss+'ref': ref_loss}])
+        eval_list.append(new_eval)
+
+        new_hist = DataFrame(
+            {'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout,
+             'Architecture': '_'.join(str(i) for i in architecture), 'Variables': '_'.join(str(i) for i in additional_input_vars_dict[model_name]),
+             'TrainLoss': history.history['loss'], 'TestLoss': history.history['val_loss'],
+             'Iteration': [i for i in range(len(history.history['loss']))]})
+        hist_df_list.append(new_hist)
 
 
 #Collapse list of prediction data and evaluation data in single dataframes

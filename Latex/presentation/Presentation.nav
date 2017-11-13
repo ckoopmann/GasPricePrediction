@@ -12,13 +12,9 @@
 \headcommand {\beamer@subsectionpages {3}{1}}
 \headcommand {\slideentry {2}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
-\headcommand {\slideentry {2}{0}{2}{2/2}{}{0}}
-\headcommand {\beamer@framepages {2}{2}}
-\headcommand {\slideentry {2}{0}{3}{3/3}{}{0}}
-\headcommand {\beamer@framepages {3}{3}}
-\headcommand {\sectionentry {3}{Methodology}{4}{Methodology}{0}}
-\headcommand {\beamer@sectionpages {2}{3}}
-\headcommand {\beamer@subsectionpages {2}{3}}
+\headcommand {\sectionentry {3}{Methodology}{2}{Methodology}{0}}
+\headcommand {\beamer@sectionpages {2}{1}}
+\headcommand {\beamer@subsectionpages {2}{1}}
 \headcommand {\slideentry {3}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\slideentry {3}{0}{2}{2/2}{}{0}}
@@ -29,20 +25,14 @@
 \headcommand {\beamer@framepages {4}{4}}
 \headcommand {\slideentry {3}{0}{5}{5/5}{}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\slideentry {3}{0}{6}{6/6}{}{0}}
-\headcommand {\beamer@framepages {6}{6}}
-\headcommand {\slideentry {3}{0}{7}{7/7}{}{0}}
-\headcommand {\beamer@framepages {7}{7}}
-\headcommand {\slideentry {3}{0}{8}{8/8}{}{0}}
-\headcommand {\beamer@framepages {8}{8}}
-\headcommand {\sectionentry {4}{Input Data}{9}{Input Data}{0}}
-\headcommand {\beamer@sectionpages {4}{8}}
-\headcommand {\beamer@subsectionpages {4}{8}}
+\headcommand {\sectionentry {4}{Input Data}{6}{Input Data}{0}}
+\headcommand {\beamer@sectionpages {2}{5}}
+\headcommand {\beamer@subsectionpages {2}{5}}
 \headcommand {\slideentry {4}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\sectionentry {5}{Training / Tuning Approach}{2}{Training / Tuning Approach}{0}}
-\headcommand {\beamer@sectionpages {9}{1}}
-\headcommand {\beamer@subsectionpages {9}{1}}
+\headcommand {\beamer@sectionpages {6}{1}}
+\headcommand {\beamer@subsectionpages {6}{1}}
 \headcommand {\slideentry {5}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\sectionentry {6}{Price Level Prediction}{2}{Price Level Prediction}{0}}
@@ -59,31 +49,44 @@
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\slideentry {7}{0}{2}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
-\headcommand {\slideentry {7}{0}{3}{3/3}{}{0}}
-\headcommand {\beamer@framepages {3}{3}}
-\headcommand {\sectionentry {8}{Conclusions / Outlook / Comments}{4}{Conclusions / Outlook / Comments}{0}}
-\headcommand {\beamer@sectionpages {3}{3}}
-\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\sectionentry {8}{Conclusions / Outlook / Comments}{3}{Conclusions / Outlook / Comments}{0}}
+\headcommand {\beamer@sectionpages {3}{2}}
+\headcommand {\beamer@subsectionpages {3}{2}}
 \headcommand {\slideentry {8}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\slideentry {8}{0}{2}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
 \headcommand {\slideentry {8}{0}{3}{3/3}{}{0}}
 \headcommand {\beamer@framepages {3}{3}}
-\headcommand {\slideentry {8}{0}{4}{4/4}{}{0}}
+\headcommand {\sectionentry {9}{Backup}{4}{Backup}{0}}
+\headcommand {\beamer@sectionpages {3}{3}}
+\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\slideentry {9}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {9}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\slideentry {9}{0}{3}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\slideentry {9}{0}{4}{4/4}{}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\slideentry {8}{0}{5}{5/5}{}{0}}
+\headcommand {\slideentry {9}{0}{5}{5/5}{}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\slideentry {8}{0}{6}{6/6}{}{0}}
+\headcommand {\slideentry {9}{0}{6}{6/6}{}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\slideentry {8}{0}{7}{7/7}{}{0}}
+\headcommand {\slideentry {9}{0}{7}{7/7}{}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\slideentry {8}{0}{8}{8/8}{}{0}}
+\headcommand {\slideentry {9}{0}{8}{8/8}{}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\slideentry {8}{0}{9}{9/9}{}{0}}
+\headcommand {\slideentry {9}{0}{9}{9/9}{}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\beamer@partpages {1}{9}}
-\headcommand {\beamer@subsectionpages {4}{9}}
-\headcommand {\beamer@sectionpages {4}{9}}
-\headcommand {\beamer@documentpages {9}}
+\headcommand {\slideentry {9}{0}{10}{10/10}{}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\slideentry {9}{0}{11}{11/11}{}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\slideentry {9}{0}{12}{12/12}{}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\beamer@partpages {1}{12}}
+\headcommand {\beamer@subsectionpages {4}{12}}
+\headcommand {\beamer@sectionpages {4}{12}}
+\headcommand {\beamer@documentpages {12}}
 \headcommand {\def \inserttotalframenumber {30}}

@@ -39,7 +39,7 @@ Entering the definition of the hidden layer of a simple RNN architecture we get 
 \end{align*}
 Due to the right hand term $\frac{dh_{t-1}}{dW_{ij}}$ this again is a recursive formula which we can expand up to $ \frac{dh_{0}}{dW_{ij}} = 0$ and get:
 \begin{align*}
-\frac{dh_t}{dW_{ij}} &= \sum_{k = 1}^t( \prod_{l = 1}^k \frac{df(Wh_{t-l}}{dWh_{t-l}}) W^{k-1} \frac{dW}{dW_{ij}} h_{t-k}
+\frac{dh_t}{dW_{ij}} &= \sum_{k = 1}^t( \prod_{l = 1}^k \frac{df(Wh_{t-l})}{dWh_{t-l}} W^{k-1} \frac{dW}{dW_{ij}} h_{t-k}
 \end{align*}
 This means that the effect of the hidden layer output $k$ time steps in the past on the current loss gradient is multiplied by a factor of $(\prod_{l = 1}^k \frac{df(Wh_{t-l}}{dWh_{t-l}}) W^{k-1}\frac{dW}{dW_{ij}}$. Due to its exponential structure the absolute value of this term  will either decay towards zero or exponentially rise, depending on the structure of the function $f$ as well as the determinant of the matrix $W$. These cases are called the \textit{vanishing} and \textit{exploding gradient problem} respectively. While in practice the first problem could be solved relatively easily by clipping the gradient to a certain maxim value, the problem of a vanishing gradient cannot be solved within the framework of this recurrent architecture. This problem severely limits the ability of simple RNNs to learn long term dependencies across time. While in theory simple RNNs could learn dependencies across arbitrarily large time lags in practise they are limited to influences across just a few time steps. Note that the derivative with regard to one of the parameters of the external variables $U_{ij}$ would a very similar structure and learning these parameters would therefore suffer from the same problems.
 

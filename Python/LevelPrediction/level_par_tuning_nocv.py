@@ -6,12 +6,14 @@ import signal
 if hasattr(signal, 'SIGPIPE'):
     signal.signal(signal.SIGPIPE,signal.SIG_DFL)
 from numpy import  concatenate, repeat
+import numpy as np
 from pandas import read_csv,  DataFrame, concat
 import re
 from pickle import dump
 from functions import *
 import sys
 from keras.optimizers import RMSprop, SGD
+from keras import backend as K
 
 from sklearn.metrics import mean_absolute_error, mean_squared_error, log_loss, roc_auc_score
 
@@ -19,19 +21,20 @@ loss_functions_dict = {'mae':mean_absolute_error,  'mse': mean_squared_error, 'b
 output_path = "../../Data/Output/LevelPrediction/level_par_tuning"
 data_path = '../../Data/Input/InputData.csv'
 length_passed = 20
-n_epochs = 300
-batch= 20
+n_epochs = 1
+batch= 100
 
 verbosity = 0
 max_days_left_passed=30
 regex_testmonth= '16'
+regex_trainmonths= '16|17'
 output_activation= 'linear'
 loss='mse'
 models = ['lstm', 'rnn', 'ffnn', 'ffnn_regression']
 additional_input_vars_dict ={model_name: [] for model_name in models}
 target_type  = 'TTF'
 
-learningrates = [0.001, 0.01, 0.1]
+learningrates = [0.0001, 0.001, 0.01, 0.1]
 dropouts = [0]
 architectures = [[8],[16], [32]]
 
@@ -52,6 +55,7 @@ for model_name in models:
 
     months = [var for var in df.name.unique() if re.search(regex, var) is not None]
     test_months = [month for month in months if re.search(regex_testmonth, month) is not None]
+    train_months_candidates = [month for month in months if re.search(regex_trainmonths, month) is None]
     train_months = []
 
     if 'ffnn' in model_name:
@@ -82,13 +86,13 @@ for model_name in models:
             all_data_list.append(all_data)
             train_months.append(target_var)
         except Exception as e:
-            # print('No Data for: ' + target_var)
-            # print('Original Error Message:' + str(e))
+            print('No Data for: ' + target_var)
+            print(e)
             pass
 
     #Create lists to seperate test and train data
     test_selection = [i for i in range(len(train_months)) if train_months[i] in test_months]
-    train_selection = [i for i in range(len(train_months)) if train_months[i] not in test_months]
+    train_selection = [i for i in range(len(train_months)) if train_months[i] in train_months_candidates]
 
     #Divide data in train and test
     X_train_list = [X_sep[i] for i in train_selection]
@@ -148,8 +152,10 @@ for model_name in models:
                 #Calculate loss function for this combination and this month
                 mean_loss = loss_function(y_test, y_hat_test)
                 ref_loss = loss_function(y_test, reference_test)
+                trainable_count = int(
+                    np.sum([K.count_params(p) for p in set(model.trainable_weights)]))
                 new_eval = DataFrame.from_records(
-                    [{'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(int(i)) for i in architecture), loss: mean_loss, loss+'ref': ref_loss}])
+                    [{'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(int(i)) for i in architecture), loss: mean_loss, loss+'ref': ref_loss, 'TrainObs': X_train.shape[0], 'TrainableParams': trainable_count}])
                 eval_list.append(new_eval)
 
                 new_hist = DataFrame(
@@ -158,8 +164,9 @@ for model_name in models:
                      'TrainLoss': history.history['loss'], 'TestLoss': history.history['val_loss'],
                      'Iteration': [i for i in range(len(history.history['loss']))]})
                 hist_df_list.append(new_hist)
-            except:
+            except Exception as e:
                 print('No training possible for parameter combination: ' + '_'.join([str(learningrate), str(dropout), '_'.join(str(int(i)) for i in architecture)]))
+                print(e)
                 continue
 
 
