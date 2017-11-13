@@ -3378,3 +3378,20 @@ Traceback (most recent call last):
   File "pandas/_libs/parsers.pyx", line 710, in pandas._libs.parsers.TextReader._setup_parser_source (pandas/_libs/parsers.c:8873)
 FileNotFoundError: File b'../../Data/Output/levelPrediction/level_var_selection/evaluation.csv' does not exist
 Already up-to-date.
+[master ec12ab4] New AWS results - Level Multivar Par Tuning
+ Committer: EC2 Default User <ec2-user@ip-172-31-22-156.us-west-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 37 insertions(+)
+To https://github.com/ckoopmann/GasPricePrediction.git
+   30e633b..ec12ab4  master -> master
+python3: can't open file 'min_eval_cv.py': [Errno 2] No such file or directory
