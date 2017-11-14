@@ -5618,3 +5618,28 @@ Trainable params: 4
 Non-trainable params: 0
 _________________________________________________________________
 None
+[master 9358be9] New AWS results - Level Evaluation
+ Committer: EC2 Default User <ec2-user@ip-172-31-22-156.us-west-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 4 files changed, 19265 insertions(+), 75947 deletions(-)
+ rewrite Data/Output/LevelPrediction/level_multivar_par_tuning/evaluation.csv (99%)
+ rewrite Data/Output/LevelPrediction/level_multivar_par_tuning/history.csv (84%)
+ rewrite Data/Output/LevelPrediction/level_multivar_par_tuning/predictions.csv (98%)
+To https://github.com/ckoopmann/GasPricePrediction.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/ckoopmann/GasPricePrediction.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
