@@ -18,9 +18,9 @@ from keras import backend as K
 from sklearn.metrics import mean_absolute_error, mean_squared_error, log_loss, roc_auc_score
 
 loss_functions_dict = {'mae':mean_absolute_error,  'mse': mean_squared_error, 'binary_crossentropy': log_loss, 'auc' : roc_auc_score}
-output_path = "../../Data/Output/levelPrediction/level_multivar_par_tuning"
+output_path = "../../Data/Output/LevelPrediction/level_multivar_par_tuning"
 data_path = '../../Data/Input/InputData.csv'
-variable_selection_path = "../../Data/Output/levelPrediction/level_var_selection/evaluation.csv"
+variable_selection_path = "../../Data/Output/LevelPrediction/level_var_selection/evaluation.csv"
 
 length_passed = 20
 n_epochs = 300
