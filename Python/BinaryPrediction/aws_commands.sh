@@ -6,6 +6,7 @@ git add --all
 git commit -m "New AWS results - Binary Multivar Par Tuning"
 git push
 python3 binary_eval_cv.py
+git pull
 git add --all
 git commit -m "New AWS results - Binary Evaluation"
 git push

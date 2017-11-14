@@ -23,7 +23,7 @@ data_path = '../../Data/Input/InputData.csv'
 variable_selection_path = "../../Data/Output/LevelPrediction/level_var_selection/evaluation.csv"
 
 length_passed = 20
-n_epochs = 300
+n_epochs = 1000
 batch= 20
 
 verbosity = 0

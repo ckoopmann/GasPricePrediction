@@ -6,6 +6,7 @@ git add --all
 git commit -m "New AWS results - Level Multivar Par Tuning"
 git push
 python3 level_eval_cv.py
+git pull
 git add --all
 git commit -m "New AWS results - Level Evaluation"
 git push
