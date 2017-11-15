@@ -19,24 +19,22 @@
 \BOOKMARK [2][-]{subsection.4.3}{LSTM}{section.4}% 19
 \BOOKMARK [1][-]{section.5}{Data}{}% 20
 \BOOKMARK [2][-]{subsection.5.1}{Target Variable}{section.5}% 21
-\BOOKMARK [3][-]{subsubsection.5.1.1}{Data Structure}{subsection.5.1}% 22
-\BOOKMARK [2][-]{subsection.5.2}{Input Variables}{section.5}% 23
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Other Energy Commodities}{subsection.5.2}% 24
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Gas Market Fundamentals}{subsection.5.2}% 25
-\BOOKMARK [3][-]{subsubsection.5.2.3}{Exchange Rates}{subsection.5.2}% 26
-\BOOKMARK [3][-]{subsubsection.5.2.4}{Correlation Analysis}{subsection.5.2}% 27
-\BOOKMARK [3][-]{subsubsection.5.2.5}{Data Availability}{subsection.5.2}% 28
-\BOOKMARK [1][-]{section.6}{Experimental Design}{}% 29
-\BOOKMARK [2][-]{subsection.6.1}{Reference Models}{section.6}% 30
-\BOOKMARK [2][-]{subsection.6.2}{Parameter Tuning}{section.6}% 31
-\BOOKMARK [3][-]{subsubsection.6.2.1}{Fixed Hyper-Parameters}{subsection.6.2}% 32
-\BOOKMARK [3][-]{subsubsection.6.2.2}{Tuning Parameters}{subsection.6.2}% 33
-\BOOKMARK [3][-]{subsubsection.6.2.3}{Tuning Process}{subsection.6.2}% 34
-\BOOKMARK [2][-]{subsection.6.3}{Variable Selection}{section.6}% 35
-\BOOKMARK [2][-]{subsection.6.4}{Model Evaluation}{section.6}% 36
-\BOOKMARK [1][-]{section.7}{Conclusions}{}% 37
-\BOOKMARK [2][-]{subsection.7.1}{Results}{section.7}% 38
-\BOOKMARK [2][-]{subsection.7.2}{Outlook}{section.7}% 39
-\BOOKMARK [1][-]{subsection.7.2}{References}{}% 40
-\BOOKMARK [1][-]{appendix.A}{Figures}{}% 41
-\BOOKMARK [1][-]{appendix.B}{Tables}{}% 42
+\BOOKMARK [2][-]{subsection.5.2}{Input Variables}{section.5}% 22
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Energy Commodity Prices}{subsection.5.2}% 23
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Gas Market Fundamentals}{subsection.5.2}% 24
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Exchange Rates}{subsection.5.2}% 25
+\BOOKMARK [3][-]{subsubsection.5.2.4}{Data Availability}{subsection.5.2}% 26
+\BOOKMARK [1][-]{section.6}{Experimental Design}{}% 27
+\BOOKMARK [2][-]{subsection.6.1}{Reference Models}{section.6}% 28
+\BOOKMARK [2][-]{subsection.6.2}{Parameter Tuning}{section.6}% 29
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Fixed Hyper-Parameters}{subsection.6.2}% 30
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Tuning Parameters}{subsection.6.2}% 31
+\BOOKMARK [3][-]{subsubsection.6.2.3}{Tuning Process}{subsection.6.2}% 32
+\BOOKMARK [2][-]{subsection.6.3}{Variable Selection}{section.6}% 33
+\BOOKMARK [2][-]{subsection.6.4}{Model Evaluation}{section.6}% 34
+\BOOKMARK [1][-]{section.7}{Conclusions}{}% 35
+\BOOKMARK [2][-]{subsection.7.1}{Results}{section.7}% 36
+\BOOKMARK [2][-]{subsection.7.2}{Outlook}{section.7}% 37
+\BOOKMARK [1][-]{subsection.7.2}{References}{}% 38
+\BOOKMARK [1][-]{appendix.A}{Figures}{}% 39
+\BOOKMARK [1][-]{appendix.B}{Tables}{}% 40

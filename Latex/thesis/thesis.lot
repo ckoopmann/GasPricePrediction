@@ -2,10 +2,4 @@
 \contentsline {table}{\numberline {2}{\ignorespaces Electricity Price Forecasting Literature}}{11}{table.2}
 \contentsline {table}{\numberline {3}{\ignorespaces Oil Price Forecasting Literature}}{13}{table.3}
 \contentsline {table}{\numberline {4}{\ignorespaces Gas Price Forecasting Literature}}{15}{table.4}
-\contentsline {table}{\numberline {5}{\ignorespaces Annual Correlation of Oil and TTF price levels}}{36}{table.5}
-\contentsline {table}{\numberline {6}{\ignorespaces Annual Correlation of Oil and TTF Daily Returns}}{36}{table.6}
-\contentsline {table}{\numberline {7}{\ignorespaces Annual Correlation of Oil and TTF Daily Returns}}{37}{table.7}
-\contentsline {table}{\numberline {8}{\ignorespaces MAPE of models by target month (delivery)}}{38}{table.8}
-\contentsline {table}{\numberline {9}{\ignorespaces MAE of models by target month (delivery)}}{39}{table.9}
-\contentsline {table}{\numberline {10}{\ignorespaces MSE of models by target month (delivery)}}{40}{table.10}
-\contentsline {table}{\numberline {11}{\ignorespaces Results of univariate minimum models 2016-2017}}{41}{table.11}
+\contentsline {table}{\numberline {5}{\ignorespaces Data Availability of all Input Variables}}{44}{table.5}

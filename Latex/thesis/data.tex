@@ -1,58 +1,35 @@
 \section{Data}\label{Sec:Data}
 The data used for this analysis is downloaded from the \textit{Thomson Reuters Eikon} database. For this purpose I have implemented a Python script that downloads all necessary time series through the \textit{Eikon Web and Scripting APIs}. In the following I will give an overview over the structure and content of the data both on the target variable as well as the input variables used for the model. 
 \subsection{Target Variable}
-\subsubsection{Data Structure}
 The target variable to be predicted in this thesis is the closing price for the TTF gas future with delivery in the next month, referred to as front month. An advantage of this specification of the target variable is, that one gets one continuous time series for which data can be downloaded for a long period of time. However this definition also poses a significant challenge. The challenge lies in the fact that the product which is traded effectively changes at the change of the month as the delivery period changes. For example the Front Month price quoted on September 30 refers to natural gas delivered in the month of October, whereas on October 1 it refers to delivery in November. This leads to structural breaks and large price changes at the end of each month. To illustrate this I have plotted both the front month price as well as the price of each months future as traded before it becomes the Front Month for the second half of 2016 in Figure \ref{fig:ttf_monthly_level_2016_02}. As one can see the price of the front month jumps at the end of each month to the level at which the next month was traded previously.  This means, that while in this thesis I refer to the front month as one continous target variable, it might also be viewed as a collection of separate time series. To ensure adequate performance of the models this idea is implemented in the implementation of the model training. That means that, when generating predictions for observations at the beginning of each month past price values of the monthly future that is the current front month are used as inputs. This is done instead of choosing the price values of what was the front month before to prevent the structural breaks a the turn of the month to affect model performance.  
 
 To get a first overview of the inter temporal dependencies across time in the target variable as well as a hint on the performance of the autoregressive reference models both the autocorrelations  as well as partial autocorrelations of the TTF front month are plotted in figures \ref{fig:acf_ttf_fm_level} and \ref{fig:pacf_ttf_fm_level}. The very high values of all auto correlations as well as the near zero partial autocorrelations for lags above 1 day suggest modelling the target variable using an AR(1) model, which will probably result in a parameter estimate very close to 1. 
 
-\begin{figure}
-  \centering
-\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/ttf_monthly_level_2016_02\string".png}
-  \caption{TTF Front Month vs. Individual Months}\label{fig:ttf_monthly_level_2016_02}
-\end{figure}
-
-
-
-\begin{figure}
-  \centering
-\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/ttf_fm_level\string".png}
-  \caption{TTF Front Month Closing Prices}\label{fig:ttf_fm_level}
-\end{figure}
-
-
-\begin{figure}
-  \centering
-\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/acf_ttf_fm_level\string".png}
-  \caption{Auto Correlations TTF Front Month Closing Prices}\label{fig:acf_ttf_fm_level}
-\end{figure}
-
-\begin{figure}
-  \centering
-\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/pacf_ttf_fm_level\string".png}
-  \caption{Partial Auto Correlations TTF Front Month Closing Prices}\label{fig:pacf_ttf_fm_level}
-\end{figure}
 
 \subsection{Input Variables}\label{Sec:Input}
-\subsubsection{Other Energy Commodities}
+In the following I will briefly describe all potential input variables that were included in the variable selection. These variables can be sorted into three categories: Energy commodity prices, gas market fundamentals and exchange rates, each of which will be illustrated separately. The initial choice of candidate variables was based on input from energy traders at BASF SE. The development of each input variable across time is plotted in figures  \ref{fig:TTFDAlevel} - \ref{fig:EURGBPFXlevel}.
+\subsubsection{Energy Commodity Prices}
+The variables conceptually most closely related to the target variable are surely prices of other energy commodities. As argued in  section \ref{Sec:Literature} natural gas shares characteristics with both oil and electricity markets. Therefore it is somewhat natural to include prices for these commodities in addition to natural gas prices for other hubs and delivery periods.
 \begin{description}
-\item[TTF Day Ahead /Spot:]
-\item[NBP Front Month:]
-\item[Oil Front Month:]
-\item[Electricity Base Load Front Month:]
-\item[Electricity Peak Load Front Month:]
+\item[TTF Day Ahead /Spot:] At the TTF Day Ahead (TTFDA) market, which is sometimes also referred to as the spot market, natural gas is traded every day for delivery the next day. This market is one of the most liquid market at any gas trading hub and enables market participants to react to daily fluctuations in both demand and supply.
+\item[NBP Front Month:] The front month price at the National Balancing Point is the equivalent of the target variable for the UK market. As explained above this is the oldest, most established and most liquid virtual trading point in Europe. Unlike the TTF, which is traded in Euro, this product is traded in British Pound and therefore the relative price difference between these markets can be influenced by the exchange rate.
+\item[Oil Front Month:] This time series describes the price of  Brent crude oil with contract conditions equivalent to that of the target variable. This product is priced in US Dollars.
+\item[Electricity Base Load Front Month:] This is the price of the so called \textit{Phelix} Base Future for delivery of electricity the next month from 0:00 - 24:00.
+\item[Electricity Peak Load Front Month:] This price is equivalent to the base load price with the difference that the delivery is limited to the peak hours 09:00 - 20:00. Both base and peak load futures are traded in Euros.
 \end{description}
+All energy commodity prices are represented by daily closing prices.
 \subsubsection{Gas Market Fundamentals}
+The second group of input variables contain data on the three main fundamental factors presumed to drive the natural gas market: consumption, production, storage and pipeline flows. 
 \begin{description}
-\item[LDZ Gas Consumption:]
-\item[Non-LDZ Gas Consumption:]
-\item[Production:]
-\item[Storage:]
+\item[Consumption:] The consumption can be divided into two types. The first type describes the amount of natural gas consumed through Local Distribution Zones (LDZ), this is the channel through which residential and the vast majority of industrial users receive their gas. The Non-LDZ consumption describes the demand of users directly connected to the high pressure gas grid, which are mostly power stations and very large industrial consumers. Both demands are used as separate input variables on a daily resolution for the Dutch market.
+\item[Production:] Daily output of British gas wells on the Continental Shelf as well as daily output of all Dutch fields are aggregated into one variable each and used as separate input variables.
+\item[Storage:] Storage levels in the Netherlands and UK are each used as a separate variable. These storage levels are highly seasonal since depots are usually filled during the summer months and then trained to fulfil the higher demand in the heating season.
+\item[Pipeline Flows:] The \textit{Interconnector} (IUK) and \textit{Balgzand Bacton Line} (BBL) are the two main natural gas pipelines connecting the British and European markets. Net gas flows on both pipelines are additional sources of demand or supply on the European market and are therefore included as additional variables.
 \end{description}
 \subsubsection{Exchange Rates}
+As mentioned above, some of the commodity prices included as inputs are denoted in US Dollar or British Pound. Therefore the exchange rates of both currencies to the Euro are included as daily closing prices to enable the models to react to the effects of foreign exchange rate volatility.
 \begin{description}
 \item[Euro - US Dollar:]
 \item[Euro - Pound:]
 \end{description}
-\subsubsection{Correlation Analysis}
 \subsubsection{Data Availability}
