@@ -1,7 +1,7 @@
 from numpy.random import seed
-seed(1)
+seed(1234)
 from tensorflow import set_random_seed
-set_random_seed(2)
+set_random_seed(1234)
 import signal
 if hasattr(signal, 'SIGPIPE'):
     signal.signal(signal.SIGPIPE,signal.SIG_DFL)
