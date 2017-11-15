@@ -24,7 +24,7 @@ parameter_selection_path_univar = "../../Data/Output/LevelPrediction/level_par_t
 parameter_selection_path_multivar = "../../Data/Output/LevelPrediction/level_multivar_par_tuning/evaluation.csv"
 length_passed = 20
 n_epochs = 500
-batch= 20
+batch= 10
 verbosity = 0
 max_days_left_passed=30
 regex_testmonth= '17'
@@ -88,7 +88,7 @@ for type in ['univar', 'multivar']:
             learningrate = learningrate_dict_multivar[model_name]
             dropout = dropout_dict_multivar[model_name]
             additional_input_vars = additional_input_vars_dict[model_name]
-    
+
         dropout = 0
 
         target_data_list = []
