@@ -1,7 +1,7 @@
 from numpy.random import seed
-seed(1)
+seed(1234)
 from tensorflow import set_random_seed
-set_random_seed(2)
+set_random_seed(1234)
 import signal
 if hasattr(signal, 'SIGPIPE'):
     signal.signal(signal.SIGPIPE,signal.SIG_DFL)
@@ -21,8 +21,8 @@ loss_functions_dict = {'mae':mean_absolute_error,  'mse': mean_squared_error, 'b
 output_path = "../../Data/Output/BinaryPrediction/binary_par_tuning"
 data_path = '../../Data/Input/InputData.csv'
 length_passed = 20
-n_epochs = 300
-batch= 20
+n_epochs = 500
+batch= 10
 
 verbosity = 0
 max_days_left_passed=30

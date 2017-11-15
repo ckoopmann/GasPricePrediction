@@ -1,7 +1,7 @@
 from numpy.random import seed
-seed(5)
+seed(1234)
 from tensorflow import set_random_seed
-set_random_seed(6)
+set_random_seed(1234)
 import signal
 if hasattr(signal, 'SIGPIPE'):
     signal.signal(signal.SIGPIPE,signal.SIG_DFL)
@@ -89,7 +89,6 @@ for type in ['univar', 'multivar']:
             dropout = dropout_dict_multivar[model_name]
             additional_input_vars = additional_input_vars_dict[model_name]
 
-        dropout = 0
 
         target_data_list = []
         all_data_list = []

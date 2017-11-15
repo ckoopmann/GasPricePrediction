@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.7.4)  14 NOV 2017 16:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.7.4)  15 NOV 2017 17:49
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -355,9 +355,6 @@ Package: scrpage2 2017/04/13 v3.23 KOMA-Script package (page head and foot)
 
 LaTeX Warning: Label `fig:ProdUKCSlevel' multiply defined.
 
-
-LaTeX Warning: Label `tab:oil_ttf_return_corr_annual' multiply defined.
-
 )
 \openout1 = `thesis.aux'.
 
@@ -499,19 +496,24 @@ Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[7] (intro.tex)
+[7] (intro.tex
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.153 \newpage
-               [1] (gas_market.tex
+l.8 \item[Binary Prediction:]
+                              Natural gas traders in the chemical industry u...
+[1])
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[2] <"../../Plots/hub_map".png, id=332, 1065.22969pt x 767.86874pt>
+[2] (gas_market.tex
+Overfull \vbox (6.78236pt too high) has occurred while \output is active []
+
+
+[3] <"../../Plots/hub_map".png, id=324, 1065.22969pt x 767.86874pt>
 File: "../../Plots/hub_map".png Graphic file (type png)
 
 <use "../../Plots/hub_map".png>
@@ -521,18 +523,18 @@ Package pdftex.def Info: "../../Plots/hub_map".png used on input line 12.
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[3]
+[4]
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[4pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+[5pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.25 \paragraph
                {Exchange Trading} <../../Plots/hub_map.png>]
-<"../../Plots/trading_types".png, id=346, 1140.51094pt x 456.95718pt>
+<"../../Plots/trading_types".png, id=339, 1140.51094pt x 456.95718pt>
 File: "../../Plots/trading_types".png Graphic file (type png)
 
 <use "../../Plots/trading_types".png>
@@ -543,7 +545,7 @@ Package pdftex.def Info: "../../Plots/trading_types".png used on input line 30.
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[5pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+[6pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -553,7 +555,7 @@ l.36
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[6pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
+[7pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
 as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -563,23 +565,23 @@ l.155 \newpage
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[7]
-Overfull \vbox (6.78236pt too high) has occurred while \output is active []
-
-
 [8]
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[9] (literature_table_electricity.tex)
+[9]
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[10]
+[10] (literature_table_electricity.tex)
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[11pdfTeX warning (ext4): destination with the same identifier (name{table.2}) 
+[11]
+Overfull \vbox (6.78236pt too high) has occurred while \output is active []
+
+
+[12pdfTeX warning (ext4): destination with the same identifier (name{table.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -592,14 +594,14 @@ Missing character: There is no © in font cmr10!
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[12] (literature_table_oil.tex
+[13] (literature_table_oil.tex
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no © in font cmr10!
 )
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[13pdfTeX warning (ext4): destination with the same identifier (name{table.3}) 
+[14pdfTeX warning (ext4): destination with the same identifier (name{table.3}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -609,28 +611,38 @@ l.45
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[14] (literature_table_gas.tex))
+[15] (literature_table_gas.tex)
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[15pdfTeX warning (ext4): destination with the same identifier (name{table.4}) 
+[16pdfTeX warning (ext4): destination with the same identifier (name{table.4}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.157 \newpage
-              ] (methods.tex
+l.64 \item[Research on natural gas:]
+                                     Despite the growing importance of natur...
+]
+Overfull \hbox (2.04707pt too wide) in paragraph at lines 69--70
+[]\OT1/cmr/m/n/10.95 A rel-a-tively con-sis-tent find-ing across the
+ []
+
+)
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[16] <"../../Plots/RNN".png, id=661, 844.65562pt x 570.63188pt>
+[17] (methods.tex
+Overfull \vbox (6.78236pt too high) has occurred while \output is active []
+
+
+[18] <"../../Plots/RNN".png, id=668, 844.65562pt x 570.63188pt>
 File: "../../Plots/RNN".png Graphic file (type png)
 
 <use "../../Plots/RNN".png>
 Package pdftex.def Info: "../../Plots/RNN".png used on input line 14.
 (pdftex.def)             Requested size: 352.8155pt x 238.35768pt.
 
-<"../../Plots/elman".png, id=662, 1022.31938pt x 746.03719pt>
+<"../../Plots/elman".png, id=669, 1022.31938pt x 746.03719pt>
 File: "../../Plots/elman".png Graphic file (type png)
 
 <use "../../Plots/elman".png>
@@ -640,7 +652,7 @@ Package pdftex.def Info: "../../Plots/elman".png used on input line 20.
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[17pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
+[19pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -650,14 +662,14 @@ l.36 \begin{align*}
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[18pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
+[20pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.45 
       <../../Plots/elman.png>]
-<"../../Plots/lstm".png, id=680, 1022.31938pt x 746.79pt>
+<"../../Plots/lstm".png, id=686, 1022.31938pt x 746.79pt>
 File: "../../Plots/lstm".png Graphic file (type png)
 
 <use "../../Plots/lstm".png>
@@ -667,11 +679,11 @@ Package pdftex.def Info: "../../Plots/lstm".png used on input line 54.
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[19] (data.tex
+[21] (data.tex
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[20pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+[22pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -679,22 +691,22 @@ Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 l.5 
      <../../Plots/lstm.png>]
 
-LaTeX Warning: Reference `Sec:Literature' on page 21 undefined on input line 12
+LaTeX Warning: Reference `Sec:Literature' on page 23 undefined on input line 12
 .
 
 
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[21]
+[23]
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[22])
+[24])
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[23] (results.tex
+[25] (results.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 5.
 
 ("C:\Users\KoopmaCK\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
@@ -706,23 +718,23 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[24]
-Overfull \vbox (6.78236pt too high) has occurred while \output is active []
-
-
-[25]
-Overfull \vbox (6.78236pt too high) has occurred while \output is active []
-
-
 [26]
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[27]) (conc.tex)
+[27]
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[28] (thesis.bbl
+[28]
+Overfull \vbox (6.78236pt too high) has occurred while \output is active []
+
+
+[29]) (conc.tex)
+Overfull \vbox (6.78236pt too high) has occurred while \output is active []
+
+
+[30] (thesis.bbl
 Missing character: There is no Ã in font cmti10!
 Missing character: There is no ­ in font cmti10!
 Missing character: There is no â in font cmr10!
@@ -735,7 +747,7 @@ Missing character: There is no “ in font cmr10!
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[29]
+[31]
 Missing character: There is no Ã in font cmcsc10!
 Missing character: There is no ± in font cmcsc10!
 Missing character: There is no Ã in font cmcsc10!
@@ -746,15 +758,14 @@ Missing character: There is no © in font cmcsc10!
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[30]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ” in font cmr10!
-
+[32]
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[31]
+[33]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ” in font cmr10!
 Missing character: There is no Ã in font cmcsc10!
 Missing character: There is no ­ in font cmcsc10!
 Missing character: There is no Ã in font cmti10!
@@ -763,15 +774,15 @@ Missing character: There is no ¼ in font cmti10!
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[32]
+[34]
 Missing character: There is no Ã in font cmcsc10!
 Missing character: There is no ± in font cmcsc10!
 )
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[33] (app_figures.tex
-<"../../Plots/ttf_monthly_level_2016_02".png, id=759, 586.1097pt x 359.9046pt>
+[35] (app_figures.tex
+<"../../Plots/ttf_monthly_level_2016_02".png, id=767, 586.1097pt x 359.9046pt>
 File: "../../Plots/ttf_monthly_level_2016_02".png Graphic file (type png)
 
 <use "../../Plots/ttf_monthly_level_2016_02".png>
@@ -779,14 +790,14 @@ Package pdftex.def Info: "../../Plots/ttf_monthly_level_2016_02".png used on in
 put line 5.
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/ttf_fm_level".png, id=760, 586.1097pt x 359.9046pt>
+<"../../Plots/ttf_fm_level".png, id=768, 586.1097pt x 359.9046pt>
 File: "../../Plots/ttf_fm_level".png Graphic file (type png)
 
 <use "../../Plots/ttf_fm_level".png>
 Package pdftex.def Info: "../../Plots/ttf_fm_level".png used on input line 13.
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/acf_ttf_fm_level".png, id=761, 586.1097pt x 359.9046pt>
+<"../../Plots/acf_ttf_fm_level".png, id=769, 586.1097pt x 359.9046pt>
 File: "../../Plots/acf_ttf_fm_level".png Graphic file (type png)
 
 <use "../../Plots/acf_ttf_fm_level".png>
@@ -794,7 +805,7 @@ Package pdftex.def Info: "../../Plots/acf_ttf_fm_level".png used on input line
 20.
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/pacf_ttf_fm_level".png, id=762, 586.1097pt x 359.9046pt>
+<"../../Plots/pacf_ttf_fm_level".png, id=770, 586.1097pt x 359.9046pt>
 File: "../../Plots/pacf_ttf_fm_level".png Graphic file (type png)
 
 <use "../../Plots/pacf_ttf_fm_level".png>
@@ -802,28 +813,28 @@ Package pdftex.def Info: "../../Plots/pacf_ttf_fm_level".png used on input line
  26.
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/TTFDAlevel".png, id=763, 586.1097pt x 359.9046pt>
+<"../../Plots/TTFDAlevel".png, id=771, 586.1097pt x 359.9046pt>
 File: "../../Plots/TTFDAlevel".png Graphic file (type png)
 
 <use "../../Plots/TTFDAlevel".png>
 Package pdftex.def Info: "../../Plots/TTFDAlevel".png used on input line 32.
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/NBPFMlevel".png, id=764, 586.1097pt x 359.9046pt>
+<"../../Plots/NBPFMlevel".png, id=772, 586.1097pt x 359.9046pt>
 File: "../../Plots/NBPFMlevel".png Graphic file (type png)
 
 <use "../../Plots/NBPFMlevel".png>
 Package pdftex.def Info: "../../Plots/NBPFMlevel".png used on input line 38.
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/OilFMlevel".png, id=765, 586.1097pt x 359.9046pt>
+<"../../Plots/OilFMlevel".png, id=773, 586.1097pt x 359.9046pt>
 File: "../../Plots/OilFMlevel".png Graphic file (type png)
 
 <use "../../Plots/OilFMlevel".png>
 Package pdftex.def Info: "../../Plots/OilFMlevel".png used on input line 44.
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/ElectricityBaseFMlevel".png, id=766, 586.1097pt x 359.9046pt>
+<"../../Plots/ElectricityBaseFMlevel".png, id=774, 586.1097pt x 359.9046pt>
 File: "../../Plots/ElectricityBaseFMlevel".png Graphic file (type png)
 
 <use "../../Plots/ElectricityBaseFMlevel".png>
@@ -831,7 +842,7 @@ Package pdftex.def Info: "../../Plots/ElectricityBaseFMlevel".png used on input
  line 50.
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/ElectricityPeakFMlevel".png, id=767, 586.1097pt x 359.9046pt>
+<"../../Plots/ElectricityPeakFMlevel".png, id=775, 586.1097pt x 359.9046pt>
 File: "../../Plots/ElectricityPeakFMlevel".png Graphic file (type png)
 
 <use "../../Plots/ElectricityPeakFMlevel".png>
@@ -839,7 +850,7 @@ Package pdftex.def Info: "../../Plots/ElectricityPeakFMlevel".png used on input
  line 56.
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/ConLDZNLlevel".png, id=768, 586.1097pt x 359.9046pt>
+<"../../Plots/ConLDZNLlevel".png, id=776, 586.1097pt x 359.9046pt>
 File: "../../Plots/ConLDZNLlevel".png Graphic file (type png)
 
 <use "../../Plots/ConLDZNLlevel".png>
@@ -847,7 +858,7 @@ Package pdftex.def Info: "../../Plots/ConLDZNLlevel".png used on input line 62.
 
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/ConNLDZNLlevel".png, id=769, 586.1097pt x 359.9046pt>
+<"../../Plots/ConNLDZNLlevel".png, id=777, 586.1097pt x 359.9046pt>
 File: "../../Plots/ConNLDZNLlevel".png Graphic file (type png)
 
 <use "../../Plots/ConNLDZNLlevel".png>
@@ -855,14 +866,14 @@ Package pdftex.def Info: "../../Plots/ConNLDZNLlevel".png used on input line 68
 .
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/ProdNLlevel".png, id=770, 586.1097pt x 359.9046pt>
+<"../../Plots/ProdNLlevel".png, id=778, 586.1097pt x 359.9046pt>
 File: "../../Plots/ProdNLlevel".png Graphic file (type png)
 
 <use "../../Plots/ProdNLlevel".png>
 Package pdftex.def Info: "../../Plots/ProdNLlevel".png used on input line 74.
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/ProdUKCSlevel".png, id=771, 586.1097pt x 359.9046pt>
+<"../../Plots/ProdUKCSlevel".png, id=779, 586.1097pt x 359.9046pt>
 File: "../../Plots/ProdUKCSlevel".png Graphic file (type png)
 
 <use "../../Plots/ProdUKCSlevel".png>
@@ -875,7 +886,7 @@ Package pdftex.def Info: "../../Plots/ProdUKCSlevel".png used on input line 88.
 
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/StorageNLlevel".png, id=772, 586.1097pt x 359.9046pt>
+<"../../Plots/StorageNLlevel".png, id=780, 586.1097pt x 359.9046pt>
 File: "../../Plots/StorageNLlevel".png Graphic file (type png)
 
 <use "../../Plots/StorageNLlevel".png>
@@ -883,7 +894,7 @@ Package pdftex.def Info: "../../Plots/StorageNLlevel".png used on input line 94
 .
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/StorageUKlevel".png, id=773, 586.1097pt x 359.9046pt>
+<"../../Plots/StorageUKlevel".png, id=781, 586.1097pt x 359.9046pt>
 File: "../../Plots/StorageUKlevel".png Graphic file (type png)
 
 <use "../../Plots/StorageUKlevel".png>
@@ -891,7 +902,7 @@ Package pdftex.def Info: "../../Plots/StorageUKlevel".png used on input line 10
 1.
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/TradeBBLlevel".png, id=774, 586.1097pt x 359.9046pt>
+<"../../Plots/TradeBBLlevel".png, id=782, 586.1097pt x 359.9046pt>
 File: "../../Plots/TradeBBLlevel".png Graphic file (type png)
 
 <use "../../Plots/TradeBBLlevel".png>
@@ -899,7 +910,7 @@ Package pdftex.def Info: "../../Plots/TradeBBLlevel".png used on input line 107
 .
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/TradeIUKlevel".png, id=775, 586.1097pt x 359.9046pt>
+<"../../Plots/TradeIUKlevel".png, id=783, 586.1097pt x 359.9046pt>
 File: "../../Plots/TradeIUKlevel".png Graphic file (type png)
 
 <use "../../Plots/TradeIUKlevel".png>
@@ -907,7 +918,7 @@ Package pdftex.def Info: "../../Plots/TradeIUKlevel".png used on input line 113
 .
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/EURUSDFXlevel".png, id=776, 586.1097pt x 359.9046pt>
+<"../../Plots/EURUSDFXlevel".png, id=784, 586.1097pt x 359.9046pt>
 File: "../../Plots/EURUSDFXlevel".png Graphic file (type png)
 
 <use "../../Plots/EURUSDFXlevel".png>
@@ -915,7 +926,7 @@ Package pdftex.def Info: "../../Plots/EURUSDFXlevel".png used on input line 119
 .
 (pdftex.def)             Requested size: 352.8155pt x 216.65285pt.
 
-<"../../Plots/EURGBPFXlevel".png, id=777, 586.1097pt x 359.9046pt>
+<"../../Plots/EURGBPFXlevel".png, id=785, 586.1097pt x 359.9046pt>
 File: "../../Plots/EURGBPFXlevel".png Graphic file (type png)
 
 <use "../../Plots/EURGBPFXlevel".png>
@@ -926,7 +937,7 @@ Package pdftex.def Info: "../../Plots/EURGBPFXlevel".png used on input line 125
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[34pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
+[36pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -943,7 +954,7 @@ f_fm_level.png>]
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[35pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
+[37pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -960,7 +971,7 @@ _level.png>]
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[36pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
+[38pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -976,7 +987,7 @@ l.129 \FloatBarrier
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[37pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
+[39pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -993,7 +1004,7 @@ level.png>]
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[38pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
+[40pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1010,7 +1021,7 @@ ZNLlevel.png>]
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[39pdfTeX warning (ext4): destination with the same identifier (name{figure.16}
+[41pdfTeX warning (ext4): destination with the same identifier (name{figure.16}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1027,7 +1038,7 @@ ng>]
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[40pdfTeX warning (ext4): destination with the same identifier (name{figure.18}
+[42pdfTeX warning (ext4): destination with the same identifier (name{figure.18}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1043,7 +1054,7 @@ l.129 \FloatBarrier
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[41pdfTeX warning (ext4): destination with the same identifier (name{figure.20}
+[43pdfTeX warning (ext4): destination with the same identifier (name{figure.20}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1060,7 +1071,7 @@ l.png>]
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[42pdfTeX warning (ext4): destination with the same identifier (name{figure.22}
+[44pdfTeX warning (ext4): destination with the same identifier (name{figure.22}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1077,7 +1088,7 @@ png>]
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[43pdfTeX warning (ext4): destination with the same identifier (name{figure.24}
+[45pdfTeX warning (ext4): destination with the same identifier (name{figure.24}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1094,7 +1105,7 @@ png>]) (app_tables.tex (../tables/data_availability.tex))
 Overfull \vbox (6.78236pt too high) has occurred while \output is active []
 
 
-[44
+[46
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
  been already used, duplicate ignored
@@ -1104,20 +1115,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
 l.191 \newpage
               ] (authorship.tex)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
- [45]
+ [47]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 49C5F4B8B239276D8630D18E12F96ED9;2530.
 
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: FC26C57C51E634013894F3B2ED7AD0CA;2553
-(rerunfilecheck)             After:  777E86ED176D69826B50F77D415F867E;2472.
 
 LaTeX Warning: There were undefined references.
 
@@ -1127,54 +1132,33 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
- 8241 strings out of 493323
- 126273 string characters out of 3128714
- 212398 words of memory out of 3000000
+ 8239 strings out of 493323
+ 126330 string characters out of 3128714
+ 212169 words of memory out of 3000000
  11393 multiletter control sequences out of 15000+200000
  10806 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,10n,38p,2420b,518s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{table.11} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{table.10} has been referenced but does not exist, r
-eplaced by a fixed one
-
-pdfTeX warning (dest): name{table.9} has been referenced but does not exist, re
-placed by a fixed one
-
-pdfTeX warning (dest): name{table.8} has been referenced but does not exist, re
-placed by a fixed one
-
-pdfTeX warning (dest): name{table.7} has been referenced but does not exist, re
-placed by a fixed one
-
-pdfTeX warning (dest): name{table.6} has been referenced but does not exist, re
-placed by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.5.2.5} has been referenced but does n
-ot exist, replaced by a fixed one
-
-<C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmbx10.pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmbx12.pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/KoopmaCK/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Koop
-maCK/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pf
-b><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmmi6.pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmmi8.pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/KoopmaCK/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/KoopmaCK
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/
-Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmsy6.pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/KoopmaCK/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on thesis.pdf (53 pages, 1355105 bytes).
+<C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmbx10.pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmbx12.pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/KoopmaCK/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Ko
+opmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi6.pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/KoopmaCK/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Koopma
+CK/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C
+:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy6.pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/KoopmaCK/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on thesis.pdf (55 pages, 1362560 bytes).
 PDF statistics:
- 938 PDF objects out of 1000 (max. 8388607)
- 209 named destinations out of 1000 (max. 500000)
+ 946 PDF objects out of 1000 (max. 8388607)
+ 207 named destinations out of 1000 (max. 500000)
  449 words of extra memory for PDF output out of 10000 (max. 10000000)
 

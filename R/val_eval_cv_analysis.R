@@ -15,9 +15,3 @@ df.evaluation = df.evaluation[,.(MSE = mean(mse), MSEReference = mean(mseref)), 
 df.evaluation = df.evaluation[order(MSE),]
 
 
-Filename = '../../Latex/tables/val_eval_cv.tex'
-caption = 'Test Results using monthly cross validation of tuned models for data 01 - 07/2017'
-label = 'tab:min.eval.cv'
-latex = xtable(df.evaluation, label = label, caption = caption, digits = 3, row.names = FALSE)
-print(latex, file = Filename)
-

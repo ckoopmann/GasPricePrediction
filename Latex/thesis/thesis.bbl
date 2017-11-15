@@ -1,4 +1,4 @@
-\begin{thebibliography}{55}
+\begin{thebibliography}{57}
 \newcommand{\enquote}[1]{``#1''}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
@@ -51,6 +51,12 @@
 \textsc{Caporin, M. and F.~Fontini} (2017): \enquote{The long-run oil–natural
   gas price relationship and the shale gas revolution,} \emph{Energy
   Economics}, 64, 511--519.
+
+\bibitem[\protect\citeauthoryear{Ceperic, Zikovic, and Ceperic}{Ceperic
+  et~al.}{2017}]{ceperic_short-term_2017}
+\textsc{Ceperic, E., S.~Zikovic, and V.~Ceperic} (2017): \enquote{Short-term
+  forecasting of natural gas prices using machine learning and feature
+  selection algorithms,} \emph{Energy}, 140, 893--900.
 
 \bibitem[\protect\citeauthoryear{Chinn and Coibion}{Chinn and
   Coibion}{2014}]{chinn_predictive_2014}
@@ -121,6 +127,12 @@
 \bibitem[\protect\citeauthoryear{Herbert}{Herbert}{1993}]{herbert_relation_1993}
 \textsc{Herbert, J.~H.} (1993): \enquote{The relation of monthly spot to
   futures prices for natural gas,} \emph{Energy}, 18, 1119--1124.
+
+\bibitem[\protect\citeauthoryear{Jin and Kim}{Jin and
+  Kim}{2015}]{jin_forecasting_2015}
+\textsc{Jin, J. and J.~Kim} (2015): \enquote{Forecasting {Natural} {Gas}
+  {Prices} {Using} {Wavelets}, {Time} {Series}, and {Artificial} {Neural}
+  {Networks},} \emph{PLOS ONE}, 10, e0142064.
 
 \bibitem[\protect\citeauthoryear{Kim, Yu, and Song}{Kim
   et~al.}{2002}]{kim_prediction_2002}
