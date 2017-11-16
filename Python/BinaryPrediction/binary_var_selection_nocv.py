@@ -23,8 +23,9 @@ data_path = '../../Data/Input/InputData.csv'
 parameter_selection_path = "../../Data/Output/BinaryPrediction/binary_par_tuning/evaluation.csv"
 
 length_passed = 20
-n_epochs = 500
-batch= 10
+n_epochs = 300
+batch= 20
+scaling = True
 verbosity = 0
 
 max_days_left_passed=30
@@ -35,7 +36,7 @@ output_activation= 'sigmoid'
 loss='binary_crossentropy'
 all_input_vars=["ConLDZNL", "ConNLDZNL",  "ProdNL", "ProdUKCS", "StorageNL", "StorageUK", "TradeBBL", "TradeIUK", "TTFDA", "NBPFM", "OilFM", "ElectricityBaseFM", "ElectricityPeakFM", "EURUSDFX", "EURGBPFX"]
 target_type = 'TTF'
-max_iteration = 2
+max_iteration = 5
 #sys.stdout.flush()
 
 
@@ -152,6 +153,16 @@ for model_name in models:
                 reference_test = concat(ref_test_list)
                 months_test_list = [repeat(train_months[i], len(ref_sep[i])) for i in test_selection]
                 months_test = concatenate(months_test_list)
+
+                if scaling:
+                    scaler_X = MinMaxScaler()
+                    X_train_scaled = scaler_X.fit_transform(X_train.reshape((-1, X_train.shape[-1])))
+                    X_train_scaled = X_train_scaled.reshape(X_train.shape)
+                    X_train = X_train_scaled
+
+                    X_test_scaled = scaler_X.transform(X_test.reshape((-1, X_test.shape[-1])))
+                    X_test_scaled = X_test_scaled.reshape(X_test.shape)
+                    X_test = X_test_scaled
 
                 #Train model
                 history = model.fit(X_train, y_train, batch_size=batch, epochs=n_epochs,

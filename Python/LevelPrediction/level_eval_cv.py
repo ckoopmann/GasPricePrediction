@@ -23,12 +23,13 @@ data_path = '../../Data/Input/InputData.csv'
 parameter_selection_path_univar = "../../Data/Output/LevelPrediction/level_par_tuning/evaluation.csv"
 parameter_selection_path_multivar = "../../Data/Output/LevelPrediction/level_multivar_par_tuning/evaluation.csv"
 length_passed = 20
-n_epochs = 500
-batch= 10
+n_epochs = 300
+batch= 20
+scaling = True
 verbosity = 0
 max_days_left_passed=30
 regex_testmonth= '17'
-output_activation= 'linear'
+output_activation= 'tanh'
 loss='mse'
 target_type  = 'TTF'
 
@@ -137,6 +138,24 @@ for type in ['univar', 'multivar']:
             months_test_list = [repeat(train_months[i], len(ref_sep[i])) for i in test_selection]
             months_test = concatenate(months_test_list)
 
+            if scaling:
+                scaler_y = MinMaxScaler()
+                y_train_scaled = scaler_y.fit_transform(y_train.reshape((-1, 1)))
+                y_train = y_train_scaled.reshape(-1, 1)
+
+                y_test_scaled = scaler_y.transform(y_test.reshape(-1, 1))
+                y_test_unscaled = y_test
+                y_test = y_test_scaled.reshape(-1, 1)
+
+                scaler_X = MinMaxScaler()
+                X_train_scaled = scaler_X.fit_transform(X_train.reshape((-1, X_train.shape[-1])))
+                X_train_scaled = X_train_scaled.reshape(X_train.shape)
+                X_train = X_train_scaled
+
+                X_test_scaled = scaler_X.transform(X_test.reshape((-1, X_test.shape[-1])))
+                X_test_scaled = X_test_scaled.reshape(X_test.shape)
+                X_test = X_test_scaled
+
             decay_rate = learningrate/n_epochs
             # Create the model
             if model_name == 'lstm':
@@ -160,8 +179,10 @@ for type in ['univar', 'multivar']:
 
             #Create predictions and reshape into one dimensional arrays
             y_hat_test = model.predict(X_test)
-            y_hat_test  = y_hat_test.reshape(y_hat_test.shape[0])
-            #Reshape actuals into one dimensional arrays
+            if scaling:
+                y_hat_test = scaler_y.inverse_transform(y_hat_test.reshape(-1, 1))
+                y_test = y_test_unscaled
+            y_hat_test = y_hat_test.reshape(-1)
             y_test = y_test.reshape(-1)
 
             #Save predictions and actuals

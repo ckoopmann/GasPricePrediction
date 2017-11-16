@@ -39,4 +39,30 @@ data_availability_latex = xtable(data_availability, label = 'tab:data-availabili
 print(data_availability_latex, file = '../Latex/tables/data_availability.tex', include.rownames=FALSE)
 
 
+binary_plot_data = df[name == "TTFFM"]
+for(i in 1:nrow(binary_plot_data)){
+    currDate = binary_plot_data$Date[i]
+    currMonth = month(currDate)
+    currYear = year(currDate)
+    currMin = min(binary_plot_data [Date >= currDate & month(Date) == currMonth & year(Date) == currYear,]$CLOSE)
+    binary_plot_data[Date == currDate,MinRemaining := currMin]
+}
+
+binary_plot_data$BinaryVar = as.numeric(binary_plot_data$CLOSE == binary_plot_data$MinRemaining)
+
+#Drop September first 2017 since there is only one observation in this month
+binary_plot_data = binary_plot_data[ Date != as.Date("2017-09-01")]
+
+binary_plot_data[,.(PositiveShare = mean(BinaryVar)), by = .(Year = as.character(year(Date)), Month = month(Date))]
+
+#Plot for month with few positive observations
+binary_plot_few_positive = ggplot(data = binary_plot_data[year(Date) == 2017 & month(Date) == 2], aes(x = Date)) + geom_line(aes(y = CLOSE)) + geom_point(aes(y = BinaryVar*max(binary_plot_data[year(Date) == 2017 & month(Date) == 2]$CLOSE))) + scale_y_continuous(sec.axis = sec_axis(~.*1/max(binary_plot_data[year(Date) == 2017 & month(Date) == 2]$CLOSE), name = "Binary Target")) + theme_classic() + labs(title = "Price level vs. binary target variable 02/2017", y = "Price Level [EUR/MWh]")
+
+#Balance overview table with annual share
+balance_overview = binary_plot_data[,.(PositiveShare = mean(BinaryVar)), by = .(Year = as.character(year(Date)))]
+balance_overview = rbind(balance_overview,binary_plot_data[,.(Year = "Total",PositiveShare = mean(BinaryVar))])
+
+balance_overview_latex = xtable(balance_overview, label = 'tab:balance-overview', caption = 'Annual share of positive observation for binary target variable', digits = 3)
+print(balance_overview_latex, file = '../Latex/tables/balance_overview.tex', include.rownames=FALSE)
+
 

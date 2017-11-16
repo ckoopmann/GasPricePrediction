@@ -1,0 +1,71 @@
+\section{Experimental Design}
+Designing an experiment to evaluate the performance of the LSTM model in comparison to reference models one has to solve several problems regarding the following topics:
+\begin{enumerate}
+\item Reference models\begin{itemize}
+	\item Selecting reference models
+\end{itemize}
+\item Parameter tuning \begin{itemize}
+	\item Defining parameter tuning process
+	\item Selecting hyper parameters to tune and choosing tuning grid
+\end{itemize}
+\item Variable selection \begin{itemize}
+	\item Defining variable selection process
+	\item Selecting candidate variables
+\end{itemize}
+\item Model evaluation \begin{itemize}
+\item Selecting hold out data to exclude from parameter tuning and variable selection.
+\item Defining testing scenario
+\end{itemize}	
+\end{enumerate}
+
+A major challenge arising from this problem is the interdependence between the parameter tuning and the variable selection steps. To tune the parameters we have to have selected a certain set of input variables and vice versa. One way to solve this problem would be to view the subset of selected input variables as just another tuning parameter and integrate both steps. However in this process the number of training iterations that would have to be performed would increase significantly to the product of the iterations in both steps. To avoid excessive computational costs the following alternative approach was chosen:
+
+\begin{enumerate}
+\item Perform parameter tuning on \textit{univariate} models
+\item Perform variable selection using parameter values determined in step 1.
+\item Tune parameters again for models using input variables determined in step 2.
+\item Evaluate both the tuned univariate models from step 1 as well as multivariate models from step 3. 
+\end{enumerate}
+Each of these steps is executed both for the LSTM model as well as for each reference model for which it is applicable.
+A \textit{univariate} model in this context is a model trained using only past observations of the front month price as input, whereas multivariate models use both the front month price as well as at least one additional input variable. In the following paragraphs the selected approach for each of the above mentioned decision problems is outlined.
+
+\subsection{Reference Models}
+The prediction results of the LSTM model are compared to each of the following reference models:
+\begin{description}
+\item[Simple Recurrent Neural Network (RNN):] This model is the implementation of the above outlined simple RNN architecture where the hidden layer output of the past time step is used as another input variable.
+\item[Feed Forward Neural Network (FFNN):] The FFNN model is an implementation of the classical Neural Network without any recurrent connection modelling  a static input output mapping. 
+\item[Regression Models:] In the case of the price level prediction this reference model consists of a standard linear model. In the univariate case it is an AR(1) model whereas in the multivariate case it is a linear regression on the last available value for each variable. For the binary prediction problem a logistic regression on the same set of variables is applied. All regression models are implemented as special cases of a FFNN without hidden layer and a linear or logistic output layer. That means the solution in both cases is found using gradient descent, and the learning rate as well as dropout is trained in the same way as for the other models.
+\end{description}
+
+
+\subsection{Parameter Tuning}
+The detailed structure of each model as well as the training process is controlled by a number of hyper parameters. The selection of parameters that are considered in this paragraph as well as the terminology is inspired by the \textit{Tensorflow} and \textit{Keras} Python packages, which were used to implement the neural network based models. Theoretically the models could be tuned on all of these parameters. However using the standard grid search used in this tuning approach the total number of parameter combinations would grow exponentially. Since each of the models have to be retrained on every parameter combination this would generate excessive computational costs. To avoid these costs the parameters are separated into a set of fixed hyper-parameters which are set to constant values derived from experience and literature and a complimentary set of tuning parameters.
+\subsubsection{Fixed Hyper-Parameters}
+In the following I will give a brief description of each hyper-parameter that was excluded from the tuning process. This selection was done based on observations from literature as well as the online machine learning community. Except for the \textit{length} parameter none of these parameters alter the actual structure of the respective model but are limited to the training process. The \textit{length} and \textit{batchsize} parameters can be considered features of the \textit{Tensorflow} package and are not necessarily present in the theoretical work on neural networks or alternative implementations.
+\begin{description}
+\item[Length:] From the definition of a recurrent neural network there is no theoretic limit on the length of inter temporal dependencies that the model can learn. This is due to the fact, that the gradient as well as the layer activations can flow infinitely far through the network. Regarding the implementation this would also mean that there is no limit on the amount of calculations that would have to be done to determine the gradient based updates to the network weights. Therefore the \textit{Tensorflow} implementation of recurrent neural networks requires the user to pass a length argument which limits the number of time steps that are included in the calculation of the gradients for each observation. This length thereby also limits the maximum length of inter temporal dependencies that the model can learn.
+
+\item[Batchsize:] The \textit{Tensorflow} package processes the training data in batches. In practice that means that at a given training epoch the gradients are calculated for a certain subset of training observations. Then the weights are updated using the gradients calculated from this subset. The \textit{batchsize} parameter controls the size of this subset. Therefore in each training step the weights are updated $\frac{n_{obs}}{batchsize}$ times (rounded up to the next integer). Given the same number of training steps a larger \textit{batchsize} therefore means less frequent weight updates, slower learning and less computational complexity.
+
+\item[Epochs:] The \textit{epochs} parameter controls the number of training steps, which is the number of times the weight updates are repeated for each training batch. Therefore the total number of weight updates is $epochs * \frac{n_{obs}}{batchsize}$. 
+
+\item[Loss:] The \textit{loss} parameter determines the loss-function that is minimized during the training of the model. In this work the \textit{Mean Squared Error} (MSE) is used as loss for the price level prediction whereas \textit{binary cross entropy} (BCE) is used for the binary prediction problem. These loss functions are defined in the following way: \begin{align*}
+MSE &= \frac{1}{n}\sum_{i=1}^{n}(y_i - \tilde{y_i})^2 \\
+BCE &= -\frac{1}{n}\sum_{i=1}^{n}(y_i)log(\tilde{y_i}) + (1-y_i)log(1-\tilde{y_i})
+\end{align*}
+
+\item[Optimizer:] The \textit{optimizer} chooses an optimization algorithm to use when minimizing the loss function on the training set. Following practice and advice from the machine learning community the \textit{Stochastic Gradient Descent} optimizer is used for the FFNN models. Following the advice in the \textit{Keras} documentation the \textit{RMSProp} optimizer is used for recurrent models.
+\end{description}
+\subsubsection{Tuning Parameters}
+In the parameter tuning stage each model was tuned over the following parameters
+\begin{description}
+\item[Learning Rate:] The learning rate is the value by which the gradient values in each iteration are multiplied to get the weight updates. This means that the weight value at epoch $n+1$ ($W_{ij, n+1}$ is calculated as $W_{ij, n+1} = W_{ij, n} - learningrate * \frac{dl(W_{ij, n})}{dW_{ij, n}}$. A lower learning rate slows down the learning process and increases the number of training epochs necessary to converge on a local minimum of the loss function. If the learning rate is too high on the other hand the gradient descent algorithm might not converge at all, constantly "over-shooting" the minimum.
+\item[Dropout:] One way to avoid the issue of over-fitting is to randomly drop different input variables at each time step. Using this approach the value of the dropout tuning parameter sets the probability with witch any individual input variable is dropped. Dropout is only tuned in multivariate models whereas in the univariate cases it is set to zero.
+\item[Architecture:] The architecture tuning parameter sets the number of neurons in the hidden layer. In the case of the LSTM network it sets the number of neurons for every trainable layer in all gates. Therefore the total number of neurons in the hidden layer of the LSTM is four times that number.
+\end{description}
+\subsubsection{Tuning Process}
+For the parameter tuning a simple grid is expanded across the selected values for each tuning parameter. The model is then trained on all data up to December 2015 and evaluated using data from 2016 separately for each parameter combination. At the end the parameter combination with the best performance on the test set is selected.
+\subsection{Variable Selection}
+To select the most relevant input factor among all variables described above a forward selection method is used. This means that in each iteration of the process separate models are trained adding each of the remaining candidates to the model. Using the same train-test split as in the tuning process the most promising variable is  selected and removed from the set of candidates for the next iteration. This is repeated until five variables have been added. Afterwards the model configuration with the best performance among all sets of selected variables of size one to five is chosen. Note that in all cases the training and testing data is limited to complete observations containing values for all candidate variables. This is done to ensure that differences in performance can be attributed to the model choice as opposed to differences in data availability.
+\subsection{Model Evaluation}
+In the model evaluation phase the performance of the LSTM is compared to each of the reference models listed above both in its univariate as well as multivariate version. For the univariate version the parameter configurations are used that were determined in the first tuning step, whereas the parameters and input variables of the multivariate models are set according to the results of the second tuning iteration and the variable selection steps. Evaluation is done in a month wise rolling prediction, meaning that for each month from January - July 2017 the model is retrained on all data previous to that month and then tested based on its prediction for that month. Afterwards the mean value of the evaluation metric is calculated across the testing months.
