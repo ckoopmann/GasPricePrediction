@@ -24,14 +24,14 @@ df.par_tuning_mins = df.par_tuning_mins[,.(Model, HiddenNeurons, Dropout, Learni
 Filename = '../Latex/tables/binary_par_tuning_short.tex'
 caption = 'Selected parameter combinations in univariate tuning step of binary prediction'
 label = 'tab:binary.par.tuning.short'
-latex = xtable(df.par_tuning_mins, label = label, caption = caption, digits = 3)
+latex = xtable(df.par_tuning_mins, label = label, caption = caption, digits = 4)
 print(latex, file = Filename)
 
 
 Filename = '../Latex/tables/binary_par_tuning_full.tex'
 caption = 'Full Results in univariate tuning step of binary prediction'
 label = 'tab:binary.par.tuning.full'
-latex = xtable(df.par_tuning[,.(Model, HiddenNeurons, Dropout, LearningRate, BCE)], label = label, caption = caption, digits = 3)
+latex = xtable(df.par_tuning[,.(Model, HiddenNeurons, Dropout, LearningRate, BCE)], label = label, caption = caption, digits = 4)
 print(latex, file = Filename)
 
 #Analysis of Var-Selection
@@ -47,14 +47,14 @@ df.var_selection_mins = df.var_selection_mins[,.(Model, Variables, BCE)]
 Filename = '../Latex/tables/binary_var_selection_short.tex'
 caption = 'Selected variable combinations in variable selection step of binary prediction'
 label = 'tab:binary.var.selection.short'
-latex = xtable(df.var_selection_mins, label = label, caption = caption, digits = 3)
+latex = xtable(df.var_selection_mins, label = label, caption = caption, digits = 4)
 print(latex, file = Filename)
 
 
 Filename = '../Latex/tables/binary_var_selection_full.tex'
 caption = 'Full Results in variable selection step of binary prediction'
 label = 'tab:binary.var.selection.full'
-latex = xtable(df.var_selection[,.(Model, Variables, BCE)], label = label, caption = caption, digits = 3)
+latex = xtable(df.var_selection[,.(Model, Variables, BCE)], label = label, caption = caption, digits = 4)
 print(latex, file = Filename)
 
 #Analysis of Par-Tuning
@@ -69,14 +69,14 @@ df.multivar_par_tuning_mins = df.multivar_par_tuning_mins[,.(Model, HiddenNeuron
 Filename = '../Latex/tables/binary_multivar_par_tuning_short.tex'
 caption = 'Selected parameter combinations in multivariate tuning step of binary prediction'
 label = 'tab:binary.multivar.par.tuning.short'
-latex = xtable(df.multivar_par_tuning_mins, label = label, caption = caption, digits = 3)
+latex = xtable(df.multivar_par_tuning_mins, label = label, caption = caption, digits = 4)
 print(latex, file = Filename)
 
 
 Filename = '../Latex/tables/binary_multivar_par_tuning_full.tex'
 caption = 'Full Results in multivariate tuning step of binary prediction'
 label = 'tab:binary.multivar.par.tuning.full'
-latex = xtable(df.multivar_par_tuning[,.(Model, HiddenNeurons, Dropout, LearningRate, BCE)], label = label, caption = caption, digits = 3)
+latex = xtable(df.multivar_par_tuning[,.(Model, HiddenNeurons, Dropout, LearningRate, BCE)], label = label, caption = caption, digits = 4)
 print(latex, file = Filename)
 
 #Analysis of Model Evaluation
@@ -94,13 +94,13 @@ df.evaluation_mean = df.evaluation_mean[order(BCE),]
 Filename = '../Latex/tables/binary_eval_short.tex'
 caption = 'Average BCE across months for each model in evaluation step'
 label = 'tab:binary.eval.short'
-latex = xtable(df.evaluation_mean, label = label, caption = caption, digits = 3)
+latex = xtable(df.evaluation_mean, label = label, caption = caption, digits = 4)
 print(latex, file = Filename)
 
 Filename = '../Latex/tables/binary_eval_full.tex'
 caption = 'Full results by testing month for each model in evaluation step'
 label = 'tab:binary.eval.short'
-latex = xtable(df.evaluation, label = label, caption = caption, digits = 3)
+latex = xtable(df.evaluation, label = label, caption = caption, digits = 4)
 print(latex, file = Filename)
 
 

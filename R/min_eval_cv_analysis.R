@@ -16,6 +16,6 @@ df.evaluation = df.evaluation[order(CrossEntropy),]
 Filename = '../../Latex/tables/min_eval_cv.tex'
 caption = 'Test Results using monthly cross validation of tuned models for data 01 - 08/2017'
 label = 'tab:min.eval.cv'
-latex = xtable(df.evaluation, label = label, caption = caption, digits = 3)
+latex = xtable(df.evaluation, label = label, caption = caption, digits = 4)
 print(latex, file = Filename)
 
