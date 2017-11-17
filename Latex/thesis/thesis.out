@@ -28,17 +28,20 @@
 \BOOKMARK [3][-]{subsubsection.5.2.3}{Exchange Rates}{subsection.5.2}% 28
 \BOOKMARK [3][-]{subsubsection.5.2.4}{Data Availability}{subsection.5.2}% 29
 \BOOKMARK [1][-]{section.6}{Experimental Design}{}% 30
-\BOOKMARK [2][-]{subsection.6.1}{Reference Models}{section.6}% 31
-\BOOKMARK [2][-]{subsection.6.2}{Parameter Tuning}{section.6}% 32
-\BOOKMARK [3][-]{subsubsection.6.2.1}{Fixed Hyper-Parameters}{subsection.6.2}% 33
-\BOOKMARK [3][-]{subsubsection.6.2.2}{Tuning Parameters}{subsection.6.2}% 34
-\BOOKMARK [3][-]{subsubsection.6.2.3}{Tuning Process}{subsection.6.2}% 35
-\BOOKMARK [2][-]{subsection.6.3}{Variable Selection}{section.6}% 36
-\BOOKMARK [2][-]{subsection.6.4}{Model Evaluation}{section.6}% 37
-\BOOKMARK [1][-]{section.7}{Results}{}% 38
-\BOOKMARK [1][-]{section.8}{Conclusions}{}% 39
-\BOOKMARK [2][-]{subsection.8.1}{Results}{section.8}% 40
-\BOOKMARK [2][-]{subsection.8.2}{Outlook}{section.8}% 41
-\BOOKMARK [1][-]{subsection.8.2}{References}{}% 42
-\BOOKMARK [1][-]{appendix.A}{Figures}{}% 43
-\BOOKMARK [1][-]{appendix.B}{Tables}{}% 44
+\BOOKMARK [2][-]{subsection.6.1}{Preprocessing}{section.6}% 31
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Treatment of missing data}{subsection.6.1}% 32
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Feature scaling}{subsection.6.1}% 33
+\BOOKMARK [2][-]{subsection.6.2}{Reference Models}{section.6}% 34
+\BOOKMARK [2][-]{subsection.6.3}{Parameter Tuning}{section.6}% 35
+\BOOKMARK [3][-]{subsubsection.6.3.1}{Fixed Hyper-Parameters}{subsection.6.3}% 36
+\BOOKMARK [3][-]{subsubsection.6.3.2}{Tuning Parameters}{subsection.6.3}% 37
+\BOOKMARK [3][-]{subsubsection.6.3.3}{Tuning Process}{subsection.6.3}% 38
+\BOOKMARK [2][-]{subsection.6.4}{Variable Selection}{section.6}% 39
+\BOOKMARK [2][-]{subsection.6.5}{Model Evaluation}{section.6}% 40
+\BOOKMARK [1][-]{section.7}{Results}{}% 41
+\BOOKMARK [1][-]{section.8}{Conclusions}{}% 42
+\BOOKMARK [2][-]{subsection.8.1}{Results}{section.8}% 43
+\BOOKMARK [2][-]{subsection.8.2}{Outlook}{section.8}% 44
+\BOOKMARK [1][-]{subsection.8.2}{References}{}% 45
+\BOOKMARK [1][-]{appendix.A}{Figures}{}% 46
+\BOOKMARK [1][-]{appendix.B}{Tables}{}% 47

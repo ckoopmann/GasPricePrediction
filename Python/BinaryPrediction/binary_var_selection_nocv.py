@@ -23,7 +23,7 @@ data_path = '../../Data/Input/InputData.csv'
 parameter_selection_path = "../../Data/Output/BinaryPrediction/binary_par_tuning/evaluation.csv"
 
 length_passed = 20
-n_epochs = 300
+n_epochs = 600
 batch= 20
 scaling = True
 verbosity = 0

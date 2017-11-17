@@ -40,17 +40,20 @@
 \contentsline {subsubsection}{\numberline {5.2.3}Exchange Rates}{26}{subsubsection.5.2.3}
 \contentsline {subsubsection}{\numberline {5.2.4}Data Availability}{26}{subsubsection.5.2.4}
 \contentsline {section}{\numberline {6}Experimental Design}{27}{section.6}
-\contentsline {subsection}{\numberline {6.1}Reference Models}{28}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Parameter Tuning}{28}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}Fixed Hyper-Parameters}{29}{subsubsection.6.2.1}
-\contentsline {subsubsection}{\numberline {6.2.2}Tuning Parameters}{30}{subsubsection.6.2.2}
-\contentsline {subsubsection}{\numberline {6.2.3}Tuning Process}{31}{subsubsection.6.2.3}
-\contentsline {subsection}{\numberline {6.3}Variable Selection}{31}{subsection.6.3}
-\contentsline {subsection}{\numberline {6.4}Model Evaluation}{31}{subsection.6.4}
-\contentsline {section}{\numberline {7}Results}{32}{section.7}
-\contentsline {section}{\numberline {8}Conclusions}{33}{section.8}
-\contentsline {subsection}{\numberline {8.1}Results}{33}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Outlook}{33}{subsection.8.2}
-\contentsline {section}{References}{34}{subsection.8.2}
-\contentsline {section}{\numberline {A}Figures}{39}{appendix.A}
-\contentsline {section}{\numberline {B}Tables}{49}{appendix.B}
+\contentsline {subsection}{\numberline {6.1}Preprocessing}{28}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}Treatment of missing data}{28}{subsubsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.2}Feature scaling}{28}{subsubsection.6.1.2}
+\contentsline {subsection}{\numberline {6.2}Reference Models}{29}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Parameter Tuning}{30}{subsection.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}Fixed Hyper-Parameters}{30}{subsubsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.2}Tuning Parameters}{32}{subsubsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.3}Tuning Process}{32}{subsubsection.6.3.3}
+\contentsline {subsection}{\numberline {6.4}Variable Selection}{33}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Model Evaluation}{33}{subsection.6.5}
+\contentsline {section}{\numberline {7}Results}{34}{section.7}
+\contentsline {section}{\numberline {8}Conclusions}{35}{section.8}
+\contentsline {subsection}{\numberline {8.1}Results}{35}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Outlook}{35}{subsection.8.2}
+\contentsline {section}{References}{36}{subsection.8.2}
+\contentsline {section}{\numberline {A}Figures}{41}{appendix.A}
+\contentsline {section}{\numberline {B}Tables}{51}{appendix.B}

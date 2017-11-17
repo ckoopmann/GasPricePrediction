@@ -11,7 +11,7 @@ The target variable of the binary prediction problem can best be described as th
 \begin{align*}
 y_{d,M}^{binary} = \prod_{i >= d} I(y_{d,M}^{level} \leq y_{i,M}^{level})
 \end{align*}
-To avoid misunderstanding is important to note that this variable does not correspond to the question of whether a certain trading day is minimal among all days of that month. In fact there is no theoretical limit on the amount of positive observations of this variable. In case of constantly rising prices all observations of this variable would be positive. For the whole data around a quarter of the observations are positive, however this share can vary significantly as shown in table \ref{tab:balance-overview}.
+To avoid misunderstanding is important to note that this variable does not correspond to the question of whether a certain trading day is minimal among all days of that month. In fact there is no theoretical limit on the amount of positive observations of this variable. In case of constantly rising prices all observations of this variable would be positive. For the whole data around a quarter of the observations are positive, however this share can vary significantly as shown in table \ref{tab:balance-overview}. It is important to note that the value of this variable at any point in time contains information regarding future prices that is not available at that time point. Therefore this variable is never used as an input variable and the univariate models in the binary prediction case also take the past values of the price level target variable as inputs.
 
 \subsection{Input Variables}\label{Sec:Input}
 In the following I will briefly describe all potential input variables that were included in the variable selection. These variables can be sorted into three categories: Energy commodity prices, gas market fundamentals and exchange rates, each of which will be illustrated separately. The initial choice of candidate variables was based on input from energy traders at BASF SE. The development of each input variable across time is plotted in figures  \ref{fig:TTFDAlevel} - \ref{fig:EURGBPFXlevel}.
@@ -35,5 +35,5 @@ The second group of input variables contain data on the three main fundamental f
 \end{description}
 \subsubsection{Exchange Rates}
 As mentioned above, some of the commodity prices included as inputs are denoted in US Dollar or British Pound. Therefore the exchange rates of both currencies to the Euro are included as daily closing prices to enable the models to react to the effects of foreign exchange rate volatility.
-\subsubsection{Data Availability}
+\subsubsection{Data Availability}\label{Sec:Data-Availability}
 In table \ref{tab:data-availability} one can see that the different categories of input variables vary strongly regarding the amount of data available. Whereas the commodity prices and exchange rates are available starting in 2010, the gas market fundamentals data start between 2012-2014 with many variable providing around half as many non missing observations as the target variable. 

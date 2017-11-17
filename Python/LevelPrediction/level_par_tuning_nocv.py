@@ -21,7 +21,7 @@ loss_functions_dict = {'mae':mean_absolute_error,  'mse': mean_squared_error, 'b
 output_path = "../../Data/Output/LevelPrediction/level_par_tuning"
 data_path = '../../Data/Input/InputData.csv'
 length_passed = 20
-n_epochs = 300
+n_epochs = 600
 batch= 20
 scaling = True
 

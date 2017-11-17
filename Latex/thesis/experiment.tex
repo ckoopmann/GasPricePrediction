@@ -1,6 +1,10 @@
 \section{Experimental Design}
 Designing an experiment to evaluate the performance of the LSTM model in comparison to reference models one has to solve several problems regarding the following topics:
 \begin{enumerate}
+\item Preprocessing\begin{itemize}
+	\item Treatment of missing data
+	\item Feature scaling
+\end{itemize}
 \item Reference models\begin{itemize}
 	\item Selecting reference models
 \end{itemize}
@@ -29,12 +33,26 @@ A major challenge arising from this problem is the interdependence between the p
 Each of these steps is executed both for the LSTM model as well as for each reference model for which it is applicable.
 A \textit{univariate} model in this context is a model trained using only past observations of the front month price as input, whereas multivariate models use both the front month price as well as at least one additional input variable. In the following paragraphs the selected approach for each of the above mentioned decision problems is outlined.
 
+\subsection{Preprocessing}
+Due to the high quality of the time series data on the \textit{Thomson Reuters Eikon} data platform, the amount of preprocessing necessary for this prediction problem was relatively limited. The preprocessing steps that are probably most interesting and have the most effect on the results were the treatment of missing data and the feature scaling for the price level prediction.
+\subsubsection{Treatment of missing data}
+As mentioned in section \ref{Sec:Data-Availability} the majority of incomplete observations are due to the fact that some variables are available only from a relatively later starting point than the target variable. To ensure that the different models are trained on the same amount and quality of data independent of the input variables of each model, all observations for the time period where some of the variables have not yet been observed at all is dropped from the training and testing data set entirely. The cases of missing data for some variables after that time period are mostly due to different number of trading days for the various financial assets as well as some variables not being recorded on a daily basis. Due to this fact and the observations that variables are rarely missing for more than a few days in a row a forward filling replacement strategy has been chosen, replacing missing observations with the last non-missing observation of that variable.
+\subsubsection{Feature scaling}
+For both the binary as well as the price level prediction problem the input data is scaled to values in the interval $[-1,1]$ using the Min-Max scaling approach as implemented in the \textit{scikit-learn} package. This scaling approach is based on the following formula: \begin{align*}
+\tilde{x}_t = 2\frac{x_t - \min_{t \in T_{train}}(x_t)}{\max_{t \in T_{train}}(x_t)-\min_{t \in T_{train}}(x_t)} - 1
+\end{align*}
+Note that the minimum and maximum is determined on the training data only to avoid including information from the test dataset. Although theoretically this could lead to values of the target variable outside of the desired interval in the test set changing this approach has not shown any effect on the results and therefore the more rigorous approach with regard to train-test separation has been chosen. For the price level prediction the target variable is also scaled using this approach in order to ensure that it is within the value range of the $tanh$ function.
 \subsection{Reference Models}
 The prediction results of the LSTM model are compared to each of the following reference models:
 \begin{description}
 \item[Simple Recurrent Neural Network (RNN):] This model is the implementation of the above outlined simple RNN architecture where the hidden layer output of the past time step is used as another input variable.
 \item[Feed Forward Neural Network (FFNN):] The FFNN model is an implementation of the classical Neural Network without any recurrent connection modelling  a static input output mapping. 
-\item[Regression Models:] In the case of the price level prediction this reference model consists of a standard linear model. In the univariate case it is an AR(1) model whereas in the multivariate case it is a linear regression on the last available value for each variable. For the binary prediction problem a logistic regression on the same set of variables is applied. All regression models are implemented as special cases of a FFNN without hidden layer and a linear or logistic output layer. That means the solution in both cases is found using gradient descent, and the learning rate as well as dropout is trained in the same way as for the other models.
+\item[Regression Models:] This reference model consists of a Feed Forward Neural Network without any hidden layer. The model therefore just applies the output activation function on a linear combination of the input variables. In the case of the binary prediction problem  where a logistic activation function is used, this is equivalent to a logistic regression, with the difference that the model is trained using gradient descent instead of maximum likelihood. In the case of the price level prediction the $tanh$ function is applied to the linear combination resulting in a somewhat unconventional regression model.
+\item[Lagged Price Level:] This reference forecast for the price level prediction is generated by just choosing today's price level as prediction for the closing price of the next trading day. It therefore represents the market expectation of the price.
+\item[Equal Distribution:] This reference for the binary prediction problem is based on the assumption that all remaining trading days are equally likely to deliver the minimal closing price. Therefore the probability forecast for the current trading day to be minimal is: \begin{align*}
+\tilde{y}^{binary}_{t,M} = \frac{1}{N^{remaining}_{t,M}}
+\end{align*}
+In this case $N^{remaining}_{t,M}$ represents the number of trading days that remain in month $M$ starting from and including trading day $t$.
 \end{description}
 
 
@@ -55,6 +73,10 @@ BCE &= -\frac{1}{n}\sum_{i=1}^{n}(y_i)log(\tilde{y_i}) + (1-y_i)log(1-\tilde{y_i
 \end{align*}
 
 \item[Optimizer:] The \textit{optimizer} chooses an optimization algorithm to use when minimizing the loss function on the training set. Following practice and advice from the machine learning community the \textit{Stochastic Gradient Descent} optimizer is used for the FFNN models. Following the advice in the \textit{Keras} documentation the \textit{RMSProp} optimizer is used for recurrent models.
+
+\item[Output Activation:] The output activation is the function that is applied to the linear combination of hidden layer outputs fed into the output layer. This activation function depends on the target variable. For the binary target variable the $logit$ function is chosen to generate predictions in the interval $[0,1]$. In the case of the price level prediction a $tanh$ activation is chosen generating predictions in the interval $[-1,1]$ which is the value range of the scaled target variable.
+
+\item[Hidden Activation:] For the activation function on the hidden layer the $tanh$ function is chosen for all networks in both prediction problems.
 \end{description}
 \subsubsection{Tuning Parameters}
 In the parameter tuning stage each model was tuned over the following parameters
