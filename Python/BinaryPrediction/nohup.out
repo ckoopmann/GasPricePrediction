@@ -30584,3 +30584,34 @@ Non-trainable params: 0
 _________________________________________________________________
 None
 Already up-to-date.
+[master 481214d] New AWS results - Binary Multivar Par Tuning
+ Committer: EC2 Default User <ec2-user@ip-172-31-19-80.us-west-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 4 files changed, 118273 insertions(+), 80761 deletions(-)
+ rewrite Data/Output/BinaryPrediction/binary_multivar_par_tuning/evaluation.csv (98%)
+To https://github.com/ckoopmann/GasPricePrediction.git
+   b846d57..481214d  master -> master
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "binary_eval_cv.py", line 48, in <module>
+    architecture_dict_multivar = {model_name: [int(s) for s in str(par_selection_df_multivar.iloc[par_selection_df_multivar.loc[par_selection_df_multivar.Model == model_name, loss].idxmin()].Architecture).split('_')] for model_name in models}
+  File "binary_eval_cv.py", line 48, in <dictcomp>
+    architecture_dict_multivar = {model_name: [int(s) for s in str(par_selection_df_multivar.iloc[par_selection_df_multivar.loc[par_selection_df_multivar.Model == model_name, loss].idxmin()].Architecture).split('_')] for model_name in models}
+  File "/usr/lib64/python3.4/dist-packages/pandas/core/indexing.py", line 1328, in __getitem__
+    return self._getitem_axis(key, axis=0)
+  File "/usr/lib64/python3.4/dist-packages/pandas/core/indexing.py", line 1749, in _getitem_axis
+    self._is_valid_integer(key, axis)
+  File "/usr/lib64/python3.4/dist-packages/pandas/core/indexing.py", line 1638, in _is_valid_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Already up-to-date.
