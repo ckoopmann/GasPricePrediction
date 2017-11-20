@@ -1,19 +1,54 @@
 \section{Results}
+In the following paragraphs, the results of the above described experiment will be presented and the performance of each model evaluated accordingly for both the price level as well as the binary prediction problem. The interpretation of these results will be left to section \ref{Sec:Conc}.
 \subsection{Price Level Prediction}
+As mentioned above the tuning and variable selection steps were done with a single train test split. This resulted in a training data set that contained $744$ observations and a test data set of $372$ observations.
 \subsubsection{Univariate Parameter Tuning}
+In the first step where the univariate version of each model is tuned over the number of hidden neurons and the learning rate, the chosen parameter combinations differ significantly among the different model types. For example for the learning rate the recurrent models end up with a value of $0.001$ whereas the feed forward neural network and the neural network based regression are tuned to higher values. Apart from the difference in the model architecture these results might actually be influence by the different optimizers chosen for each type of model. Regarding the number of hidden neurons it should be noted that this parameter is not tuned for the regression model since by definition this model does not contain any hidden neurons. With regards to this parameter the LSTM is tuned to the highest value in the parameter grid whereas the other two neural networks are tunded to the lowest one. Combined with the effects of the LSTM architecture this causes the LSTM to contain by far the highest number of trainable parameters with a total of $4385$ against $89$ and $25$ parameters for the RNN and FFNN models.
 \input{\string"../tables/level_par_tuning_short\string".tex}
 \subsubsection{Variable Selection}
+Table \ref{tab:level.var.selection.short} shows the best performing variable combinations of each model when iteratively adding up to five additional variables in forward selection manner. When analysing the results it is important to keep in mind that using this approach starting with $15$ candidate variables each model was trained $65$ times. Since this is much higher than the number of parameter combinations in the parameter tuning, it is not surprising that the MSE values are much lower than in those steps. Regarding the different model types it can be observed that the recurrent models are tuned to a lower number of additional input variables than the FFNN and Regression model. UK Storage levels, the front month future at the NBP hub and the electricity base load front month are variables that are selected as inputs across different model types. This indicates that they might actually contain some predictive value as opposed to being just a chance selection resulting from random fluctuations in the tuning process.
 \input{\string"../tables/level_var_selection_short\string".tex}
 \subsubsection{Multivariate Parameter Tuning}
+In the multivariate tuning the same approach is used as in the univariate case with the difference of adding the dropout as additional tuning variable and using multivariate models with the input variables selected above. Again one can see somewhat similar results to the univariate tuning step regarding the selection of the  learning rate. However in the case of the number of hidden neurons the LSTM is tuned to a lower number whereas the chosen number of neurons for both the RNN as well as FFNN increases. Dropout seems not to bring any additional benefit to model performance with it being tuned to zero for all models but the LSTM.
 \input{\string"../tables/level_multivar_par_tuning_short\string".tex}
 \subsubsection{Evaluation}
+Resulting from the rolling prediction approach selected for this step all models are trained on a larger amount of training data than in the tuning and variable selection steps. This number increases with each month chosen as test month from $1116$ to $1302$. In table \ref{tab:level.eval.short} the average value of the MSE across months is shown for each model. From these results one can draw several observations. Firstly the LSTM model outperforms all other neural networks as well as the regression approach both within the univariate as well as multivariate models. Secondly within each model category the the univariate version outperforms that which contains additional inputs. However the most significant observation  might be the fact that none of the models is able to outperform the lagged value approach representing the current market prices. Also there is a big gap between the worst two models represented by the multivariate feed forward neural network and regression models and the rest of the models.
 \input{\string"../tables/level_eval_short\string".tex}
+Figures \ref{fig:level_evaluation_monthly_multivar} and \ref{fig:level_evaluation_monthly_univar} give  a more detailed impression of the performance of each model across test months, by showing the mean squared error on the test set for each test month selected in the evaluation process. From these graphs a few additional observations can be obtained. Regarding the relative performance of the different models, one can observe that the differences in performance generally diminish over time and that the  overall differences are mainly driven by the earlier months. Also the mean squared error of the best models closely follow that of the lagged value reference model. In fact the remaining difference in performance between the univariate LSTM and the lagged value reference vanishes almost completely in the later months.
+
+\begin{figure}[h!]
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/level_evaluation_monthly_multivar\string".png}
+  \caption{Month wise MSE for multivariate models}\label{fig:level_evaluation_monthly_multivar}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/level_evaluation_monthly_univar\string".png}
+  \caption{Month wise MSE for univariate models}\label{fig:level_evaluation_monthly_univar}
+\end{figure}
+
+The consistent similarity in performance among the LSTM and the lagged value references suggest that they might provide very similar  predictions. As figure \ref{fig:level_predictions} shows this in fact true. Graphically the predictions from both approaches are almost indistinguishable even after zooming in on the time frame starting in March 2017.
+
+\begin{figure}[h!]
+  \centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{\string"../../Plots/level_predictions\string".png}
+  \caption{Predictions LSTM vs. Lagged Value }\label{fig:level_predictions}
+\end{figure}
+
+\FloatBarrier
 \subsection{Binary Prediction}
 \subsubsection{Univariate Parameter Tuning}
 \input{\string"../tables/binary_par_tuning_short\string".tex}
 \subsubsection{Variable Selection}
 \input{\string"../tables/binary_var_selection_short\string".tex}
 \subsubsection{Multivariate Parameter Tuning}
+
 \input{\string"../tables/binary_multivar_par_tuning_short\string".tex}
 \subsubsection{Evaluation}
 \input{\string"../tables/binary_eval_short\string".tex}
+\subsubsection{Trading Strategy}
+\input{\string"../tables/binary_trade_short\string".tex}
+
+\FloatBarrier
+

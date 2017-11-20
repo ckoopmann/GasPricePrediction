@@ -53,17 +53,18 @@
 \contentsline {section}{\numberline {7}Results}{34}{section.7}
 \contentsline {subsection}{\numberline {7.1}Price Level Prediction}{34}{subsection.7.1}
 \contentsline {subsubsection}{\numberline {7.1.1}Univariate Parameter Tuning}{34}{subsubsection.7.1.1}
-\contentsline {subsubsection}{\numberline {7.1.2}Variable Selection}{34}{subsubsection.7.1.2}
-\contentsline {subsubsection}{\numberline {7.1.3}Multivariate Parameter Tuning}{34}{subsubsection.7.1.3}
-\contentsline {subsubsection}{\numberline {7.1.4}Evaluation}{35}{subsubsection.7.1.4}
-\contentsline {subsection}{\numberline {7.2}Binary Prediction}{35}{subsection.7.2}
-\contentsline {subsubsection}{\numberline {7.2.1}Univariate Parameter Tuning}{35}{subsubsection.7.2.1}
-\contentsline {subsubsection}{\numberline {7.2.2}Variable Selection}{35}{subsubsection.7.2.2}
-\contentsline {subsubsection}{\numberline {7.2.3}Multivariate Parameter Tuning}{36}{subsubsection.7.2.3}
-\contentsline {subsubsection}{\numberline {7.2.4}Evaluation}{36}{subsubsection.7.2.4}
-\contentsline {section}{\numberline {8}Conclusions}{37}{section.8}
-\contentsline {subsection}{\numberline {8.1}Results}{37}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Outlook}{37}{subsection.8.2}
-\contentsline {section}{References}{38}{subsection.8.2}
-\contentsline {section}{\numberline {A}Figures}{43}{appendix.A}
-\contentsline {section}{\numberline {B}Tables}{53}{appendix.B}
+\contentsline {subsubsection}{\numberline {7.1.2}Variable Selection}{35}{subsubsection.7.1.2}
+\contentsline {subsubsection}{\numberline {7.1.3}Multivariate Parameter Tuning}{35}{subsubsection.7.1.3}
+\contentsline {subsubsection}{\numberline {7.1.4}Evaluation}{36}{subsubsection.7.1.4}
+\contentsline {subsection}{\numberline {7.2}Binary Prediction}{39}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}Univariate Parameter Tuning}{39}{subsubsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2}Variable Selection}{39}{subsubsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.3}Multivariate Parameter Tuning}{39}{subsubsection.7.2.3}
+\contentsline {subsubsection}{\numberline {7.2.4}Evaluation}{39}{subsubsection.7.2.4}
+\contentsline {subsubsection}{\numberline {7.2.5}Trading Strategy}{39}{subsubsection.7.2.5}
+\contentsline {section}{\numberline {8}Conclusions}{40}{section.8}
+\contentsline {subsection}{\numberline {8.1}Results}{40}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Outlook}{40}{subsection.8.2}
+\contentsline {section}{References}{41}{subsection.8.2}
+\contentsline {section}{\numberline {A}Figures}{46}{appendix.A}
+\contentsline {section}{\numberline {B}Tables}{56}{appendix.B}

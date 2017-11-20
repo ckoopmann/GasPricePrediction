@@ -1,17 +1,20 @@
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Fri Nov 17 15:45:11 2017
-\begin{table}[ht]
+% Mon Nov 20 15:01:03 2017
+\begin{table}[h!]
 \centering
-\begin{tabular}{rlrrrr}
+ \begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{lrrrr}
   \hline
- & Model & HiddenNeurons & Dropout & LearningRate & BCE \\ 
+Model & HiddenNeurons & Dropout & LearningRate & BCE \\ 
   \hline
-1 & LSTM &     8 & 0.0000 & 0.0010 & 0.1530 \\ 
-  2 & RNN &    32 & 0.0000 & 0.0001 & 0.1594 \\ 
-  3 & FFNN &    16 & 0.0000 & 0.0100 & 0.1953 \\ 
-  4 & Regression &     0 & 0.0000 & 0.1000 & 0.1954 \\ 
+LSTM &    32 & 0.2500 & 0.0010 & 0.4494 \\ 
+  RNN &    16 & 0.5000 & 0.0100 & 0.4721 \\ 
+  FFNN &     8 & 0.0000 & 0.0100 & 0.4734 \\ 
+  Regression &     0 & 0.0000 & 0.1000 & 0.4904 \\ 
    \hline
-\end{tabular}
+ \end{tabular}
+\end{adjustbox}
 \caption{Selected parameter combinations in multivariate tuning step of binary prediction} 
 \label{tab:binary.multivar.par.tuning.short}
 \end{table}
+

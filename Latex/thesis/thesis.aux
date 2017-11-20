@@ -17,6 +17,7 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \bibstyle{ecta}
+\providecommand \oddpage@label [2]{}
 \@writefile{toc}{\contentsline {section}{List of Abbreviations}{v}{section*.3}}
 \@writefile{toc}{\contentsline {section}{List of Figures}{vi}{section*.4}}
 \@writefile{toc}{\contentsline {section}{List of Tables}{vii}{section*.5}}
@@ -197,32 +198,41 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.1}Univariate Parameter Tuning}{34}{subsubsection.7.1.1}}
 \@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Selected parameter combinations in univariate tuning step of price level prediction}}{34}{table.5}}
 \newlabel{tab:level.par.tuning.short}{{5}{34}{Selected parameter combinations in univariate tuning step of price level prediction}{table.5}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.2}Variable Selection}{34}{subsubsection.7.1.2}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Selected variable combinations in variable selection step of price level prediction}}{34}{table.6}}
-\newlabel{tab:level.var.selection.short}{{6}{34}{Selected variable combinations in variable selection step of price level prediction}{table.6}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.3}Multivariate Parameter Tuning}{34}{subsubsection.7.1.3}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Selected parameter combinations in multivariate tuning step of price level prediction}}{34}{table.7}}
-\newlabel{tab:level.multivar.par.tuning.short}{{7}{34}{Selected parameter combinations in multivariate tuning step of price level prediction}{table.7}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Average MSE across months for each model in evaluation step}}{35}{table.8}}
-\newlabel{tab:level.eval.short}{{8}{35}{Average MSE across months for each model in evaluation step}{table.8}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.4}Evaluation}{35}{subsubsection.7.1.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Binary Prediction}{35}{subsection.7.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.1}Univariate Parameter Tuning}{35}{subsubsection.7.2.1}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Selected parameter combinations in univariate tuning step of binary prediction}}{35}{table.9}}
-\newlabel{tab:binary.par.tuning.short}{{9}{35}{Selected parameter combinations in univariate tuning step of binary prediction}{table.9}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2}Variable Selection}{35}{subsubsection.7.2.2}}
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Selected variable combinations in variable selection step of binary prediction}}{35}{table.10}}
-\newlabel{tab:binary.var.selection.short}{{10}{35}{Selected variable combinations in variable selection step of binary prediction}{table.10}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.3}Multivariate Parameter Tuning}{36}{subsubsection.7.2.3}}
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Selected parameter combinations in multivariate tuning step of binary prediction}}{36}{table.11}}
-\newlabel{tab:binary.multivar.par.tuning.short}{{11}{36}{Selected parameter combinations in multivariate tuning step of binary prediction}{table.11}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.4}Evaluation}{36}{subsubsection.7.2.4}}
-\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Average BCE across months for each model in evaluation step}}{36}{table.12}}
-\newlabel{tab:binary.eval.short}{{12}{36}{Average BCE across months for each model in evaluation step}{table.12}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusions}{37}{section.8}}
-\newlabel{Sec:Conc}{{8}{37}{Conclusions}{section.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Results}{37}{subsection.8.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Outlook}{37}{subsection.8.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.2}Variable Selection}{35}{subsubsection.7.1.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Selected variable combinations in variable selection step of price level prediction}}{35}{table.6}}
+\newlabel{tab:level.var.selection.short}{{6}{35}{Selected variable combinations in variable selection step of price level prediction}{table.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.3}Multivariate Parameter Tuning}{35}{subsubsection.7.1.3}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Selected parameter combinations in multivariate tuning step of price level prediction}}{36}{table.7}}
+\newlabel{tab:level.multivar.par.tuning.short}{{7}{36}{Selected parameter combinations in multivariate tuning step of price level prediction}{table.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.4}Evaluation}{36}{subsubsection.7.1.4}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Average MSE across months for each model in evaluation step}}{36}{table.8}}
+\newlabel{tab:level.eval.short}{{8}{36}{Average MSE across months for each model in evaluation step}{table.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Month wise MSE for multivariate models}}{37}{figure.6}}
+\newlabel{fig:level_evaluation_monthly_multivar}{{6}{37}{Month wise MSE for multivariate models}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Month wise MSE for univariate models}}{38}{figure.7}}
+\newlabel{fig:level_evaluation_monthly_univar}{{7}{38}{Month wise MSE for univariate models}{figure.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Predictions LSTM vs. Lagged Value }}{38}{figure.8}}
+\newlabel{fig:level_predictions}{{8}{38}{Predictions LSTM vs. Lagged Value}{figure.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Selected parameter combinations in univariate tuning step of binary prediction}}{39}{table.9}}
+\newlabel{tab:binary.par.tuning.short}{{9}{39}{Selected parameter combinations in univariate tuning step of binary prediction}{table.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Selected variable combinations in variable selection step of binary prediction}}{39}{table.10}}
+\newlabel{tab:binary.var.selection.short}{{10}{39}{Selected variable combinations in variable selection step of binary prediction}{table.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Selected parameter combinations in multivariate tuning step of binary prediction}}{39}{table.11}}
+\newlabel{tab:binary.multivar.par.tuning.short}{{11}{39}{Selected parameter combinations in multivariate tuning step of binary prediction}{table.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Average BCE across months for each model in evaluation step}}{39}{table.12}}
+\newlabel{tab:binary.eval.short}{{12}{39}{Average BCE across months for each model in evaluation step}{table.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Binary Prediction}{39}{subsection.7.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.1}Univariate Parameter Tuning}{39}{subsubsection.7.2.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2}Variable Selection}{39}{subsubsection.7.2.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.3}Multivariate Parameter Tuning}{39}{subsubsection.7.2.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.4}Evaluation}{39}{subsubsection.7.2.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.5}Trading Strategy}{39}{subsubsection.7.2.5}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Average price per MWh across months for simple trading strategy based on each model}}{40}{table.13}}
+\newlabel{tab:binary.trade.short}{{13}{40}{Average price per MWh across months for simple trading strategy based on each model}{table.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusions}{40}{section.8}}
+\newlabel{Sec:Conc}{{8}{40}{Conclusions}{section.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Results}{40}{subsection.8.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Outlook}{40}{subsection.8.2}}
 \bibdata{MasterThesis}
 \bibcite{abrishami_different_2011}{{1}{2011}{{Abrishami and Varahrami}}{{Abrishami and Varahrami}}}
 \bibcite{alizadeh_monthly_2010}{{2}{2010}{{Alizadeh and Mafinezhad}}{{Alizadeh and Mafinezhad}}}
@@ -235,7 +245,7 @@
 \bibcite{ceperic_short-term_2017}{{9}{2017}{{Ceperic et~al.}}{{Ceperic, Zikovic, and Ceperic}}}
 \bibcite{chinn_predictive_2014}{{10}{2014}{{Chinn and Coibion}}{{Chinn and Coibion}}}
 \bibcite{contreras_arima_2003}{{11}{2003}{{Contreras et~al.}}{{Contreras, Espinola, Nogales, and Conejo}}}
-\@writefile{toc}{\contentsline {section}{References}{38}{subsection.8.2}}
+\@writefile{toc}{\contentsline {section}{References}{41}{subsection.8.2}}
 \bibcite{crespo_cuaresma_forecasting_2004}{{12}{2004}{{Crespo~Cuaresma et~al.}}{{Crespo~Cuaresma, Hlouskova, Kossmeier, and Obersteiner}}}
 \bibcite{cruz_effect_2011}{{13}{2011}{{Cruz et~al.}}{{Cruz, Muñoz, Zamora, and Espínola}}}
 \bibcite{dees_assessing_2008}{{14}{2008}{{Dées et~al.}}{{Dées, Gasteuil, Kaufmann, and Mann}}}
@@ -282,49 +292,49 @@
 \bibcite{ye_monthly_2005}{{55}{2005}{{Ye et~al.}}{{Ye, Zyren, and Shore}}}
 \bibcite{ye_forecasting_2006}{{56}{2006}{{Ye et~al.}}{{Ye, Zyren, and Shore}}}
 \bibcite{zareipour_application_2006}{{57}{2006}{{Zareipour et~al.}}{{Zareipour, Cañizares, Bhattacharya, and Thomson}}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Figures}{43}{appendix.A}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces TTF Front Month vs. Individual Months}}{43}{figure.6}}
-\newlabel{fig:ttf_monthly_level_2016_02}{{6}{43}{TTF Front Month vs. Individual Months}{figure.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces TTF Front Month Closing Prices}}{43}{figure.7}}
-\newlabel{fig:ttf_fm_level}{{7}{43}{TTF Front Month Closing Prices}{figure.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Auto Correlations TTF Front Month Closing Prices}}{44}{figure.8}}
-\newlabel{fig:acf_ttf_fm_level}{{8}{44}{Auto Correlations TTF Front Month Closing Prices}{figure.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Partial Auto Correlations TTF Front Month Closing Prices}}{44}{figure.9}}
-\newlabel{fig:pacf_ttf_fm_level}{{9}{44}{Partial Auto Correlations TTF Front Month Closing Prices}{figure.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces TTF Day Ahead}}{45}{figure.10}}
-\newlabel{fig:TTFDAlevel}{{10}{45}{TTF Day Ahead}{figure.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces NBP Front Month}}{45}{figure.11}}
-\newlabel{fig:NBPFMlevel}{{11}{45}{NBP Front Month}{figure.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Brent Oil Front Month}}{46}{figure.12}}
-\newlabel{fig:OilFMlevel}{{12}{46}{Brent Oil Front Month}{figure.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Phelix Base Load Front Month}}{46}{figure.13}}
-\newlabel{fig:ElectricityBaseFMlevel}{{13}{46}{Phelix Base Load Front Month}{figure.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Phelix Peak Load Front Month}}{47}{figure.14}}
-\newlabel{fig:ElectricityPeakFMlevel}{{14}{47}{Phelix Peak Load Front Month}{figure.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Dutch LDZ Consumption}}{47}{figure.15}}
-\newlabel{fig:ConLDZNLlevel}{{15}{47}{Dutch LDZ Consumption}{figure.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Dutch Non-LDZ Consumption}}{48}{figure.16}}
-\newlabel{fig:ConNLDZNLlevel}{{16}{48}{Dutch Non-LDZ Consumption}{figure.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Dutch Production}}{48}{figure.17}}
-\newlabel{fig:ProdNLlevel}{{17}{48}{Dutch Production}{figure.17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces UK Continental Shelf Production}}{49}{figure.18}}
-\newlabel{fig:ProdUKCSlevel}{{18}{49}{UK Continental Shelf Production}{figure.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces UK Continental Shelf Production}}{49}{figure.19}}
-\newlabel{fig:ProdUKCSlevel}{{19}{49}{UK Continental Shelf Production}{figure.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Dutch Storage}}{50}{figure.20}}
-\newlabel{fig:StorageNLlevel}{{20}{50}{Dutch Storage}{figure.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces UK Storage}}{50}{figure.21}}
-\newlabel{fig:StorageUKlevel}{{21}{50}{UK Storage}{figure.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces BBL Pipeline Flow}}{51}{figure.22}}
-\newlabel{fig:TradeBBLlevel}{{22}{51}{BBL Pipeline Flow}{figure.22}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Interconnector Pipeline Flow}}{51}{figure.23}}
-\newlabel{fig:TradeIUKlevel}{{23}{51}{Interconnector Pipeline Flow}{figure.23}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces USD - EUR Exchange Rate}}{52}{figure.24}}
-\newlabel{fig:EURUSDFXlevel}{{24}{52}{USD - EUR Exchange Rate}{figure.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces GBP - EUR Exchange Rate}}{52}{figure.25}}
-\newlabel{fig:EURGBPFXlevel}{{25}{52}{GBP - EUR Exchange Rate}{figure.25}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Tables}{53}{appendix.B}}
-\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Data Availability of all Input Variables}}{53}{table.13}}
-\newlabel{tab:data-availability}{{13}{53}{Data Availability of all Input Variables}{table.13}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Annual share of positive observation for binary target variable}}{54}{table.14}}
-\newlabel{tab:balance-overview}{{14}{54}{Annual share of positive observation for binary target variable}{table.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Figures}{46}{appendix.A}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces TTF Front Month vs. Individual Months}}{46}{figure.9}}
+\newlabel{fig:ttf_monthly_level_2016_02}{{9}{46}{TTF Front Month vs. Individual Months}{figure.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces TTF Front Month Closing Prices}}{46}{figure.10}}
+\newlabel{fig:ttf_fm_level}{{10}{46}{TTF Front Month Closing Prices}{figure.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Auto Correlations TTF Front Month Closing Prices}}{47}{figure.11}}
+\newlabel{fig:acf_ttf_fm_level}{{11}{47}{Auto Correlations TTF Front Month Closing Prices}{figure.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Partial Auto Correlations TTF Front Month Closing Prices}}{47}{figure.12}}
+\newlabel{fig:pacf_ttf_fm_level}{{12}{47}{Partial Auto Correlations TTF Front Month Closing Prices}{figure.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces TTF Day Ahead}}{48}{figure.13}}
+\newlabel{fig:TTFDAlevel}{{13}{48}{TTF Day Ahead}{figure.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces NBP Front Month}}{48}{figure.14}}
+\newlabel{fig:NBPFMlevel}{{14}{48}{NBP Front Month}{figure.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Brent Oil Front Month}}{49}{figure.15}}
+\newlabel{fig:OilFMlevel}{{15}{49}{Brent Oil Front Month}{figure.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Phelix Base Load Front Month}}{49}{figure.16}}
+\newlabel{fig:ElectricityBaseFMlevel}{{16}{49}{Phelix Base Load Front Month}{figure.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Phelix Peak Load Front Month}}{50}{figure.17}}
+\newlabel{fig:ElectricityPeakFMlevel}{{17}{50}{Phelix Peak Load Front Month}{figure.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Dutch LDZ Consumption}}{50}{figure.18}}
+\newlabel{fig:ConLDZNLlevel}{{18}{50}{Dutch LDZ Consumption}{figure.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Dutch Non-LDZ Consumption}}{51}{figure.19}}
+\newlabel{fig:ConNLDZNLlevel}{{19}{51}{Dutch Non-LDZ Consumption}{figure.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Dutch Production}}{51}{figure.20}}
+\newlabel{fig:ProdNLlevel}{{20}{51}{Dutch Production}{figure.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces UK Continental Shelf Production}}{52}{figure.21}}
+\newlabel{fig:ProdUKCSlevel}{{21}{52}{UK Continental Shelf Production}{figure.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces UK Continental Shelf Production}}{52}{figure.22}}
+\newlabel{fig:ProdUKCSlevel}{{22}{52}{UK Continental Shelf Production}{figure.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Dutch Storage}}{53}{figure.23}}
+\newlabel{fig:StorageNLlevel}{{23}{53}{Dutch Storage}{figure.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces UK Storage}}{53}{figure.24}}
+\newlabel{fig:StorageUKlevel}{{24}{53}{UK Storage}{figure.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces BBL Pipeline Flow}}{54}{figure.25}}
+\newlabel{fig:TradeBBLlevel}{{25}{54}{BBL Pipeline Flow}{figure.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Interconnector Pipeline Flow}}{54}{figure.26}}
+\newlabel{fig:TradeIUKlevel}{{26}{54}{Interconnector Pipeline Flow}{figure.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces USD - EUR Exchange Rate}}{55}{figure.27}}
+\newlabel{fig:EURUSDFXlevel}{{27}{55}{USD - EUR Exchange Rate}{figure.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces GBP - EUR Exchange Rate}}{55}{figure.28}}
+\newlabel{fig:EURGBPFXlevel}{{28}{55}{GBP - EUR Exchange Rate}{figure.28}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Tables}{56}{appendix.B}}
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Data Availability of all Input Variables}}{56}{table.14}}
+\newlabel{tab:data-availability}{{14}{56}{Data Availability of all Input Variables}{table.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Annual share of positive observation for binary target variable}}{57}{table.15}}
+\newlabel{tab:balance-overview}{{15}{57}{Annual share of positive observation for binary target variable}{table.15}{}}

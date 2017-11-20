@@ -1,22 +1,25 @@
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Fri Nov 17 15:45:08 2017
-\begin{table}[ht]
+% Mon Nov 20 17:43:43 2017
+\begin{table}[h!]
 \centering
-\begin{tabular}{rllr}
+ \begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{llr}
   \hline
- & Model & Variables & MSE \\ 
+Model & Variables & MSE \\ 
   \hline
-1 & LaggedValue & TTFFM  & 0.1221 \\ 
-  2 & LSTM & TTFFM  & 0.1294 \\ 
-  3 & FFNN & TTFFM  & 0.1333 \\ 
-  4 & RNN & TTFFM  & 0.1578 \\ 
-  5 & LSTM & TTFFM OilFM & 0.1706 \\ 
-  6 & RNN & TTFFM StorageUK ConNLDZNL & 0.1746 \\ 
-  7 & Regression & TTFFM  & 0.2004 \\ 
-  8 & FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0.4918 \\ 
-  9 & Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0.5022 \\ 
+LaggedValue & TTFFM  & 0.1221 \\ 
+  LSTM & TTFFM  & 0.1294 \\ 
+  FFNN & TTFFM  & 0.1333 \\ 
+  RNN & TTFFM  & 0.1578 \\ 
+  LSTM & TTFFM OilFM & 0.1706 \\ 
+  RNN & TTFFM StorageUK ConNLDZNL & 0.1746 \\ 
+  Regression & TTFFM  & 0.2004 \\ 
+  FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0.4918 \\ 
+  Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0.5022 \\ 
    \hline
-\end{tabular}
+ \end{tabular}
+\end{adjustbox}
 \caption{Average MSE across months for each model in evaluation step} 
 \label{tab:level.eval.short}
 \end{table}
+

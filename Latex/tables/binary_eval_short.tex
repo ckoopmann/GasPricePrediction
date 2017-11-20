@@ -1,22 +1,25 @@
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Fri Nov 17 15:45:12 2017
-\begin{table}[ht]
+% Mon Nov 20 15:01:03 2017
+\begin{table}[h!]
 \centering
-\begin{tabular}{rllr}
+ \begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{llr}
   \hline
- & Model & Variables & BCE \\ 
+Model & Variables & BCE \\ 
   \hline
-1 & LSTM & TTFFM  & 0.4519 \\ 
-  2 & LSTM & TTFFM TTFDA & 0.4677 \\ 
-  3 & FFNN & TTFFM ConNLDZNL StorageUK & 0.4776 \\ 
-  4 & RNN & TTFFM  & 0.4798 \\ 
-  5 & Regression & TTFFM  & 0.4812 \\ 
-  6 & FFNN & TTFFM  & 0.4815 \\ 
-  7 & LaggedValue & TTFFM  & 0.4968 \\ 
-  8 & Regression & TTFFM NBPFM ElectricityPeakFM EURGBPFX ElectricityBaseFM StorageUK & 0.5026 \\ 
-  9 & RNN & TTFFM NBPFM StorageUK & 0.5171 \\ 
+LSTM & TTFFM  & 0.4519 \\ 
+  LSTM & TTFFM TTFDA & 0.4677 \\ 
+  FFNN & TTFFM ConNLDZNL StorageUK & 0.4776 \\ 
+  RNN & TTFFM  & 0.4798 \\ 
+  Regression & TTFFM  & 0.4812 \\ 
+  FFNN & TTFFM  & 0.4815 \\ 
+  EqualDistribution &  & 0.4968 \\ 
+  Regression & TTFFM NBPFM ElectricityPeakFM EURGBPFX ElectricityBaseFM StorageUK & 0.5026 \\ 
+  RNN & TTFFM NBPFM StorageUK & 0.5171 \\ 
    \hline
-\end{tabular}
+ \end{tabular}
+\end{adjustbox}
 \caption{Average BCE across months for each model in evaluation step} 
 \label{tab:binary.eval.short}
 \end{table}
+

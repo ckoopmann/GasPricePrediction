@@ -1,76 +1,79 @@
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Fri Nov 17 15:45:08 2017
-\begin{table}[ht]
+% Mon Nov 20 17:43:43 2017
+\begin{table}[h!]
 \centering
-\begin{tabular}{rlllr}
+ \begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{lllr}
   \hline
- & Model & Variables & TestMonth & MSE \\ 
+Model & Variables & TestMonth & MSE \\ 
   \hline
-1 & LSTM & TTFFM  & 0117 & 0.0946 \\ 
-  2 & LSTM & TTFFM  & 0217 & 0.3661 \\ 
-  3 & LSTM & TTFFM  & 0317 & 0.2332 \\ 
-  4 & LSTM & TTFFM  & 0417 & 0.0747 \\ 
-  5 & LSTM & TTFFM  & 0517 & 0.0561 \\ 
-  6 & LSTM & TTFFM  & 0617 & 0.0476 \\ 
-  7 & LSTM & TTFFM  & 0717 & 0.0338 \\ 
-  8 & RNN & TTFFM  & 0117 & 0.1094 \\ 
-  9 & RNN & TTFFM  & 0217 & 0.3581 \\ 
-  10 & RNN & TTFFM  & 0317 & 0.2674 \\ 
-  11 & RNN & TTFFM  & 0417 & 0.0599 \\ 
-  12 & RNN & TTFFM  & 0517 & 0.0803 \\ 
-  13 & RNN & TTFFM  & 0617 & 0.1212 \\ 
-  14 & RNN & TTFFM  & 0717 & 0.1081 \\ 
-  15 & FFNN & TTFFM  & 0117 & 0.1033 \\ 
-  16 & FFNN & TTFFM  & 0217 & 0.2923 \\ 
-  17 & FFNN & TTFFM  & 0317 & 0.2791 \\ 
-  18 & FFNN & TTFFM  & 0417 & 0.0966 \\ 
-  19 & FFNN & TTFFM  & 0517 & 0.0636 \\ 
-  20 & FFNN & TTFFM  & 0617 & 0.0591 \\ 
-  21 & FFNN & TTFFM  & 0717 & 0.0388 \\ 
-  22 & Regression & TTFFM  & 0117 & 0.2241 \\ 
-  23 & Regression & TTFFM  & 0217 & 0.3248 \\ 
-  24 & Regression & TTFFM  & 0317 & 0.4049 \\ 
-  25 & Regression & TTFFM  & 0417 & 0.2087 \\ 
-  26 & Regression & TTFFM  & 0517 & 0.1009 \\ 
-  27 & Regression & TTFFM  & 0617 & 0.0918 \\ 
-  28 & Regression & TTFFM  & 0717 & 0.0475 \\ 
-  29 & LSTM & TTFFM OilFM & 0117 & 0.1035 \\ 
-  30 & LSTM & TTFFM OilFM & 0217 & 0.2490 \\ 
-  31 & LSTM & TTFFM OilFM & 0317 & 0.2901 \\ 
-  32 & LSTM & TTFFM OilFM & 0417 & 0.2705 \\ 
-  33 & LSTM & TTFFM OilFM & 0517 & 0.0550 \\ 
-  34 & LSTM & TTFFM OilFM & 0617 & 0.0470 \\ 
-  35 & LSTM & TTFFM OilFM & 0717 & 0.1791 \\ 
-  36 & RNN & TTFFM StorageUK ConNLDZNL & 0117 & 0.1101 \\ 
-  37 & RNN & TTFFM StorageUK ConNLDZNL & 0217 & 0.3954 \\ 
-  38 & RNN & TTFFM StorageUK ConNLDZNL & 0317 & 0.4324 \\ 
-  39 & RNN & TTFFM StorageUK ConNLDZNL & 0417 & 0.1087 \\ 
-  40 & RNN & TTFFM StorageUK ConNLDZNL & 0517 & 0.0779 \\ 
-  41 & RNN & TTFFM StorageUK ConNLDZNL & 0617 & 0.0594 \\ 
-  42 & RNN & TTFFM StorageUK ConNLDZNL & 0717 & 0.0386 \\ 
-  43 & FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0117 & 0.9654 \\ 
-  44 & FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0217 & 0.5574 \\ 
-  45 & FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0317 & 0.6608 \\ 
-  46 & FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0417 & 0.7936 \\ 
-  47 & FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0517 & 0.3059 \\ 
-  48 & FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0617 & 0.0940 \\ 
-  49 & FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0717 & 0.0657 \\ 
-  50 & Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0117 & 1.0856 \\ 
-  51 & Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0217 & 0.6777 \\ 
-  52 & Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0317 & 0.7081 \\ 
-  53 & Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0417 & 0.6130 \\ 
-  54 & Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0517 & 0.2136 \\ 
-  55 & Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0617 & 0.1230 \\ 
-  56 & Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0717 & 0.0948 \\ 
-  57 & LaggedValue & TTFFM  & 0117 & 0.1032 \\ 
-  58 & LaggedValue & TTFFM  & 0217 & 0.2922 \\ 
-  59 & LaggedValue & TTFFM  & 0317 & 0.2606 \\ 
-  60 & LaggedValue & TTFFM  & 0417 & 0.0664 \\ 
-  61 & LaggedValue & TTFFM  & 0517 & 0.0538 \\ 
-  62 & LaggedValue & TTFFM  & 0617 & 0.0461 \\ 
-  63 & LaggedValue & TTFFM  & 0717 & 0.0323 \\ 
+LSTM & TTFFM  & 0117 & 0.0946 \\ 
+  LSTM & TTFFM  & 0217 & 0.3661 \\ 
+  LSTM & TTFFM  & 0317 & 0.2332 \\ 
+  LSTM & TTFFM  & 0417 & 0.0747 \\ 
+  LSTM & TTFFM  & 0517 & 0.0561 \\ 
+  LSTM & TTFFM  & 0617 & 0.0476 \\ 
+  LSTM & TTFFM  & 0717 & 0.0338 \\ 
+  RNN & TTFFM  & 0117 & 0.1094 \\ 
+  RNN & TTFFM  & 0217 & 0.3581 \\ 
+  RNN & TTFFM  & 0317 & 0.2674 \\ 
+  RNN & TTFFM  & 0417 & 0.0599 \\ 
+  RNN & TTFFM  & 0517 & 0.0803 \\ 
+  RNN & TTFFM  & 0617 & 0.1212 \\ 
+  RNN & TTFFM  & 0717 & 0.1081 \\ 
+  FFNN & TTFFM  & 0117 & 0.1033 \\ 
+  FFNN & TTFFM  & 0217 & 0.2923 \\ 
+  FFNN & TTFFM  & 0317 & 0.2791 \\ 
+  FFNN & TTFFM  & 0417 & 0.0966 \\ 
+  FFNN & TTFFM  & 0517 & 0.0636 \\ 
+  FFNN & TTFFM  & 0617 & 0.0591 \\ 
+  FFNN & TTFFM  & 0717 & 0.0388 \\ 
+  Regression & TTFFM  & 0117 & 0.2241 \\ 
+  Regression & TTFFM  & 0217 & 0.3248 \\ 
+  Regression & TTFFM  & 0317 & 0.4049 \\ 
+  Regression & TTFFM  & 0417 & 0.2087 \\ 
+  Regression & TTFFM  & 0517 & 0.1009 \\ 
+  Regression & TTFFM  & 0617 & 0.0918 \\ 
+  Regression & TTFFM  & 0717 & 0.0475 \\ 
+  LSTM & TTFFM OilFM & 0117 & 0.1035 \\ 
+  LSTM & TTFFM OilFM & 0217 & 0.2490 \\ 
+  LSTM & TTFFM OilFM & 0317 & 0.2901 \\ 
+  LSTM & TTFFM OilFM & 0417 & 0.2705 \\ 
+  LSTM & TTFFM OilFM & 0517 & 0.0550 \\ 
+  LSTM & TTFFM OilFM & 0617 & 0.0470 \\ 
+  LSTM & TTFFM OilFM & 0717 & 0.1791 \\ 
+  RNN & TTFFM StorageUK ConNLDZNL & 0117 & 0.1101 \\ 
+  RNN & TTFFM StorageUK ConNLDZNL & 0217 & 0.3954 \\ 
+  RNN & TTFFM StorageUK ConNLDZNL & 0317 & 0.4324 \\ 
+  RNN & TTFFM StorageUK ConNLDZNL & 0417 & 0.1087 \\ 
+  RNN & TTFFM StorageUK ConNLDZNL & 0517 & 0.0779 \\ 
+  RNN & TTFFM StorageUK ConNLDZNL & 0617 & 0.0594 \\ 
+  RNN & TTFFM StorageUK ConNLDZNL & 0717 & 0.0386 \\ 
+  FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0117 & 0.9654 \\ 
+  FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0217 & 0.5574 \\ 
+  FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0317 & 0.6608 \\ 
+  FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0417 & 0.7936 \\ 
+  FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0517 & 0.3059 \\ 
+  FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0617 & 0.0940 \\ 
+  FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0717 & 0.0657 \\ 
+  Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0117 & 1.0856 \\ 
+  Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0217 & 0.6777 \\ 
+  Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0317 & 0.7081 \\ 
+  Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0417 & 0.6130 \\ 
+  Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0517 & 0.2136 \\ 
+  Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0617 & 0.1230 \\ 
+  Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0717 & 0.0948 \\ 
+  LaggedValue & TTFFM  & 0117 & 0.1032 \\ 
+  LaggedValue & TTFFM  & 0217 & 0.2922 \\ 
+  LaggedValue & TTFFM  & 0317 & 0.2606 \\ 
+  LaggedValue & TTFFM  & 0417 & 0.0664 \\ 
+  LaggedValue & TTFFM  & 0517 & 0.0538 \\ 
+  LaggedValue & TTFFM  & 0617 & 0.0461 \\ 
+  LaggedValue & TTFFM  & 0717 & 0.0323 \\ 
    \hline
-\end{tabular}
+ \end{tabular}
+\end{adjustbox}
 \caption{Full results by testing month for each model in evaluation step} 
 \label{tab:level.eval.short}
 \end{table}
+

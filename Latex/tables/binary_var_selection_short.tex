@@ -1,17 +1,20 @@
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Fri Nov 17 15:45:11 2017
-\begin{table}[ht]
+% Mon Nov 20 15:01:02 2017
+\begin{table}[h!]
 \centering
-\begin{tabular}{rllr}
+ \begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{llr}
   \hline
- & Model & Variables & BCE \\ 
+Model & Variables & BCE \\ 
   \hline
-1 & LSTM & TTFFM TTFDA & 0.4516 \\ 
-  2 & RNN & TTFFM NBPFM StorageUK & 0.4708 \\ 
-  3 & FFNN & TTFFM ConNLDZNL StorageUK & 0.4741 \\ 
-  4 & Regression & TTFFM NBPFM ElectricityPeakFM EURGBPFX ElectricityBaseFM StorageUK & 0.4878 \\ 
+LSTM & TTFFM TTFDA & 0.4516 \\ 
+  RNN & TTFFM NBPFM StorageUK & 0.4708 \\ 
+  FFNN & TTFFM ConNLDZNL StorageUK & 0.4741 \\ 
+  Regression & TTFFM NBPFM ElectricityPeakFM EURGBPFX ElectricityBaseFM StorageUK & 0.4878 \\ 
    \hline
-\end{tabular}
+ \end{tabular}
+\end{adjustbox}
 \caption{Selected variable combinations in variable selection step of binary prediction} 
 \label{tab:binary.var.selection.short}
 \end{table}
+

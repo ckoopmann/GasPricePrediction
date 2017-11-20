@@ -1,17 +1,20 @@
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Fri Nov 17 15:45:07 2017
-\begin{table}[ht]
+% Mon Nov 20 17:43:42 2017
+\begin{table}[h!]
 \centering
-\begin{tabular}{rllr}
+ \begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{llr}
   \hline
- & Model & Variables & MSE \\ 
+Model & Variables & MSE \\ 
   \hline
-1 & LSTM & TTFFM OilFM & 0.1738 \\ 
-  2 & RNN & TTFFM StorageUK ConNLDZNL & 0.1502 \\ 
-  3 & FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0.1424 \\ 
-  4 & Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0.1569 \\ 
+LSTM & TTFFM OilFM & 0.1738 \\ 
+  RNN & TTFFM StorageUK ConNLDZNL & 0.1502 \\ 
+  FFNN & TTFFM ProdUKCS ElectricityBaseFM StorageUK NBPFM & 0.1424 \\ 
+  Regression & TTFFM ElectricityBaseFM NBPFM StorageUK TTFDA & 0.1569 \\ 
    \hline
-\end{tabular}
+ \end{tabular}
+\end{adjustbox}
 \caption{Selected variable combinations in variable selection step of price level prediction} 
 \label{tab:level.var.selection.short}
 \end{table}
+
