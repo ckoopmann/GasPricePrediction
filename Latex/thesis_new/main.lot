@@ -1,0 +1,39 @@
+\contentsline {xpart}{Introduction}{2}{part.1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Introduction}{2}{chapter.1}
+\contentsline {xpart}{The natural gas market}{6}{part.2}
+\addvspace {10\p@ }
+\contentsline {xchapter}{European Gas Market}{6}{chapter.2}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Future vs. Spot Markets\relax }}{10}{table.caption.9}
+\contentsline {xpart}{Methods}{12}{part.3}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Method}{12}{chapter.3}
+\contentsline {xpart}{Literature review}{19}{part.4}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Literature Overview}{19}{chapter.4}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Electricity Price Forecasting Literature\relax }}{24}{table.caption.16}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Oil Price Forecasting Literature\relax }}{27}{table.caption.20}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Gas Price Forecasting Literature\relax }}{29}{table.caption.24}
+\contentsline {xpart}{Empirical study}{32}{part.5}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Data}{32}{chapter.5}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Experimental Design}{37}{chapter.6}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Results}{45}{chapter.7}
+\contentsline {table}{\numberline {7.1}{\ignorespaces Selected parameter combinations in univariate tuning step of price level prediction\relax }}{46}{table.caption.25}
+\contentsline {table}{\numberline {7.2}{\ignorespaces Selected variable combinations in variable selection step of price level prediction\relax }}{47}{table.caption.26}
+\contentsline {table}{\numberline {7.3}{\ignorespaces Selected parameter combinations in multivariate tuning step of price level prediction\relax }}{47}{table.caption.27}
+\contentsline {table}{\numberline {7.4}{\ignorespaces Average MSE across months for each model in evaluation step\relax }}{48}{table.caption.28}
+\contentsline {table}{\numberline {7.5}{\ignorespaces Selected parameter combinations in univariate tuning step of binary prediction\relax }}{51}{table.caption.32}
+\contentsline {table}{\numberline {7.6}{\ignorespaces Selected variable combinations in variable selection step of binary prediction\relax }}{51}{table.caption.33}
+\contentsline {table}{\numberline {7.7}{\ignorespaces Selected parameter combinations in multivariate tuning step of binary prediction\relax }}{52}{table.caption.34}
+\contentsline {table}{\numberline {7.8}{\ignorespaces Average BCE across months for each model in evaluation step\relax }}{52}{table.caption.35}
+\contentsline {table}{\numberline {7.9}{\ignorespaces Average price per MWh across months for simple trading strategy based on each model\relax }}{57}{table.caption.40}
+\contentsline {xpart}{Conclusions}{59}{part.6}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Conclusions}{59}{chapter.8}
+\contentsline {xpart}{Appendix}{67}{part.7}
+\contentsline {table}{\numberline {8.1}{\ignorespaces Data Availability of all Input Variables\relax }}{78}{table.caption.62}
+\contentsline {table}{\numberline {8.2}{\ignorespaces Annual share of positive observation for binary target variable\relax }}{79}{table.caption.63}
+\contentsline {table}{\numberline {8.3}{\ignorespaces Savings in EUR/MWh of univariate LSTM model relative to equal distribution benchmark for differenttrading periods\relax }}{79}{table.caption.64}

@@ -1,0 +1,103 @@
+\documentclass[12pt]{ociamthesis}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{marginnote}
+\usepackage{epigraph}
+\usepackage{soul}
+\usepackage[export]{adjustbox}
+\usepackage{eurosym}
+\usepackage{dcolumn}
+\usepackage{natbib}
+\usepackage{rotating}
+\usepackage{geometry}
+\usepackage{minitoc}
+\usepackage{bbm}
+\usepackage{hyperref}
+
+%\usepackage{tikz}
+\usepackage{lscape}
+\usepackage{amssymb}%http://ctan.org/pkg/amssymb
+\newcommand{\cmark}{\color{Aquamarine} \Large \textbf{\checkmark} \color{black} \normalsize}
+
+\usepackage{pifont}%http://ctan.org/pkg/pifont
+\usepackage{subfig}
+%\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{placeins}
+%\usepackage{pdfpages}
+
+%\usepackage[inline]{showlabels}
+
+\newtheorem{hyp}{Hypothesis}
+\newtheorem{question}{Explorative question}
+\newcommand{\myfloatalign}{\centering} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define page style
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\nouppercase{\leftmark}}
+%\fancyhead[R]{\nouppercase{\rightmark}}
+\rfoot{Page \thepage}
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usetikzlibrary{calc}
+
+\definecolor{myblue}{RGB}{0,163,243}
+
+\linespread{1.25}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Front page
+%
+
+\title{\Large{Natural gas price forecasting using recurrent neural networks}}     %your thesis title,}}   %note \\[1ex] is a line break in the title
+
+\author{Christian Koopmann}             %your name
+\college{School of Business and Economics}  %your college
+
+%\renewcommand{\submittedtext}{change the default text here if needed}
+\degree{MSc. Statistics}     %the degree
+\degreedate{Berlin, 2017} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+\begin{romanpages}
+\begin{acknowledgements}
+My special gratitude goes to Prof. Dr. Stefan Lessmann for his thorough support and guidance throughout my master thesis. Thank you for the helping advice, full support and understanding during my studies! 
+
+Many thanks to Dr. Stefan Gnutzmann for the abundant data and the helpful inputs and to Prof. Dr. Daniel Klapper for his fast responses and much needed assistance.
+\end{acknowledgements}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\end{romanpages}
+
+
+
+
+\input{structure.tex}
+
+\begin{originality}
+I hereby confirm that I have written the accompanying thesis by myself, without
+contributions from any sources other than those cited in the text, the references, and
+the acknowledgements.
+
+This applies explicitly to all graphics, drawings, maps and images included in the
+thesis.
+
+Berlin, 
+\end{originality}
+
+\end{document}

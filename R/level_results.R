@@ -154,10 +154,19 @@ ggsave( "../Plots/level_evaluation_monthly_univar.png",plt.evaluation_months_uni
 #Compare LSTM and Lagged Value predictions
 df.predictions = as.data.table(read.csv(file = "../Data/Output/LevelPrediction/level_eval/predictions.csv"))[,.SD[which.min(Month_Traded)],by = Date]
 df.predictions[,Date := as.Date(Date)]
-df.predictions = df.predictions[Date >= as.Date('2017-03-01') & Model == 'lstm' & Variables == '',.(Date, LSTM = Prediction, LaggedValue = Reference)]
-df.predictions = gather(df.predictions, Type, Value,  LSTM, LaggedValue)
+df.predictions = df.predictions[Model == 'lstm' & Variables == '',.(Date, LSTM = Prediction, LaggedValue = Reference, Month_Traded)]
+df.predictions_long = as.data.table(gather(df.predictions, Type, Value,  LSTM, LaggedValue))
 
 
-plt.predictions = ggplot(data = df.predictions, aes(x = Date, y = Value)) + geom_line(aes(col = Type)) + theme_classic() + scale_color_uchicago("dark") + labs(title = "Predictions LSTM vs. LaggedValue vs. Actual", x = "Trading Day", y = "Price [EUR/MWh]")+ scale_x_date(labels = date_format("%m-%Y"))
+plt.predictions = ggplot(data = df.predictions_long[Date >= as.Date('2017-03-01')], aes(x = Date, y = Value)) + geom_line(aes(col = Type)) + theme_classic() + scale_color_uchicago("dark") + labs(title = "Predictions LSTM vs. LaggedValue vs. Actual", x = "Trading Day", y = "Price [EUR/MWh]")+ scale_x_date(labels = date_format("%m-%Y"))
 
 ggsave( "../Plots/level_predictions.png",plt.predictions, width = 8.11, height = 4.98)
+
+#Get mean absolute difference betwen predictions
+df.predictions[,mean(abs(LSTM - LaggedValue)),by = Month_Traded]
+df.predictions[,mean(abs(LSTM - LaggedValue))]
+#Mean Absolute relative difference
+df.predictions[,mean(abs(LSTM - LaggedValue)/LaggedValue), by = Month_Traded]
+df.predictions[,mean(abs(LSTM - LaggedValue)/LaggedValue)]
+#Mean Difference
+df.predictions[,mean(LSTM - LaggedValue)]

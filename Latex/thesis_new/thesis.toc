@@ -1,0 +1,83 @@
+\contentsline {section}{List of Abbreviations}{iv}{chapter*.3}
+\contentsline {section}{List of Figures}{v}{section*.4}
+\contentsline {section}{List of Tables}{vi}{chapter*.5}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Introduction}{2}{chapter.2}
+\contentsline {section}{\numberline {2.1}Motivation}{2}{section.2.1}
+\contentsline {section}{\numberline {2.2}Topic}{2}{section.2.2}
+\contentsline {section}{\numberline {2.3}Structure}{3}{section.2.3}
+\contentsline {part}{I\hspace {1em}The natural gas market}{4}{part.1}
+\contentsline {xpart}{The natural gas market}{5}{part.1}
+\contentsline {chapter}{\numberline {3}European Gas Market}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}History}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}Types of natural gas trading}{7}{section.3.2}
+\contentsline {paragraph}{Bilateral Negotiations}{7}{section*.8}
+\contentsline {paragraph}{Over the Counter}{7}{section*.9}
+\contentsline {paragraph}{Exchange Trading}{8}{section*.10}
+\contentsline {section}{\numberline {3.3}Natural Gas Derivatives}{8}{section.3.3}
+\contentsline {part}{II\hspace {1em}Methods}{10}{part.2}
+\contentsline {xpart}{Methods}{11}{part.2}
+\contentsline {section}{\numberline {3.4}Method}{11}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}RNN}{11}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Vanishing Gradient Problem}{13}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}LSTM}{14}{subsection.3.4.3}
+\contentsline {part}{III\hspace {1em}Literature review}{16}{part.3}
+\contentsline {xpart}{Literature review}{17}{part.3}
+\contentsline {section}{\numberline {3.5}Literature Overview}{17}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Electricity}{17}{subsection.3.5.1}
+\contentsline {paragraph}{Linear Models}{18}{section*.16}
+\contentsline {paragraph}{Feed Forward Neural Networks}{19}{section*.17}
+\contentsline {paragraph}{Recurrent Neural Networks}{19}{section*.18}
+\contentsline {subsection}{\numberline {3.5.2}Oil}{20}{subsection.3.5.2}
+\contentsline {paragraph}{Linear Models}{21}{section*.20}
+\contentsline {paragraph}{Feed Forward Neural Networks}{21}{section*.21}
+\contentsline {paragraph}{Recurrent Neural Networks}{22}{section*.22}
+\contentsline {subsection}{\numberline {3.5.3}Natural Gas}{22}{subsection.3.5.3}
+\contentsline {paragraph}{Linear Models}{23}{section*.24}
+\contentsline {paragraph}{Feed Forward Neural Networks}{23}{section*.25}
+\contentsline {paragraph}{Recurrent Neural Network}{23}{section*.26}
+\contentsline {subsection}{\numberline {3.5.4}Summary}{24}{subsection.3.5.4}
+\contentsline {part}{IV\hspace {1em}Empirical study}{26}{part.4}
+\contentsline {xpart}{Empirical study}{27}{part.4}
+\contentsline {chapter}{\numberline {4}Data}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}Data}{27}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Target Variable}{27}{subsection.4.1.1}
+\contentsline {subsubsection}{Price Level Prediction}{27}{section*.28}
+\contentsline {subsubsection}{Binary Prediction}{28}{section*.29}
+\contentsline {subsection}{\numberline {4.1.2}Input Variables}{28}{subsection.4.1.2}
+\contentsline {subsubsection}{Energy Commodity Prices}{29}{section*.30}
+\contentsline {subsubsection}{Gas Market Fundamentals}{29}{section*.31}
+\contentsline {subsubsection}{Exchange Rates}{30}{section*.32}
+\contentsline {subsubsection}{Data Availability}{30}{section*.33}
+\contentsline {chapter}{\numberline {5}Experimental Design}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}Experimental Design}{31}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Preprocessing}{32}{subsection.5.1.1}
+\contentsline {subsubsection}{Treatment of missing data}{32}{section*.34}
+\contentsline {subsubsection}{Feature scaling}{33}{section*.35}
+\contentsline {subsection}{\numberline {5.1.2}Reference Models}{33}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Parameter Tuning}{34}{subsection.5.1.3}
+\contentsline {subsubsection}{Fixed Hyper-Parameters}{34}{section*.36}
+\contentsline {subsubsection}{Tuning Parameters}{36}{section*.37}
+\contentsline {subsubsection}{Tuning Process}{36}{section*.38}
+\contentsline {subsection}{\numberline {5.1.4}Variable Selection}{36}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}Model Evaluation}{37}{subsection.5.1.5}
+\contentsline {section}{\numberline {5.2}Results}{37}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Price Level Prediction}{37}{subsection.5.2.1}
+\contentsline {subsubsection}{Univariate Parameter Tuning}{37}{section*.39}
+\contentsline {subsubsection}{Variable Selection}{38}{section*.41}
+\contentsline {subsubsection}{Multivariate Parameter Tuning}{38}{section*.43}
+\contentsline {subsubsection}{Evaluation}{39}{section*.45}
+\contentsline {subsection}{\numberline {5.2.2}Binary Prediction}{41}{subsection.5.2.2}
+\contentsline {subsubsection}{Univariate Parameter Tuning}{42}{section*.50}
+\contentsline {subsubsection}{Variable Selection}{42}{section*.52}
+\contentsline {subsubsection}{Multivariate Parameter Tuning}{43}{section*.54}
+\contentsline {subsubsection}{Evaluation}{43}{section*.56}
+\contentsline {subsubsection}{Trading Strategy}{45}{section*.60}
+\contentsline {chapter}{\numberline {6}Conclusions}{49}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusions}{49}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Results}{49}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Outlook}{49}{subsection.6.1.2}
+\contentsline {part}{V\hspace {1em}Appendix}{50}{part.5}
+\contentsline {xpart}{Appendix}{51}{part.5}
+\contentsline {section}{\numberline {6.2}Figures}{51}{section.6.2}
+\contentsline {section}{\numberline {6.3}Tables}{62}{section.6.3}

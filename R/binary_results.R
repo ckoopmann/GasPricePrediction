@@ -134,18 +134,40 @@ latex = gsub('\\begin{tabular}', ' \\begin{adjustbox}{max width=\\textwidth}\n\\
 latex = gsub('\\end{tabular}', ' \\end{tabular}\n\\end{adjustbox}', latex, fixed = T)
 writeLines(latex, con = Filename)
 
+
+#Graph performance over test month
+df.evaluation[, Multivar := Variables != "TTFFM "]
+df.evaluation[Multivar == T, Type := "Multivariate"]
+df.evaluation[Multivar != T, Type := "Univariate"]
+
+plt.evaluation_months = ggplot(data = df.evaluation, aes(x = as.numeric(TestMonth), y = BCE)) + geom_line(aes(col = Model, linetype = Type)) + scale_x_continuous(breaks=c(117, 217,317,417,517,617,717), labels=c("January 17", "February 17", "March 17", "April 17", "May 17", "June 17", "July 17")) + theme_classic() + scale_color_uchicago("dark") + labs(title = "Test BCE across Test Months for all", x = "Test Month")
+
+ggsave( "../Plots/binary_evaluation_monthly_all.png",plt.evaluation_months, width = 8.11, height = 4.98)
+
+#Multivariate models plus EqualDistribution 
+plt.evaluation_months_multivar = ggplot(data = df.evaluation[Type == "Multivariate" | Model == "EqualDistribution"], aes(x = as.numeric(TestMonth), y = BCE)) + geom_line(aes(col = Model)) + scale_x_continuous(breaks=c(117, 217,317,417,517,617,717), labels=c("January 17", "February 17", "March 17", "April 17", "May 17", "June 17", "July 17")) + theme_classic() + scale_color_uchicago("dark") + labs(title = "Test BCE across test months for multivariate models", x = "Test Month")
+
+ggsave( "../Plots/binary_evaluation_monthly_multivar.png",plt.evaluation_months_multivar, width = 8.11, height = 4.98)
+
+#Univariate Models
+plt.evaluation_months_univar = ggplot(data = df.evaluation[Type == "Univariate" | Model == "EqualDistribution"], aes(x = as.numeric(TestMonth), y = BCE)) + geom_line(aes(col = Model)) + scale_x_continuous(breaks=c(117, 217,317,417,517,617,717), labels=c("January 17", "February 17", "March 17", "April 17", "May 17", "June 17", "July 17")) + theme_classic() + scale_color_uchicago("dark") + labs(title = "Test BCE across test months for univariate models", x = "Test Month")
+
+ggsave( "../Plots/binary_evaluation_monthly_univar.png",plt.evaluation_months_univar, width = 8.11, height = 4.98)
+
+
 ##Trading Strategy Analysis
 df.predictions = as.data.table(read.csv(file = paste(chr.evaluation_directory, "predictions.csv", sep = "/")))
 #Set last prediction always to one to ensure sum of trades to be 1
-df.predictions[Reference == 1, Prediction := 1]
 df.predictions[, Variables := paste0('TTFFM ',gsub('_', ' ', Variables))]
 df.predictions[, Model:= toupper(Model)]
 df.predictions[, Model := gsub('FFNN_REGRESSION','Regression',Model)]
-df.predictions = rbind(df.predictions[,.(Date, Month_Traded, Model, Variables, Prediction)], df.predictions[Model == 'LSTM' & Variables == 'TTFFM ',.(Date, Month_Traded, Model = 'EqualDistribution', Variables = '', Prediction = Reference)])
+df.predictions_long = df.predictions
+df.predictions_long[Reference == 1, Prediction := 1]
+df.predictions_long = rbind(df.predictions_long[,.(Date, Month_Traded, Model, Variables, Prediction)], df.predictions_long[Model == 'LSTM' & Variables == 'TTFFM ',.(Date, Month_Traded, Model = 'EqualDistribution', Variables = '', Prediction = Reference)])
 
 df.prices = as.data.table(read.csv(file = "../Data/Output/LevelPrediction/level_eval/predictions.csv"))[Model == 'lstm' & Variables == '',.(Date, Month_Traded, Price = Actual)]
 
-df.predictions_prices = merge(df.predictions, df.prices,by = c("Date", "Month_Traded"), all.x = T, all.y = F)
+df.predictions_prices = merge(df.predictions_long, df.prices,by = c("Date", "Month_Traded"), all.x = T, all.y = F)
 
 
 df.predictions_prices[,DaysLeft := .N:1, by = .( Model, Month_Traded, Variables)]
@@ -174,8 +196,58 @@ latex = gsub('\\begin{tabular}', ' \\begin{adjustbox}{max width=\\textwidth}\n\\
 latex = gsub('\\end{tabular}', ' \\end{tabular}\n\\end{adjustbox}', latex, fixed = T)
 writeLines(latex, con = Filename)
 
+#Trading evaluation graphed over time
+
+#Graph performance over test month
+df.trade_evaluation[, Multivar := Variables != "TTFFM "]
+df.trade_evaluation[Multivar == T, Type := "Multivariate"]
+df.trade_evaluation[Multivar != T, Type := "Univariate"]
+
+plt.trade_evaluation_months = ggplot(data = df.trade_evaluation, aes(x = as.numeric(Month_Traded), y = AveragePrice)) + geom_line(aes(col = Model, linetype = Type)) + scale_x_continuous(breaks=c(117, 217,317,417,517,617,717), labels=c("January 17", "February 17", "March 17", "April 17", "May 17", "June 17", "July 17")) + theme_classic() + scale_color_uchicago("dark") + labs(title = "Test AveragePrice across Test Months for all", x = "Test Month")
+
+ggsave( "../Plots/binary_trade_evaluation_monthly_all.png",plt.trade_evaluation_months, width = 8.11, height = 4.98)
+
+#Multivariate models plus EqualDistribution 
+plt.trade_evaluation_months_multivar = ggplot(data = df.trade_evaluation[Type == "Multivariate" | Model == "EqualDistribution"], aes(x = as.numeric(Month_Traded), y = AveragePrice)) + geom_line(aes(col = Model)) + scale_x_continuous(breaks=c(117, 217,317,417,517,617,717), labels=c("January 17", "February 17", "March 17", "April 17", "May 17", "June 17", "July 17")) + theme_classic() + scale_color_uchicago("dark") + labs(title = "Average price per MWh for trading strategies based on multivariate models", x = "Month Traded", y = "Price[EUR/MW]")
+
+ggsave( "../Plots/binary_trade_evaluation_monthly_multivar.png",plt.trade_evaluation_months_multivar, width = 8.11, height = 4.98)
+
+#Univariate models plus EqualDistribution 
+plt.trade_evaluation_months_univar = ggplot(data = df.trade_evaluation[Type == "Univariate" | Model == "EqualDistribution"], aes(x = as.numeric(Month_Traded), y = AveragePrice)) + geom_line(aes(col = Model)) + scale_x_continuous(breaks=c(117, 217,317,417,517,617,717), labels=c("January 17", "February 17", "March 17", "April 17", "May 17", "June 17", "July 17")) + theme_classic() + scale_color_uchicago("dark") + labs(title = "Average price per MWh for trading strategies based on univariate models", x = "Month Traded", y = "Price[EUR/MW]")
+
+ggsave( "../Plots/binary_trade_evaluation_monthly_univar.png",plt.trade_evaluation_months_univar, width = 8.11, height = 4.98)
+
+#Plot predictions for example month
+df.prediction_plot_data = df.predictions_long[Month_Traded == "TTF0717" & Model %in% c("LSTM", "EqualDistribution") & Variables %in% c("TTFFM ", "")]
+
+plt.predictions = ggplot(data = df.prediction_plot_data, aes(x = as.Date(Date), y = Prediction)) + geom_line(aes(col = Model)) + theme_classic() + scale_color_uchicago("dark") + labs(title = "Predictions LSTM vs. EqualDistribution", subtitle = "Month Traded July 2017", x = "Trading Day", y = "Binary Prediction")
 
 
 
+df.eval_cutoff = data.table()
+for(num.daysleft_cutoff in 1:15){
+    df.predictions_prices_reduced_iteration = df.predictions_prices[DaysLeft <= num.daysleft_cutoff,]
+    
+    df.predictions_prices_reduced_iteration[,RemainingShare := cumprod(1-Prediction), by = .(Month_Traded,Model, Variables)]
+    df.predictions_prices_reduced_iteration[,RemainingShare := shift(RemainingShare), by = .(Month_Traded,Model, Variables)]
+    df.predictions_prices_reduced_iteration[is.na(RemainingShare),RemainingShare := 1]
+    df.predictions_prices_reduced_iteration[,ProportionTraded := RemainingShare*Prediction]
+    
+    df.predictions_prices_reduced_iteration[,sum(ProportionTraded), by = .(Month_Traded,Model, Variables)]
+    
+    df.trade_evaluation = df.predictions_prices_reduced_iteration[,.(AveragePrice = sum(ProportionTraded*Price)), by = .(Month_Traded,Model, Variables)]
+    df.trade_evaluation_mean = df.trade_evaluation[,.(AveragePrice = mean(AveragePrice)), by = .(Model, Variables)]
+    num.price_lstm_univar = df.trade_evaluation_mean[Model == 'LSTM' & Variables == "TTFFM ",AveragePrice]
+    num.price_equal = df.trade_evaluation_mean[Model == 'EqualDistribution',AveragePrice]
+    num.savings = num.price_equal - num.price_lstm_univar
+    df.eval_cutoff = rbind(df.eval_cutoff, data.table(TradingPeriod = num.daysleft_cutoff, LSTMSavings = num.savings))
+}
 
-
+Filename = '../Latex/tables/binary_eval_cutoff.tex'
+caption = 'Savings in EUR/MWh of univariate LSTM model relative to equal distribution benchmark for differenttrading periods'
+label = 'tab:binary.eval.cutoff'
+latex = xtable(df.eval_cutoff, label = label, caption = caption, digits = 4)
+latex = print(latex, include.rownames = F, table.placement = 'h!')
+latex = gsub('\\begin{tabular}', ' \\begin{adjustbox}{max width=\\textwidth}\n\\begin{tabular}', latex, fixed = T)
+latex = gsub('\\end{tabular}', ' \\end{tabular}\n\\end{adjustbox}', latex, fixed = T)
+writeLines(latex, con = Filename)

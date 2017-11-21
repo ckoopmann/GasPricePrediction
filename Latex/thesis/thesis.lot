@@ -8,8 +8,9 @@
 \contentsline {table}{\numberline {8}{\ignorespaces Average MSE across months for each model in evaluation step}}{36}{table.8}
 \contentsline {table}{\numberline {9}{\ignorespaces Selected parameter combinations in univariate tuning step of binary prediction}}{39}{table.9}
 \contentsline {table}{\numberline {10}{\ignorespaces Selected variable combinations in variable selection step of binary prediction}}{39}{table.10}
-\contentsline {table}{\numberline {11}{\ignorespaces Selected parameter combinations in multivariate tuning step of binary prediction}}{39}{table.11}
-\contentsline {table}{\numberline {12}{\ignorespaces Average BCE across months for each model in evaluation step}}{39}{table.12}
-\contentsline {table}{\numberline {13}{\ignorespaces Average price per MWh across months for simple trading strategy based on each model}}{40}{table.13}
-\contentsline {table}{\numberline {14}{\ignorespaces Data Availability of all Input Variables}}{56}{table.14}
-\contentsline {table}{\numberline {15}{\ignorespaces Annual share of positive observation for binary target variable}}{57}{table.15}
+\contentsline {table}{\numberline {11}{\ignorespaces Selected parameter combinations in multivariate tuning step of binary prediction}}{40}{table.11}
+\contentsline {table}{\numberline {12}{\ignorespaces Average BCE across months for each model in evaluation step}}{40}{table.12}
+\contentsline {table}{\numberline {13}{\ignorespaces Average price per MWh across months for simple trading strategy based on each model}}{44}{table.13}
+\contentsline {table}{\numberline {14}{\ignorespaces Data Availability of all Input Variables}}{62}{table.14}
+\contentsline {table}{\numberline {15}{\ignorespaces Annual share of positive observation for binary target variable}}{63}{table.15}
+\contentsline {table}{\numberline {16}{\ignorespaces Savings in EUR/MWh of univariate LSTM model relative to equal distribution benchmark for differenttrading periods}}{63}{table.16}

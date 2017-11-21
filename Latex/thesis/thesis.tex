@@ -148,36 +148,39 @@
 \pagestyle{plain}
 \setcounter{page}{1}    % start page numbering anew
 \pagenumbering{arabic}  % page numbers in arabic style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{Introduction}
+\input{intro.tex}
+%-----------------------------
+%\section{Developments in the used car sector in Germany (2008-2012)}
+%\input{car_trends.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{The natural gas market}
+\input{gas_market.tex}
+
+\part{Methods}
+\input{methods.tex}
+
+\part{Literature review}
+\input{literature_overview.tex}
+
+\part{Empirical study}
+\chapter{Data}
+\input{data.tex}
+\chapter{Experimental Design}
+\input{experiment.tex}
+\input{results.tex}
 
 
-\input{intro}
-\newpage
-\input{gas_market}
-\newpage
-\input{methods}
-\newpage
-\input{literature_overview}
-\newpage
-\input{data}
-\newpage
-\input{experiment}
-\newpage
-\input{results}
-\newpage
-\input{conc}
+\chapter{Conclusions}
+\input{conc.tex}
 
-
-
-% ----------------
-% --- appendix ---
-% ----------------
-\appendix
-
-% literature
-\newpage
-\addcontentsline{toc}{section}{References}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{ecta}
 \bibliography{MasterThesis}
 
+\part{Appendix}
 % figures (not mandatory)
 \newpage
 \input{app_figures}
@@ -185,7 +188,6 @@
 % tables (not mandatory)
 \newpage
 \input{app_tables}
-
 
 
 % --------------------------------------------

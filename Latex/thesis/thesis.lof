@@ -6,23 +6,27 @@
 \contentsline {figure}{\numberline {6}{\ignorespaces Month wise MSE for multivariate models}}{37}{figure.6}
 \contentsline {figure}{\numberline {7}{\ignorespaces Month wise MSE for univariate models}}{38}{figure.7}
 \contentsline {figure}{\numberline {8}{\ignorespaces Predictions LSTM vs. Lagged Value }}{38}{figure.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces TTF Front Month vs. Individual Months}}{46}{figure.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces TTF Front Month Closing Prices}}{46}{figure.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Auto Correlations TTF Front Month Closing Prices}}{47}{figure.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces Partial Auto Correlations TTF Front Month Closing Prices}}{47}{figure.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces TTF Day Ahead}}{48}{figure.13}
-\contentsline {figure}{\numberline {14}{\ignorespaces NBP Front Month}}{48}{figure.14}
-\contentsline {figure}{\numberline {15}{\ignorespaces Brent Oil Front Month}}{49}{figure.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces Phelix Base Load Front Month}}{49}{figure.16}
-\contentsline {figure}{\numberline {17}{\ignorespaces Phelix Peak Load Front Month}}{50}{figure.17}
-\contentsline {figure}{\numberline {18}{\ignorespaces Dutch LDZ Consumption}}{50}{figure.18}
-\contentsline {figure}{\numberline {19}{\ignorespaces Dutch Non-LDZ Consumption}}{51}{figure.19}
-\contentsline {figure}{\numberline {20}{\ignorespaces Dutch Production}}{51}{figure.20}
-\contentsline {figure}{\numberline {21}{\ignorespaces UK Continental Shelf Production}}{52}{figure.21}
-\contentsline {figure}{\numberline {22}{\ignorespaces UK Continental Shelf Production}}{52}{figure.22}
-\contentsline {figure}{\numberline {23}{\ignorespaces Dutch Storage}}{53}{figure.23}
-\contentsline {figure}{\numberline {24}{\ignorespaces UK Storage}}{53}{figure.24}
-\contentsline {figure}{\numberline {25}{\ignorespaces BBL Pipeline Flow}}{54}{figure.25}
-\contentsline {figure}{\numberline {26}{\ignorespaces Interconnector Pipeline Flow}}{54}{figure.26}
-\contentsline {figure}{\numberline {27}{\ignorespaces USD - EUR Exchange Rate}}{55}{figure.27}
-\contentsline {figure}{\numberline {28}{\ignorespaces GBP - EUR Exchange Rate}}{55}{figure.28}
+\contentsline {figure}{\numberline {9}{\ignorespaces Month wise BCE for multivariate models}}{41}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Month wise BCE for univariate models}}{41}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Average prices for multivariate models}}{43}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Average prices for univariate models}}{44}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces TTF Front Month vs. Individual Months}}{52}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces TTF Front Month Closing Prices}}{52}{figure.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Auto Correlations TTF Front Month Closing Prices}}{53}{figure.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Partial Auto Correlations TTF Front Month Closing Prices}}{53}{figure.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces TTF Day Ahead}}{54}{figure.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces NBP Front Month}}{54}{figure.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Brent Oil Front Month}}{55}{figure.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Phelix Base Load Front Month}}{55}{figure.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Phelix Peak Load Front Month}}{56}{figure.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces Dutch LDZ Consumption}}{56}{figure.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Dutch Non-LDZ Consumption}}{57}{figure.23}
+\contentsline {figure}{\numberline {24}{\ignorespaces Dutch Production}}{57}{figure.24}
+\contentsline {figure}{\numberline {25}{\ignorespaces UK Continental Shelf Production}}{58}{figure.25}
+\contentsline {figure}{\numberline {26}{\ignorespaces UK Continental Shelf Production}}{58}{figure.26}
+\contentsline {figure}{\numberline {27}{\ignorespaces Dutch Storage}}{59}{figure.27}
+\contentsline {figure}{\numberline {28}{\ignorespaces UK Storage}}{59}{figure.28}
+\contentsline {figure}{\numberline {29}{\ignorespaces BBL Pipeline Flow}}{60}{figure.29}
+\contentsline {figure}{\numberline {30}{\ignorespaces Interconnector Pipeline Flow}}{60}{figure.30}
+\contentsline {figure}{\numberline {31}{\ignorespaces USD - EUR Exchange Rate}}{61}{figure.31}
+\contentsline {figure}{\numberline {32}{\ignorespaces GBP - EUR Exchange Rate}}{61}{figure.32}
