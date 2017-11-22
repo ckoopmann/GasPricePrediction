@@ -1,4 +1,4 @@
-\begin{thebibliography}{57}
+\begin{thebibliography}{59}
 \newcommand{\enquote}[1]{``#1''}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
@@ -52,12 +52,6 @@
   gas price relationship and the shale gas revolution,} \emph{Energy
   Economics}, 64, 511--519.
 
-\bibitem[\protect\citeauthoryear{Ceperic, Zikovic, and Ceperic}{Ceperic
-  et~al.}{2017}]{ceperic_short-term_2017}
-\textsc{Ceperic, E., S.~Zikovic, and V.~Ceperic} (2017): \enquote{Short-term
-  forecasting of natural gas prices using machine learning and feature
-  selection algorithms,} \emph{Energy}, 140, 893--900.
-
 \bibitem[\protect\citeauthoryear{Chinn and Coibion}{Chinn and
   Coibion}{2014}]{chinn_predictive_2014}
 \textsc{Chinn, M.~D. and O.~Coibion} (2014): \enquote{The predictive content of
@@ -86,6 +80,12 @@
   et~al.}{2008}]{dees_assessing_2008}
 \textsc{Dées, S., A.~Gasteuil, R.~Kaufmann, and M.~Mann} (2008):
   \enquote{Assessing the factors behind oil price changes,} .
+
+\bibitem[\protect\citeauthoryear{Čeperić, Žiković, and Čeperić}{Čeperić
+  et~al.}{2017}]{ceperic_short-term_2017}
+\textsc{Čeperić, E., S.~Žiković, and V.~Čeperić} (2017):
+  \enquote{Short-term forecasting of natural gas prices using machine learning
+  and feature selection algorithms,} \emph{Energy}, 140, 893--900.
 
 \bibitem[\protect\citeauthoryear{Gareta, Romeo, and Gil}{Gareta
   et~al.}{2006}]{gareta_forecasting_2006}
@@ -127,6 +127,14 @@
 \bibitem[\protect\citeauthoryear{Herbert}{Herbert}{1993}]{herbert_relation_1993}
 \textsc{Herbert, J.~H.} (1993): \enquote{The relation of monthly spot to
   futures prices for natural gas,} \emph{Energy}, 18, 1119--1124.
+
+\bibitem[\protect\citeauthoryear{IEA}{IEA}{2011}]{iea_world_2011}
+\textsc{IEA, I.} (2011): \enquote{World energy outlook 2011,} \emph{Int. Energy
+  Agency}, 666.
+
+\bibitem[\protect\citeauthoryear{IEA}{IEA}{2017}]{iea_world_2017}
+---\hspace{-.1pt}---\hspace{-.1pt}--- (2017): \enquote{World energy outlook
+  2017,} \emph{Int. Energy Agency}, 666.
 
 \bibitem[\protect\citeauthoryear{Jin and Kim}{Jin and
   Kim}{2015}]{jin_forecasting_2015}

@@ -33,7 +33,7 @@
 \contentsline {xpart}{Conclusions}{59}{part.6}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Conclusions}{59}{chapter.8}
-\contentsline {xpart}{Appendix}{67}{part.7}
-\contentsline {table}{\numberline {8.1}{\ignorespaces Data Availability of all Input Variables\relax }}{78}{table.caption.62}
-\contentsline {table}{\numberline {8.2}{\ignorespaces Annual share of positive observation for binary target variable\relax }}{79}{table.caption.63}
-\contentsline {table}{\numberline {8.3}{\ignorespaces Savings in EUR/MWh of univariate LSTM model relative to equal distribution benchmark for differenttrading periods\relax }}{79}{table.caption.64}
+\contentsline {xpart}{Appendix}{69}{part.7}
+\contentsline {table}{\numberline {8.1}{\ignorespaces Data Availability of all Input Variables\relax }}{80}{table.caption.62}
+\contentsline {table}{\numberline {8.2}{\ignorespaces Annual share of positive observation for binary target variable\relax }}{81}{table.caption.63}
+\contentsline {table}{\numberline {8.3}{\ignorespaces Savings in EUR/MWh of univariate LSTM model relative to equal distribution benchmark for differenttrading periods\relax }}{81}{table.caption.64}

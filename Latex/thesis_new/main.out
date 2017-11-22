@@ -1,61 +1,66 @@
 \BOOKMARK [-1][-]{part.1}{I Introduction}{}% 1
 \BOOKMARK [0][-]{chapter.1}{Introduction}{part.1}% 2
 \BOOKMARK [1][-]{section.1.1}{Motivation}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.2}{Topic}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.3}{Structure}{chapter.1}% 5
-\BOOKMARK [-1][-]{part.2}{II The natural gas market}{}% 6
-\BOOKMARK [0][-]{chapter.2}{European Gas Market}{part.2}% 7
-\BOOKMARK [1][-]{section.2.1}{History}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.2}{Types of natural gas trading}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.3}{Natural Gas Derivatives}{chapter.2}% 10
-\BOOKMARK [-1][-]{part.3}{III Methods}{}% 11
-\BOOKMARK [0][-]{chapter.3}{Method}{part.3}% 12
-\BOOKMARK [1][-]{section.3.1}{RNN}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.2}{Vanishing Gradient Problem}{chapter.3}% 14
-\BOOKMARK [1][-]{section.3.3}{LSTM}{chapter.3}% 15
-\BOOKMARK [-1][-]{part.4}{IV Literature review}{}% 16
-\BOOKMARK [0][-]{chapter.4}{Literature Overview}{part.4}% 17
-\BOOKMARK [1][-]{section.4.1}{Electricity}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.2}{Oil}{chapter.4}% 19
-\BOOKMARK [1][-]{section.4.3}{Natural Gas}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.4}{Summary}{chapter.4}% 21
-\BOOKMARK [-1][-]{part.5}{V Empirical study}{}% 22
-\BOOKMARK [0][-]{chapter.5}{Data}{part.5}% 23
-\BOOKMARK [1][-]{section.5.1}{Target Variable}{chapter.5}% 24
-\BOOKMARK [2][-]{subsection.5.1.1}{Price Level Prediction}{section.5.1}% 25
-\BOOKMARK [2][-]{subsection.5.1.2}{Binary Prediction}{section.5.1}% 26
-\BOOKMARK [1][-]{section.5.2}{Input Variables}{chapter.5}% 27
-\BOOKMARK [2][-]{subsection.5.2.1}{Energy Commodity Prices}{section.5.2}% 28
-\BOOKMARK [2][-]{subsection.5.2.2}{Gas Market Fundamentals}{section.5.2}% 29
-\BOOKMARK [2][-]{subsection.5.2.3}{Exchange Rates}{section.5.2}% 30
-\BOOKMARK [2][-]{subsection.5.2.4}{Data Availability}{section.5.2}% 31
-\BOOKMARK [0][-]{chapter.6}{Experimental Design}{part.5}% 32
-\BOOKMARK [1][-]{section.6.1}{Preprocessing}{chapter.6}% 33
-\BOOKMARK [2][-]{subsection.6.1.1}{Treatment of missing data}{section.6.1}% 34
-\BOOKMARK [2][-]{subsection.6.1.2}{Feature scaling}{section.6.1}% 35
-\BOOKMARK [1][-]{section.6.2}{Reference Models}{chapter.6}% 36
-\BOOKMARK [1][-]{section.6.3}{Parameter Tuning}{chapter.6}% 37
-\BOOKMARK [2][-]{subsection.6.3.1}{Fixed Hyper-Parameters}{section.6.3}% 38
-\BOOKMARK [2][-]{subsection.6.3.2}{Tuning Parameters}{section.6.3}% 39
-\BOOKMARK [2][-]{subsection.6.3.3}{Tuning Process}{section.6.3}% 40
-\BOOKMARK [1][-]{section.6.4}{Variable Selection}{chapter.6}% 41
-\BOOKMARK [1][-]{section.6.5}{Model Evaluation}{chapter.6}% 42
-\BOOKMARK [0][-]{chapter.7}{Results}{part.5}% 43
-\BOOKMARK [1][-]{section.7.1}{Price Level Prediction}{chapter.7}% 44
-\BOOKMARK [2][-]{subsection.7.1.1}{Univariate Parameter Tuning}{section.7.1}% 45
-\BOOKMARK [2][-]{subsection.7.1.2}{Variable Selection}{section.7.1}% 46
-\BOOKMARK [2][-]{subsection.7.1.3}{Multivariate Parameter Tuning}{section.7.1}% 47
-\BOOKMARK [2][-]{subsection.7.1.4}{Evaluation}{section.7.1}% 48
-\BOOKMARK [1][-]{section.7.2}{Binary Prediction}{chapter.7}% 49
-\BOOKMARK [2][-]{subsection.7.2.1}{Univariate Parameter Tuning}{section.7.2}% 50
-\BOOKMARK [2][-]{subsection.7.2.2}{Variable Selection}{section.7.2}% 51
-\BOOKMARK [2][-]{subsection.7.2.3}{Multivariate Parameter Tuning}{section.7.2}% 52
-\BOOKMARK [2][-]{subsection.7.2.4}{Evaluation}{section.7.2}% 53
-\BOOKMARK [2][-]{subsection.7.2.5}{Trading Strategy}{section.7.2}% 54
-\BOOKMARK [-1][-]{part.6}{VI Conclusions}{}% 55
-\BOOKMARK [0][-]{chapter.8}{Conclusions}{part.6}% 56
-\BOOKMARK [1][-]{section.8.1}{Results}{chapter.8}% 57
-\BOOKMARK [1][-]{section.8.2}{Outlook}{chapter.8}% 58
-\BOOKMARK [-1][-]{part.7}{VII Appendix}{}% 59
-\BOOKMARK [0][-]{section.8.3}{Figures}{part.7}% 60
-\BOOKMARK [1][-]{section.8.4}{Tables}{section.8.3}% 61
+\BOOKMARK [1][-]{section.1.2}{Prediction problems}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Research questions}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Structure}{chapter.1}% 6
+\BOOKMARK [-1][-]{part.2}{II The natural gas market}{}% 7
+\BOOKMARK [0][-]{chapter.2}{European Gas Market}{part.2}% 8
+\BOOKMARK [1][-]{section.2.1}{History}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{Types of natural gas trading}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{Natural Gas Derivatives}{chapter.2}% 11
+\BOOKMARK [-1][-]{part.3}{III Methods}{}% 12
+\BOOKMARK [0][-]{chapter.3}{Method}{part.3}% 13
+\BOOKMARK [1][-]{section.3.1}{RNN}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.2}{Vanishing Gradient Problem}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.3}{LSTM}{chapter.3}% 16
+\BOOKMARK [-1][-]{part.4}{IV Literature review}{}% 17
+\BOOKMARK [0][-]{chapter.4}{Literature Overview}{part.4}% 18
+\BOOKMARK [1][-]{section.4.1}{Electricity}{chapter.4}% 19
+\BOOKMARK [1][-]{section.4.2}{Oil}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.3}{Natural Gas}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.4}{Summary}{chapter.4}% 22
+\BOOKMARK [-1][-]{part.5}{V Empirical study}{}% 23
+\BOOKMARK [0][-]{chapter.5}{Data}{part.5}% 24
+\BOOKMARK [1][-]{section.5.1}{Target Variable}{chapter.5}% 25
+\BOOKMARK [2][-]{subsection.5.1.1}{Price Level Prediction}{section.5.1}% 26
+\BOOKMARK [2][-]{subsection.5.1.2}{Binary Prediction}{section.5.1}% 27
+\BOOKMARK [1][-]{section.5.2}{Input Variables}{chapter.5}% 28
+\BOOKMARK [2][-]{subsection.5.2.1}{Energy Commodity Prices}{section.5.2}% 29
+\BOOKMARK [2][-]{subsection.5.2.2}{Gas Market Fundamentals}{section.5.2}% 30
+\BOOKMARK [2][-]{subsection.5.2.3}{Exchange Rates}{section.5.2}% 31
+\BOOKMARK [2][-]{subsection.5.2.4}{Data Availability}{section.5.2}% 32
+\BOOKMARK [0][-]{chapter.6}{Experimental Design}{part.5}% 33
+\BOOKMARK [1][-]{section.6.1}{Preprocessing}{chapter.6}% 34
+\BOOKMARK [2][-]{subsection.6.1.1}{Treatment of missing data}{section.6.1}% 35
+\BOOKMARK [2][-]{subsection.6.1.2}{Feature scaling}{section.6.1}% 36
+\BOOKMARK [1][-]{section.6.2}{Reference Models}{chapter.6}% 37
+\BOOKMARK [1][-]{section.6.3}{Parameter Tuning}{chapter.6}% 38
+\BOOKMARK [2][-]{subsection.6.3.1}{Fixed Hyper-Parameters}{section.6.3}% 39
+\BOOKMARK [2][-]{subsection.6.3.2}{Tuning Parameters}{section.6.3}% 40
+\BOOKMARK [2][-]{subsection.6.3.3}{Tuning Process}{section.6.3}% 41
+\BOOKMARK [1][-]{section.6.4}{Variable Selection}{chapter.6}% 42
+\BOOKMARK [1][-]{section.6.5}{Model Evaluation}{chapter.6}% 43
+\BOOKMARK [0][-]{chapter.7}{Results}{part.5}% 44
+\BOOKMARK [1][-]{section.7.1}{Price Level Prediction}{chapter.7}% 45
+\BOOKMARK [2][-]{subsection.7.1.1}{Univariate Parameter Tuning}{section.7.1}% 46
+\BOOKMARK [2][-]{subsection.7.1.2}{Variable Selection}{section.7.1}% 47
+\BOOKMARK [2][-]{subsection.7.1.3}{Multivariate Parameter Tuning}{section.7.1}% 48
+\BOOKMARK [2][-]{subsection.7.1.4}{Evaluation}{section.7.1}% 49
+\BOOKMARK [1][-]{section.7.2}{Binary Prediction}{chapter.7}% 50
+\BOOKMARK [2][-]{subsection.7.2.1}{Univariate Parameter Tuning}{section.7.2}% 51
+\BOOKMARK [2][-]{subsection.7.2.2}{Variable Selection}{section.7.2}% 52
+\BOOKMARK [2][-]{subsection.7.2.3}{Multivariate Parameter Tuning}{section.7.2}% 53
+\BOOKMARK [2][-]{subsection.7.2.4}{Evaluation}{section.7.2}% 54
+\BOOKMARK [2][-]{subsection.7.2.5}{Trading Strategy}{section.7.2}% 55
+\BOOKMARK [-1][-]{part.6}{VI Conclusions}{}% 56
+\BOOKMARK [0][-]{chapter.8}{Conclusions}{part.6}% 57
+\BOOKMARK [1][-]{section.8.1}{Research Questions}{chapter.8}% 58
+\BOOKMARK [2][-]{subsection.8.1.1}{Performance of recurrent neural networks}{section.8.1}% 59
+\BOOKMARK [2][-]{subsection.8.1.2}{Relative performance of LSTM}{section.8.1}% 60
+\BOOKMARK [2][-]{subsection.8.1.3}{Business value}{section.8.1}% 61
+\BOOKMARK [1][-]{section.8.2}{Other observations}{chapter.8}% 62
+\BOOKMARK [1][-]{section.8.3}{Outlook}{chapter.8}% 63
+\BOOKMARK [-1][-]{part.7}{VII Appendix}{}% 64
+\BOOKMARK [0][-]{section.8.4}{Figures}{part.7}% 65
+\BOOKMARK [1][-]{section.8.5}{Tables}{section.8.4}% 66

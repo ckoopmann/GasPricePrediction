@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.7.4)  21 NOV 2017 17:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.7.4)  22 NOV 2017 14:04
 entering extended mode
 **./main.tex
 (main.tex
@@ -1652,7 +1652,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 75.
 
-<oxlogo.png, id=250, 803.0pt x 803.0pt>
+<oxlogo.png, id=270, 803.0pt x 803.0pt>
 File: oxlogo.png Graphic file (type png)
  <use oxlogo.png>
 Package pdftex.def Info: oxlogo.png used on input line 75.
@@ -1722,20 +1722,29 @@ been already used, duplicate ignored
 l.6 \begin{description}
                         [2
 
-]) [3] [4] [5
+]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 14.
+
+("C:\Users\KoopmaCK\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omsptm.f
+d"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 14.
+ [3]) [4] [5
 
 ] (gas_market.tex
 Chapter 2.
 [6
 
-] [7] <"../../Plots/hub_map".png, id=498, 1065.22969pt x 767.86874pt>
+] [7] <"../../Plots/hub_map".png, id=530, 1065.22969pt x 767.86874pt>
 File: "../../Plots/hub_map".png Graphic file (type png)
 
 <use "../../Plots/hub_map".png>
 Package pdftex.def Info: "../../Plots/hub_map".png used on input line 12.
 (pdftex.def)             Requested size: 334.60422pt x 241.20036pt.
  [8 <../../Plots/hub_map.png>]
-<"../../Plots/trading_types".png, id=507, 1140.51094pt x 456.95718pt>
+<"../../Plots/trading_types".png, id=539, 1140.51094pt x 456.95718pt>
 File: "../../Plots/trading_types".png Graphic file (type png)
 
 <use "../../Plots/trading_types".png>
@@ -1749,21 +1758,21 @@ Package pdftex.def Info: "../../Plots/trading_types".png used on input line 30.
 Chapter 3.
 [12
 
-] <"../../Plots/RNN".png, id=534, 844.65562pt x 570.63188pt>
+] <"../../Plots/RNN".png, id=565, 844.65562pt x 570.63188pt>
 File: "../../Plots/RNN".png Graphic file (type png)
 
 <use "../../Plots/RNN".png>
 Package pdftex.def Info: "../../Plots/RNN".png used on input line 14.
 (pdftex.def)             Requested size: 334.60422pt x 226.0545pt.
 
-<"../../Plots/elman".png, id=535, 1022.31938pt x 746.03719pt>
+<"../../Plots/elman".png, id=566, 1022.31938pt x 746.03719pt>
 File: "../../Plots/elman".png Graphic file (type png)
 
 <use "../../Plots/elman".png>
 Package pdftex.def Info: "../../Plots/elman".png used on input line 20.
 (pdftex.def)             Requested size: 334.60422pt x 244.17813pt.
  [13 <../../Plots/RNN.png>] [14 <../../Plots/elman.png>] <"../../Plots/lstm".pn
-g, id=550, 1022.31938pt x 746.79pt>
+g, id=581, 1022.31938pt x 746.79pt>
 File: "../../Plots/lstm".png Graphic file (type png)
 
 <use "../../Plots/lstm".png>
@@ -1791,15 +1800,7 @@ LaTeX Warning: Reference `Sec:Literature' on page 34 undefined on input line 19
 
 [34] [35]) (experiment.tex [36]
 Chapter 6.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 5.
-
-("C:\Users\KoopmaCK\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omsptm.f
-d"
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 5.
- [37
+[37
 
 ] [38] [39] [40] [41] [42] [43]) (results.tex [44]
 Chapter 7.
@@ -1812,8 +1813,8 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ) (../tables/level_multivar_par_tuning_short.tex [46])
 (../tables/level_eval_short.tex [47])
-<"../../Plots/level_evaluation_monthly_multivar".png, id=986, 586.1097pt x 359.
-9046pt>
+<"../../Plots/level_evaluation_monthly_multivar".png, id=1017, 586.1097pt x 359
+.9046pt>
 File: "../../Plots/level_evaluation_monthly_multivar".png Graphic file (type pn
 g)
  <use "../../Plots/level_evaluation_monthly_multivar".png>
@@ -1825,8 +1826,8 @@ ed on input line 21.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<"../../Plots/level_evaluation_monthly_univar".png, id=987, 586.1097pt x 359.90
-46pt>
+<"../../Plots/level_evaluation_monthly_univar".png, id=1018, 586.1097pt x 359.9
+046pt>
 File: "../../Plots/level_evaluation_monthly_univar".png Graphic file (type png)
 
  <use "../../Plots/level_evaluation_monthly_univar".png>
@@ -1837,7 +1838,7 @@ Package pdftex.def Info: "../../Plots/level_evaluation_monthly_univar".png used
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<"../../Plots/level_predictions".png, id=989, 586.1097pt x 359.9046pt>
+<"../../Plots/level_predictions".png, id=1020, 586.1097pt x 359.9046pt>
 File: "../../Plots/level_predictions".png Graphic file (type png)
 
 <use "../../Plots/level_predictions".png>
@@ -1859,7 +1860,7 @@ png>]) (../tables/binary_multivar_par_tuning_short.tex
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ) (../tables/binary_eval_short.tex [51])
-<"../../Plots/binary_evaluation_monthly_multivar".png, id=1012, 586.1097pt x 35
+<"../../Plots/binary_evaluation_monthly_multivar".png, id=1043, 586.1097pt x 35
 9.9046pt>
 File: "../../Plots/binary_evaluation_monthly_multivar".png Graphic file (type p
 ng)
@@ -1872,7 +1873,7 @@ sed on input line 59.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<"../../Plots/binary_evaluation_monthly_univar".png, id=1013, 586.1097pt x 359.
+<"../../Plots/binary_evaluation_monthly_univar".png, id=1044, 586.1097pt x 359.
 9046pt>
 File: "../../Plots/binary_evaluation_monthly_univar".png Graphic file (type png
 )
@@ -1886,7 +1887,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [52] [53 <../../Plots/binary_evaluation_monthly_multivar.png> <../../Plots/bina
 ry_evaluation_monthly_univar.png>] [54]
-<"../../Plots/binary_trade_evaluation_monthly_multivar".png, id=1030, 586.1097p
+<"../../Plots/binary_trade_evaluation_monthly_multivar".png, id=1061, 586.1097p
 t x 359.9046pt>
 File: "../../Plots/binary_trade_evaluation_monthly_multivar".png Graphic file (
 type png)
@@ -1900,7 +1901,7 @@ Package pdftex.def Info: "../../Plots/binary_trade_evaluation_monthly_multivar"
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<"../../Plots/binary_trade_evaluation_monthly_univar".png, id=1031, 586.1097pt 
+<"../../Plots/binary_trade_evaluation_monthly_univar".png, id=1062, 586.1097pt 
 x 359.9046pt>
 File: "../../Plots/binary_trade_evaluation_monthly_univar".png Graphic file (ty
 pe png)
@@ -1921,11 +1922,11 @@ ots/binary_trade_evaluation_monthly_univar.png>]) [57] [58
 
 ] (conc.tex
 Chapter 8.
-) (main.bbl [59
+[59
 
-] [60
+] [60]) (main.bbl [61] [62
 
-] [61] [62] [63] [64]) [65] [66
+] [63] [64] [65] [66]) [67] [68
 
 ] (app_figures.tex
 
@@ -1933,21 +1934,21 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 (hyperref)                than one, level fixed on input line 1.
 
 
-<"../../Plots/ttf_monthly_level_2016_02".png, id=1087, 586.1097pt x 359.9046pt>
+<"../../Plots/ttf_monthly_level_2016_02".png, id=1126, 586.1097pt x 359.9046pt>
 File: "../../Plots/ttf_monthly_level_2016_02".png Graphic file (type png)
 <use "../../Plots/ttf_monthly_level_2016_02".png>
 Package pdftex.def Info: "../../Plots/ttf_monthly_level_2016_02".png used on in
 put line 5.
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/ttf_fm_level".png, id=1088, 586.1097pt x 359.9046pt>
+<"../../Plots/ttf_fm_level".png, id=1127, 586.1097pt x 359.9046pt>
 File: "../../Plots/ttf_fm_level".png Graphic file (type png)
 
 <use "../../Plots/ttf_fm_level".png>
 Package pdftex.def Info: "../../Plots/ttf_fm_level".png used on input line 13.
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/acf_ttf_fm_level".png, id=1089, 586.1097pt x 359.9046pt>
+<"../../Plots/acf_ttf_fm_level".png, id=1128, 586.1097pt x 359.9046pt>
 File: "../../Plots/acf_ttf_fm_level".png Graphic file (type png)
 
 <use "../../Plots/acf_ttf_fm_level".png>
@@ -1955,7 +1956,7 @@ Package pdftex.def Info: "../../Plots/acf_ttf_fm_level".png used on input line
 20.
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/pacf_ttf_fm_level".png, id=1090, 586.1097pt x 359.9046pt>
+<"../../Plots/pacf_ttf_fm_level".png, id=1129, 586.1097pt x 359.9046pt>
 File: "../../Plots/pacf_ttf_fm_level".png Graphic file (type png)
 
 <use "../../Plots/pacf_ttf_fm_level".png>
@@ -1963,28 +1964,28 @@ Package pdftex.def Info: "../../Plots/pacf_ttf_fm_level".png used on input line
  26.
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/TTFDAlevel".png, id=1091, 586.1097pt x 359.9046pt>
+<"../../Plots/TTFDAlevel".png, id=1130, 586.1097pt x 359.9046pt>
 File: "../../Plots/TTFDAlevel".png Graphic file (type png)
 
 <use "../../Plots/TTFDAlevel".png>
 Package pdftex.def Info: "../../Plots/TTFDAlevel".png used on input line 32.
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/NBPFMlevel".png, id=1092, 586.1097pt x 359.9046pt>
+<"../../Plots/NBPFMlevel".png, id=1131, 586.1097pt x 359.9046pt>
 File: "../../Plots/NBPFMlevel".png Graphic file (type png)
 
 <use "../../Plots/NBPFMlevel".png>
 Package pdftex.def Info: "../../Plots/NBPFMlevel".png used on input line 38.
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/OilFMlevel".png, id=1093, 586.1097pt x 359.9046pt>
+<"../../Plots/OilFMlevel".png, id=1132, 586.1097pt x 359.9046pt>
 File: "../../Plots/OilFMlevel".png Graphic file (type png)
 
 <use "../../Plots/OilFMlevel".png>
 Package pdftex.def Info: "../../Plots/OilFMlevel".png used on input line 44.
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/ElectricityBaseFMlevel".png, id=1094, 586.1097pt x 359.9046pt>
+<"../../Plots/ElectricityBaseFMlevel".png, id=1133, 586.1097pt x 359.9046pt>
 File: "../../Plots/ElectricityBaseFMlevel".png Graphic file (type png)
 
 <use "../../Plots/ElectricityBaseFMlevel".png>
@@ -1992,7 +1993,7 @@ Package pdftex.def Info: "../../Plots/ElectricityBaseFMlevel".png used on input
  line 50.
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/ElectricityPeakFMlevel".png, id=1095, 586.1097pt x 359.9046pt>
+<"../../Plots/ElectricityPeakFMlevel".png, id=1134, 586.1097pt x 359.9046pt>
 File: "../../Plots/ElectricityPeakFMlevel".png Graphic file (type png)
 
 <use "../../Plots/ElectricityPeakFMlevel".png>
@@ -2000,7 +2001,7 @@ Package pdftex.def Info: "../../Plots/ElectricityPeakFMlevel".png used on input
  line 56.
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/ConLDZNLlevel".png, id=1096, 586.1097pt x 359.9046pt>
+<"../../Plots/ConLDZNLlevel".png, id=1135, 586.1097pt x 359.9046pt>
 File: "../../Plots/ConLDZNLlevel".png Graphic file (type png)
 
 <use "../../Plots/ConLDZNLlevel".png>
@@ -2008,7 +2009,7 @@ Package pdftex.def Info: "../../Plots/ConLDZNLlevel".png used on input line 62.
 
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/ConNLDZNLlevel".png, id=1097, 586.1097pt x 359.9046pt>
+<"../../Plots/ConNLDZNLlevel".png, id=1136, 586.1097pt x 359.9046pt>
 File: "../../Plots/ConNLDZNLlevel".png Graphic file (type png)
 
 <use "../../Plots/ConNLDZNLlevel".png>
@@ -2016,14 +2017,14 @@ Package pdftex.def Info: "../../Plots/ConNLDZNLlevel".png used on input line 68
 .
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/ProdNLlevel".png, id=1098, 586.1097pt x 359.9046pt>
+<"../../Plots/ProdNLlevel".png, id=1137, 586.1097pt x 359.9046pt>
 File: "../../Plots/ProdNLlevel".png Graphic file (type png)
 
 <use "../../Plots/ProdNLlevel".png>
 Package pdftex.def Info: "../../Plots/ProdNLlevel".png used on input line 74.
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/ProdUKCSlevel".png, id=1099, 586.1097pt x 359.9046pt>
+<"../../Plots/ProdUKCSlevel".png, id=1138, 586.1097pt x 359.9046pt>
 File: "../../Plots/ProdUKCSlevel".png Graphic file (type png)
 
 <use "../../Plots/ProdUKCSlevel".png>
@@ -2036,7 +2037,7 @@ Package pdftex.def Info: "../../Plots/ProdUKCSlevel".png used on input line 88.
 
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/StorageNLlevel".png, id=1100, 586.1097pt x 359.9046pt>
+<"../../Plots/StorageNLlevel".png, id=1139, 586.1097pt x 359.9046pt>
 File: "../../Plots/StorageNLlevel".png Graphic file (type png)
 
 <use "../../Plots/StorageNLlevel".png>
@@ -2044,7 +2045,7 @@ Package pdftex.def Info: "../../Plots/StorageNLlevel".png used on input line 94
 .
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/StorageUKlevel".png, id=1101, 586.1097pt x 359.9046pt>
+<"../../Plots/StorageUKlevel".png, id=1140, 586.1097pt x 359.9046pt>
 File: "../../Plots/StorageUKlevel".png Graphic file (type png)
 
 <use "../../Plots/StorageUKlevel".png>
@@ -2052,7 +2053,7 @@ Package pdftex.def Info: "../../Plots/StorageUKlevel".png used on input line 10
 1.
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/TradeBBLlevel".png, id=1102, 586.1097pt x 359.9046pt>
+<"../../Plots/TradeBBLlevel".png, id=1141, 586.1097pt x 359.9046pt>
 File: "../../Plots/TradeBBLlevel".png Graphic file (type png)
 
 <use "../../Plots/TradeBBLlevel".png>
@@ -2060,7 +2061,7 @@ Package pdftex.def Info: "../../Plots/TradeBBLlevel".png used on input line 107
 .
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/TradeIUKlevel".png, id=1103, 586.1097pt x 359.9046pt>
+<"../../Plots/TradeIUKlevel".png, id=1142, 586.1097pt x 359.9046pt>
 File: "../../Plots/TradeIUKlevel".png Graphic file (type png)
 
 <use "../../Plots/TradeIUKlevel".png>
@@ -2068,7 +2069,7 @@ Package pdftex.def Info: "../../Plots/TradeIUKlevel".png used on input line 113
 .
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/EURUSDFXlevel".png, id=1104, 586.1097pt x 359.9046pt>
+<"../../Plots/EURUSDFXlevel".png, id=1143, 586.1097pt x 359.9046pt>
 File: "../../Plots/EURUSDFXlevel".png Graphic file (type png)
 
 <use "../../Plots/EURUSDFXlevel".png>
@@ -2076,34 +2077,34 @@ Package pdftex.def Info: "../../Plots/EURUSDFXlevel".png used on input line 119
 .
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
 
-<"../../Plots/EURGBPFXlevel".png, id=1105, 586.1097pt x 359.9046pt>
+<"../../Plots/EURGBPFXlevel".png, id=1144, 586.1097pt x 359.9046pt>
 File: "../../Plots/EURGBPFXlevel".png Graphic file (type png)
 
 <use "../../Plots/EURGBPFXlevel".png>
 Package pdftex.def Info: "../../Plots/EURGBPFXlevel".png used on input line 125
 .
 (pdftex.def)             Requested size: 334.60422pt x 205.46626pt.
- [67 <../../Plots/ttf_monthly_level_2016_02.png>] [68 <../../Plots/ttf_fm_level
+ [69 <../../Plots/ttf_monthly_level_2016_02.png>] [70 <../../Plots/ttf_fm_level
 .png> <../../Plots/acf_ttf_fm_level.png>]
-[69 <../../Plots/pacf_ttf_fm_level.png> <../../Plots/TTFDAlevel.png>] [70 <../.
-./Plots/NBPFMlevel.png> <../../Plots/OilFMlevel.png>] [71 <../../Plots/Electric
-ityBaseFMlevel.png> <../../Plots/ElectricityPeakFMlevel.png>] [72 <../../Plots/
-ConLDZNLlevel.png> <../../Plots/ConNLDZNLlevel.png>] [73 <../../Plots/ProdNLlev
-el.png> <../../Plots/ProdUKCSlevel.png>] [74 <../../Plots/StorageNLlevel.png>]
-[75 <../../Plots/StorageUKlevel.png> <../../Plots/TradeBBLlevel.png>] [76 <../.
-./Plots/TradeIUKlevel.png> <../../Plots/EURUSDFXlevel.png>] [77 <../../Plots/EU
+[71 <../../Plots/pacf_ttf_fm_level.png> <../../Plots/TTFDAlevel.png>] [72 <../.
+./Plots/NBPFMlevel.png> <../../Plots/OilFMlevel.png>] [73 <../../Plots/Electric
+ityBaseFMlevel.png> <../../Plots/ElectricityPeakFMlevel.png>] [74 <../../Plots/
+ConLDZNLlevel.png> <../../Plots/ConNLDZNLlevel.png>] [75 <../../Plots/ProdNLlev
+el.png> <../../Plots/ProdUKCSlevel.png>] [76 <../../Plots/StorageNLlevel.png>]
+[77 <../../Plots/StorageUKlevel.png> <../../Plots/TradeBBLlevel.png>] [78 <../.
+./Plots/TradeIUKlevel.png> <../../Plots/EURUSDFXlevel.png>] [79 <../../Plots/EU
 RGBPFXlevel.png>]) (app_tables.tex (../tables/data_availability.tex)
 (../tables/balance_overview.tex) (../tables/binary_eval_cutoff.tex
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-))) [78
+))) [80
 
 ]
 
-LaTeX Warning: Text page 79 contains only floats.
+LaTeX Warning: Text page 81 contains only floats.
 
-[79] [80
+[81] [82
 
 ]
 Package minitoc Info: I0009
@@ -2127,14 +2128,14 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the main.log file.
 
-[81]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
+[83]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 99.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 99.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 99.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 99.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E1A676D7060698CE6838AD03D89AB99A;3852.
+(rerunfilecheck)             Checksum: F95BD4C004BA21B55E00BE7DAADEDAEB;4256.
 
 
 LaTeX Warning: There were undefined references.
@@ -2142,16 +2143,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 99.
  ) 
 Here is how much of TeX's memory you used:
- 33971 strings out of 493323
- 672493 string characters out of 3128714
- 768526 words of memory out of 3000000
- 36364 multiletter control sequences out of 15000+200000
+ 33992 strings out of 493323
+ 672835 string characters out of 3128714
+ 768610 words of memory out of 3000000
+ 36376 multiletter control sequences out of 15000+200000
  552778 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,12n,96p,10486b,530s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 61i,12n,96p,10486b,534s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.
 enc}<C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmex10.pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/
@@ -2169,9 +2170,9 @@ Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/KoopmaCK
 pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/
 utmr8a.pfb><C:/Users/KoopmaCK/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw
 /times/utmri8a.pfb>
-Output written on main.pdf (91 pages, 1671799 bytes).
+Output written on main.pdf (93 pages, 1682047 bytes).
 PDF statistics:
- 1293 PDF objects out of 1440 (max. 8388607)
- 281 named destinations out of 1000 (max. 500000)
- 661 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1335 PDF objects out of 1440 (max. 8388607)
+ 290 named destinations out of 1000 (max. 500000)
+ 701 words of extra memory for PDF output out of 10000 (max. 10000000)
 
