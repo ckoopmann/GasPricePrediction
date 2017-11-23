@@ -73,17 +73,6 @@
 \begin{document}
 \maketitle
 \begin{romanpages}
-\begin{acknowledgements}
-
-\end{acknowledgements}
-\tableofcontents
-\listoffigures
-\listoftables
-
-\end{romanpages}
-
-
-\input{structure.tex}
 
 \begin{originality}
 I hereby confirm that I have written the accompanying thesis by myself, without
@@ -93,7 +82,35 @@ the acknowledgements.
 This applies explicitly to all graphics, drawings, maps and images included in the
 thesis.
 
-Berlin, 
+Berlin, \today
+ \\
+ \\
+ \\
+ \\
+ \\
+Christian Koopmann
 \end{originality}
+\newpage
+\begin{acknowledgements}
+This thesis has been completed in cooperation with \textit{BASF SE} in the \textit{Advanced Data Analytics} team of the procurement department. I am especially thankful to my supervisor Dr. Ferdinand Kiermaier as well as my colleagues both in the Data Analytics team as well as the energy trading department, for their valuable input and feedback.
+
+Special thanks go to my thesis supervisor Prof. Dr. Stefan Lessmann for his support and guidance throughout the completion of this thesis. Especially his inputs regarding the specification of the topic as well as the interpretation of the results were of particular value. 
+\end{acknowledgements}
+\newpage
+\begin{abstract}
+In this thesis Long Short Term Memory networks are used to model prices of monthly futures for natural gas on the TTF trading hub. The models are used to predict both daily closing prices as well as a binary variable indicating price optimality among the remaining trading days until delivery.
+ \\
+Based on the results from the prediction of closing prices the results regarding LSTM performance are mixed, with the method outperforming alternative neural network structures but providing no predictive advantage over current market prices.
+ \\
+Regarding the binary predictions the LSTM model shows a stronger performance outperforming all reference models including simpler recurrent structures as well as feed forward neural networks and logistic regression. Based on these predictions a trading strategy is derived that is able to generate significant savings over the average market price for buyers of natural gas.
+\end{abstract}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\end{romanpages}
+
+
+\input{structure.tex}
 
 \end{document}

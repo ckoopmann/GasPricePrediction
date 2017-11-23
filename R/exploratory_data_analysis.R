@@ -58,6 +58,12 @@ binary_plot_data[,.(PositiveShare = mean(BinaryVar)), by = .(Year = as.character
 #Plot for month with few positive observations
 binary_plot_few_positive = ggplot(data = binary_plot_data[year(Date) == 2017 & month(Date) == 2], aes(x = Date)) + geom_line(aes(y = CLOSE)) + geom_point(aes(y = BinaryVar*max(binary_plot_data[year(Date) == 2017 & month(Date) == 2]$CLOSE))) + scale_y_continuous(sec.axis = sec_axis(~.*1/max(binary_plot_data[year(Date) == 2017 & month(Date) == 2]$CLOSE), name = "Binary Target")) + theme_classic() + labs(title = "Price level vs. binary target variable 02/2017", y = "Price Level [EUR/MWh]")
 
+ggsave( "../Plots/binary_plot_few_positive.png",binary_plot_few_positive, width = 8.11, height = 4.98)
+
+binary_plot_many_positive = ggplot(data = binary_plot_data[year(Date) == 2016 & month(Date) == 12], aes(x = Date)) + geom_line(aes(y = CLOSE)) + geom_point(aes(y = BinaryVar*max(binary_plot_data[year(Date) == 2016 & month(Date) == 12]$CLOSE))) + scale_y_continuous(sec.axis = sec_axis(~.*1/max(binary_plot_data[year(Date) == 2016 & month(Date) == 12]$CLOSE), name = "Binary Target")) + theme_classic() + labs(title = "Price level vs. binary target variable 12/2016", y = "Price Level [EUR/MWh]")
+
+ggsave( "../Plots/binary_plot_many_positive.png",binary_plot_many_positive, width = 8.11, height = 4.98)
+
 #Balance overview table with annual share
 balance_overview = binary_plot_data[,.(PositiveShare = mean(BinaryVar)), by = .(Year = as.character(year(Date)))]
 balance_overview = rbind(balance_overview,binary_plot_data[,.(Year = "Total",PositiveShare = mean(BinaryVar))])

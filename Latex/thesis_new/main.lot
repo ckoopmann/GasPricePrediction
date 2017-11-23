@@ -17,23 +17,23 @@
 \contentsline {xpart}{Empirical study}{33}{part.5}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Data}{33}{chapter.5}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Data Availability of all Input Variables\relax }}{40}{table.caption.29}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Experimental Design}{38}{chapter.6}
+\contentsline {xchapter}{Experimental Design}{41}{chapter.6}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Results}{46}{chapter.7}
-\contentsline {table}{\numberline {7.1}{\ignorespaces Selected parameter combinations in univariate tuning step of price level prediction\relax }}{47}{table.caption.25}
-\contentsline {table}{\numberline {7.2}{\ignorespaces Selected variable combinations in variable selection step of price level prediction\relax }}{48}{table.caption.26}
-\contentsline {table}{\numberline {7.3}{\ignorespaces Selected parameter combinations in multivariate tuning step of price level prediction\relax }}{48}{table.caption.27}
-\contentsline {table}{\numberline {7.4}{\ignorespaces Average MSE across months for each model in evaluation step\relax }}{49}{table.caption.28}
-\contentsline {table}{\numberline {7.5}{\ignorespaces Selected parameter combinations in univariate tuning step of binary prediction\relax }}{52}{table.caption.32}
-\contentsline {table}{\numberline {7.6}{\ignorespaces Selected variable combinations in variable selection step of binary prediction\relax }}{52}{table.caption.33}
-\contentsline {table}{\numberline {7.7}{\ignorespaces Selected parameter combinations in multivariate tuning step of binary prediction\relax }}{53}{table.caption.34}
-\contentsline {table}{\numberline {7.8}{\ignorespaces Average BCE across months for each model in evaluation step\relax }}{53}{table.caption.35}
-\contentsline {table}{\numberline {7.9}{\ignorespaces Average price per MWh across months for simple trading strategy based on each model\relax }}{58}{table.caption.40}
-\contentsline {xpart}{Conclusions}{60}{part.6}
+\contentsline {xchapter}{Results}{49}{chapter.7}
+\contentsline {table}{\numberline {7.1}{\ignorespaces Selected parameter combinations in univariate tuning step of price level prediction\relax }}{50}{table.caption.30}
+\contentsline {table}{\numberline {7.2}{\ignorespaces Selected variable combinations in variable selection step of price level prediction\relax }}{51}{table.caption.31}
+\contentsline {table}{\numberline {7.3}{\ignorespaces Selected parameter combinations in multivariate tuning step of price level prediction\relax }}{51}{table.caption.32}
+\contentsline {table}{\numberline {7.4}{\ignorespaces Average MSE across months for each model in evaluation step\relax }}{52}{table.caption.33}
+\contentsline {table}{\numberline {7.5}{\ignorespaces Selected parameter combinations in univariate tuning step of binary prediction\relax }}{55}{table.caption.37}
+\contentsline {table}{\numberline {7.6}{\ignorespaces Selected variable combinations in variable selection step of binary prediction\relax }}{55}{table.caption.38}
+\contentsline {table}{\numberline {7.7}{\ignorespaces Selected parameter combinations in multivariate tuning step of binary prediction\relax }}{56}{table.caption.39}
+\contentsline {table}{\numberline {7.8}{\ignorespaces Average BCE across months for each model in evaluation step\relax }}{56}{table.caption.40}
+\contentsline {table}{\numberline {7.9}{\ignorespaces Average price per MWh across months for simple trading strategy based on each model\relax }}{61}{table.caption.45}
+\contentsline {xpart}{Conclusions}{63}{part.6}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions}{60}{chapter.8}
-\contentsline {xpart}{Appendix}{72}{part.7}
-\contentsline {table}{\numberline {8.1}{\ignorespaces Data Availability of all Input Variables\relax }}{83}{table.caption.62}
-\contentsline {table}{\numberline {8.2}{\ignorespaces Annual share of positive observation for binary target variable\relax }}{84}{table.caption.63}
-\contentsline {table}{\numberline {8.3}{\ignorespaces Savings in EUR/MWh of univariate LSTM model relative to equal distribution benchmark for differenttrading periods\relax }}{84}{table.caption.64}
+\contentsline {xchapter}{Conclusions}{63}{chapter.8}
+\contentsline {xpart}{Appendix}{75}{part.7}
+\contentsline {table}{\numberline {8.1}{\ignorespaces Annual share of positive observation for binary target variable\relax }}{85}{table.caption.65}
+\contentsline {table}{\numberline {8.2}{\ignorespaces Savings in EUR/MWh of univariate LSTM model relative to equal distribution benchmark for differenttrading periods\relax }}{86}{table.caption.66}

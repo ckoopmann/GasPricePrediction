@@ -18,38 +18,40 @@
 \contentsline {xpart}{Empirical study}{33}{part.5}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Data}{33}{chapter.5}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces TTF Front Month vs. Individual Months\relax }}{34}{figure.caption.25}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Auto Correlations TTF Front Month Closing Prices\relax }}{35}{figure.caption.26}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Partial Auto Correlations TTF Front Month Closing Prices\relax }}{35}{figure.caption.27}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Binary target variable and price level for December 2016\relax }}{36}{figure.caption.28}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Experimental Design}{38}{chapter.6}
+\contentsline {xchapter}{Experimental Design}{41}{chapter.6}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Results}{46}{chapter.7}
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Month wise MSE for multivariate models\relax }}{50}{figure.caption.29}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Month wise MSE for univariate models\relax }}{50}{figure.caption.30}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Predictions LSTM vs. Lagged Value \relax }}{51}{figure.caption.31}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Month wise BCE for multivariate models\relax }}{54}{figure.caption.36}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Month wise BCE for univariate models\relax }}{54}{figure.caption.37}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Average prices for multivariate models\relax }}{57}{figure.caption.38}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Average prices for univariate models\relax }}{57}{figure.caption.39}
-\contentsline {xpart}{Conclusions}{60}{part.6}
+\contentsline {xchapter}{Results}{49}{chapter.7}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Month wise MSE for multivariate models\relax }}{53}{figure.caption.34}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Month wise MSE for univariate models\relax }}{53}{figure.caption.35}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Predictions LSTM vs. Lagged Value \relax }}{54}{figure.caption.36}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Month wise BCE for multivariate models\relax }}{57}{figure.caption.41}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Month wise BCE for univariate models\relax }}{57}{figure.caption.42}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Average prices for multivariate models\relax }}{60}{figure.caption.43}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Average prices for univariate models\relax }}{60}{figure.caption.44}
+\contentsline {xpart}{Conclusions}{63}{part.6}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusions}{60}{chapter.8}
-\contentsline {xpart}{Appendix}{72}{part.7}
-\contentsline {figure}{\numberline {8.1}{\ignorespaces TTF Front Month vs. Individual Months\relax }}{72}{figure.caption.42}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces TTF Front Month Closing Prices\relax }}{73}{figure.caption.43}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Auto Correlations TTF Front Month Closing Prices\relax }}{73}{figure.caption.44}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Partial Auto Correlations TTF Front Month Closing Prices\relax }}{74}{figure.caption.45}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces TTF Day Ahead\relax }}{74}{figure.caption.46}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces NBP Front Month\relax }}{75}{figure.caption.47}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Brent Oil Front Month\relax }}{75}{figure.caption.48}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces Phelix Base Load Front Month\relax }}{76}{figure.caption.49}
-\contentsline {figure}{\numberline {8.9}{\ignorespaces Phelix Peak Load Front Month\relax }}{76}{figure.caption.50}
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Dutch LDZ Consumption\relax }}{77}{figure.caption.51}
-\contentsline {figure}{\numberline {8.11}{\ignorespaces Dutch Non-LDZ Consumption\relax }}{77}{figure.caption.52}
-\contentsline {figure}{\numberline {8.12}{\ignorespaces Dutch Production\relax }}{78}{figure.caption.53}
-\contentsline {figure}{\numberline {8.13}{\ignorespaces UK Continental Shelf Production\relax }}{78}{figure.caption.54}
-\contentsline {figure}{\numberline {8.14}{\ignorespaces UK Continental Shelf Production\relax }}{79}{figure.caption.55}
-\contentsline {figure}{\numberline {8.15}{\ignorespaces Dutch Storage\relax }}{79}{figure.caption.56}
-\contentsline {figure}{\numberline {8.16}{\ignorespaces UK Storage\relax }}{80}{figure.caption.57}
-\contentsline {figure}{\numberline {8.17}{\ignorespaces BBL Pipeline Flow\relax }}{80}{figure.caption.58}
-\contentsline {figure}{\numberline {8.18}{\ignorespaces Interconnector Pipeline Flow\relax }}{81}{figure.caption.59}
-\contentsline {figure}{\numberline {8.19}{\ignorespaces USD - EUR Exchange Rate\relax }}{81}{figure.caption.60}
-\contentsline {figure}{\numberline {8.20}{\ignorespaces GBP - EUR Exchange Rate\relax }}{82}{figure.caption.61}
+\contentsline {xchapter}{Conclusions}{63}{chapter.8}
+\contentsline {xpart}{Appendix}{75}{part.7}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces TTF Front Month vs. Individual Months\relax }}{75}{figure.caption.47}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces TTF Front Month Closing Prices\relax }}{76}{figure.caption.48}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces TTF Day Ahead\relax }}{76}{figure.caption.49}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces NBP Front Month\relax }}{77}{figure.caption.50}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Brent Oil Front Month\relax }}{77}{figure.caption.51}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Phelix Base Load Front Month\relax }}{78}{figure.caption.52}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Phelix Peak Load Front Month\relax }}{78}{figure.caption.53}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Dutch LDZ Consumption\relax }}{79}{figure.caption.54}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Dutch Non-LDZ Consumption\relax }}{79}{figure.caption.55}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Dutch Production\relax }}{80}{figure.caption.56}
+\contentsline {figure}{\numberline {8.11}{\ignorespaces UK Continental Shelf Production\relax }}{80}{figure.caption.57}
+\contentsline {figure}{\numberline {8.12}{\ignorespaces UK Continental Shelf Production\relax }}{81}{figure.caption.58}
+\contentsline {figure}{\numberline {8.13}{\ignorespaces Dutch Storage\relax }}{81}{figure.caption.59}
+\contentsline {figure}{\numberline {8.14}{\ignorespaces UK Storage\relax }}{82}{figure.caption.60}
+\contentsline {figure}{\numberline {8.15}{\ignorespaces BBL Pipeline Flow\relax }}{82}{figure.caption.61}
+\contentsline {figure}{\numberline {8.16}{\ignorespaces Interconnector Pipeline Flow\relax }}{83}{figure.caption.62}
+\contentsline {figure}{\numberline {8.17}{\ignorespaces USD - EUR Exchange Rate\relax }}{83}{figure.caption.63}
+\contentsline {figure}{\numberline {8.18}{\ignorespaces GBP - EUR Exchange Rate\relax }}{84}{figure.caption.64}
