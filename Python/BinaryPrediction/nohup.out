@@ -25322,3 +25322,14 @@ Fast-forward
  .../LevelPrediction/level_eval/predictions.csv     |  3472 +-
  Python/LevelPrediction/nohup.out                   |   680 +
  4 files changed, 19272 insertions(+), 29792 deletions(-)
+Collecting h5py
+  Downloading h5py-2.7.1-cp34-cp34m-manylinux1_x86_64.whl (5.4MB)
+Requirement already satisfied: six in /usr/lib/python3.4/dist-packages (from h5py)
+Requirement already satisfied: numpy>=1.7 in /usr/lib64/python3.4/dist-packages (from h5py)
+Installing collected packages: h5py
+Successfully installed h5py-2.7.1
+Traceback (most recent call last):
+  File "binary_par_tuning_nocv.py", line 3, in <module>
+    from tensorflow import set_random_seed
+ModuleNotFoundError: No module named 'tensorflow'
+Already up-to-date.
