@@ -10,9 +10,9 @@
 \contentsline {chapter}{\numberline {2}The natural gas market}{6}{chapter.2}
 \contentsline {section}{\numberline {2.1}History}{6}{section.2.1}
 \contentsline {section}{\numberline {2.2}Types of natural gas trading}{8}{section.2.2}
-\contentsline {paragraph}{Bilateral negotiations}{8}{section*.5}
-\contentsline {paragraph}{Over-the-Counter}{9}{section*.6}
-\contentsline {paragraph}{Exchange trading}{9}{section*.7}
+\contentsline {paragraph}{Bilateral negotiations}{8}{section*.7}
+\contentsline {paragraph}{Over-the-Counter}{9}{section*.8}
+\contentsline {paragraph}{Exchange trading}{9}{section*.9}
 \contentsline {section}{\numberline {2.3}Natural gas derivatives}{10}{section.2.3}
 \contentsline {part}{III\hspace {1em}Methodology}{11}{part.3}
 \contentsline {xpart}{Methodology}{12}{part.3}
@@ -25,17 +25,17 @@
 \contentsline {xpart}{Literature review}{20}{part.4}
 \contentsline {chapter}{\numberline {4}Literature review}{20}{chapter.4}
 \contentsline {section}{\numberline {4.1}Electricity}{21}{section.4.1}
-\contentsline {paragraph}{Linear Models}{21}{section*.13}
-\contentsline {paragraph}{Feed Forward Neural Networks}{22}{section*.14}
-\contentsline {paragraph}{Recurrent Neural Networks}{23}{section*.15}
+\contentsline {paragraph}{Linear Models}{21}{section*.15}
+\contentsline {paragraph}{Feed Forward Neural Networks}{22}{section*.16}
+\contentsline {paragraph}{Recurrent Neural Networks}{23}{section*.17}
 \contentsline {section}{\numberline {4.2}Oil}{25}{section.4.2}
-\contentsline {paragraph}{Linear Models}{26}{section*.17}
-\contentsline {paragraph}{Feed Forward Neural Networks}{26}{section*.18}
-\contentsline {paragraph}{Recurrent Neural Networks}{27}{section*.19}
+\contentsline {paragraph}{Linear Models}{26}{section*.19}
+\contentsline {paragraph}{Feed Forward Neural Networks}{26}{section*.20}
+\contentsline {paragraph}{Recurrent Neural Networks}{27}{section*.21}
 \contentsline {section}{\numberline {4.3}Natural Gas}{28}{section.4.3}
-\contentsline {paragraph}{Linear Models}{29}{section*.21}
-\contentsline {paragraph}{Feed Forward Neural Networks}{29}{section*.22}
-\contentsline {paragraph}{Recurrent Neural Network}{30}{section*.23}
+\contentsline {paragraph}{Linear Models}{29}{section*.23}
+\contentsline {paragraph}{Feed Forward Neural Networks}{29}{section*.24}
+\contentsline {paragraph}{Recurrent Neural Network}{30}{section*.25}
 \contentsline {section}{\numberline {4.4}Summary}{31}{section.4.4}
 \contentsline {part}{V\hspace {1em}Empirical study}{32}{part.5}
 \contentsline {xpart}{Empirical study}{33}{part.5}
