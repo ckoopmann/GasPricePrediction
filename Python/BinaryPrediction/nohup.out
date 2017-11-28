@@ -25333,3 +25333,24 @@ Traceback (most recent call last):
     from tensorflow import set_random_seed
 ModuleNotFoundError: No module named 'tensorflow'
 Already up-to-date.
+[master 3622c57] New AWS results - Binary Par Tuning
+ Committer: EC2 Default User <ec2-user@ip-172-31-23-62.us-west-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 11 insertions(+)
+To https://github.com/ckoopmann/GasPricePrediction.git
+   7cffc55..3622c57  master -> master
+Traceback (most recent call last):
+  File "binary_var_selection_nocv.py", line 3, in <module>
+    from tensorflow import set_random_seed
+ModuleNotFoundError: No module named 'tensorflow'
+Already up-to-date.
