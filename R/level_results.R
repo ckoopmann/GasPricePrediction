@@ -8,6 +8,7 @@ library(plyr)
 library(xtable)
 library(scales)
 
+#Select directory paths for Output data from each step of the price level prediction process
 chr.par_tuning_directory = "../Data/Output/LevelPrediction/level_par_tuning"
 chr.var_selection_directory = "../Data/Output/LevelPrediction/level_var_selection"
 chr.multivar_par_tuning_directory = "../Data/Output/LevelPrediction/level_multivar_par_tuning"
@@ -16,12 +17,15 @@ chr.evaluation_directory = "../Data/Output/LevelPrediction/level_eval"
 #Analysis of Par-Tuning
 df.par_tuning = as.data.table(read.csv(file = paste(chr.par_tuning_directory, "evaluation.csv", sep = "/")))
 df.par_tuning[, Model:= toupper(Model)]
+#Minor changes in spelling of some model types and column names
 df.par_tuning[, Model := gsub('FFNN_REGRESSION','Regression',Model)]
 df.par_tuning = rename(df.par_tuning, c(Architecture = "HiddenNeurons", mse = 'MSE'))
+#Get Minimum values of target function by model
 df.par_tuning_mins = df.par_tuning[,.SD[which.min(MSE)],by = Model]
-
+#Get full data on each minimal parameter combination. (Assumes that minimum values are unique)
 df.par_tuning_mins = df.par_tuning_mins[,.(Model, HiddenNeurons, Dropout, LearningRate, MSE)]
 
+#Save data on minimal parameter combinations as latex table
 Filename = '../Latex/tables/level_par_tuning_short.tex'
 caption = 'Selected parameter combinations in univariate tuning step of price level prediction'
 label = 'tab:level.par.tuning.short'
@@ -31,6 +35,7 @@ latex = gsub('\\begin{tabular}', ' \\begin{adjustbox}{max width=\\textwidth}\n\\
 latex = gsub('\\end{tabular}', ' \\end{tabular}\n\\end{adjustbox}', latex, fixed = T)
 writeLines(latex, con = Filename)
 
+#Save data on all parameter combinations as latex tables
 Filename = '../Latex/tables/level_par_tuning_full.tex'
 caption = 'Full Results in univariate tuning step of price level prediction'
 label = 'tab:level.par.tuning.full'
@@ -44,13 +49,15 @@ writeLines(latex, con = Filename)
 #Analysis of Var-Selection
 df.var_selection = as.data.table(read.csv(file = paste(chr.var_selection_directory, "evaluation.csv", sep = "/")))
 df.var_selection[, Model:= toupper(Model)]
+#Minor changes in spelling of some model types and column names
 df.var_selection[, Model := gsub('FFNN_REGRESSION','Regression',Model)]
 df.var_selection[, Variables := paste0('TTFFM ',gsub('_', ' ', Vars))]
+#Get minimum variable combinations
 df.var_selection = rename(df.var_selection, c( mse = 'MSE'))
 df.var_selection_mins = df.var_selection[,.SD[which.min(MSE)],by = Model]
-
 df.var_selection_mins = df.var_selection_mins[,.(Model, Variables, MSE)]
 
+#Save minimum variable combinations as latex
 Filename = '../Latex/tables/level_var_selection_short.tex'
 caption = 'Selected variable combinations in variable selection step of price level prediction'
 label = 'tab:level.var.selection.short'
@@ -61,7 +68,7 @@ latex = gsub('\\end{tabular}', ' \\end{tabular}\n\\end{adjustbox}', latex, fixed
 writeLines(latex, con = Filename)
 
 
-
+#Save data on all variable combiantions as latex
 Filename = '../Latex/tables/level_var_selection_full.tex'
 caption = 'Full Results in variable selection step of price level prediction'
 label = 'tab:level.var.selection.full'
@@ -72,15 +79,17 @@ latex = gsub('\\end{tabular}', ' \\end{tabular}\n\\end{adjustbox}', latex, fixed
 writeLines(latex, con = Filename)
 
 
-#Analysis of Par-Tuning
+#Analysis of multivariate Par-Tuning (Same as univariate case above)
 df.multivar_par_tuning = as.data.table(read.csv(file = paste(chr.multivar_par_tuning_directory, "evaluation.csv", sep = "/")))
 df.multivar_par_tuning[, Model:= toupper(Model)]
+#Minor changes in spelling of some model types and column names
 df.multivar_par_tuning[, Model := gsub('FFNN_REGRESSION','Regression',Model)]
 df.multivar_par_tuning = rename(df.multivar_par_tuning, c(Architecture = "HiddenNeurons", mse = 'MSE'))
+#Get minimal parameter combinations
 df.multivar_par_tuning_mins = df.multivar_par_tuning[,.SD[which.min(MSE)],by = Model]
-
 df.multivar_par_tuning_mins = df.multivar_par_tuning_mins[,.(Model, HiddenNeurons, Dropout, LearningRate, MSE)]
 
+#Save minimal parameter combinations as latex
 Filename = '../Latex/tables/level_multivar_par_tuning_short.tex'
 caption = 'Selected parameter combinations in multivariate tuning step of price level prediction'
 label = 'tab:level.multivar.par.tuning.short'
@@ -90,8 +99,7 @@ latex = gsub('\\begin{tabular}', ' \\begin{adjustbox}{max width=\\textwidth}\n\\
 latex = gsub('\\end{tabular}', ' \\end{tabular}\n\\end{adjustbox}', latex, fixed = T)
 writeLines(latex, con = Filename)
 
-
-
+#Save data on all parameter combinations as latex
 Filename = '../Latex/tables/level_multivar_par_tuning_full.tex'
 caption = 'Full Results in multivariate tuning step of price level prediction'
 label = 'tab:level.multivar.par.tuning.full'
@@ -105,15 +113,18 @@ writeLines(latex, con = Filename)
 #Analysis of Model Evaluation
 df.evaluation = as.data.table(read.csv(file = paste(chr.evaluation_directory, "evaluation.csv", sep = "/")))
 df.evaluation[, Model:= toupper(Model)]
+#Minor changes in spelling of some model types and column names
 df.evaluation[, Model := gsub('FFNN_REGRESSION','Regression',Model)]
 df.evaluation[, Variables := paste0('TTFFM ',gsub('_', ' ', Variables))]
 df.evaluation = rename(df.evaluation, c(Architecture = "HiddenNeurons", mse = 'MSE'))
+#Convert the reference value for the lagged value model from a column to an additional row in the evalaution data.table
 df.evaluation = rbind(df.evaluation[,.(Model, Variables,TestMonth = gsub('TTF','',TestMonth), MSE)],  df.evaluation[Model == 'LSTM' & Variables == "TTFFM ",.(Model = 'LaggedValue', Variables = "TTFFM ",TestMonth = gsub('TTF','',TestMonth), MSE = mseref)])
 
+#Calculate mean MSE across test months for each model
 df.evaluation_mean = df.evaluation[,.(MSE = mean(MSE)), by = .(Model, Variables)]
 df.evaluation_mean = df.evaluation_mean[order(MSE),]
 
-
+#Save mean MSEs across months as latex table
 Filename = '../Latex/tables/level_eval_short.tex'
 caption = 'Average MSE across months for each model in evaluation step'
 label = 'tab:level.eval.short'
@@ -123,6 +134,7 @@ latex = gsub('\\begin{tabular}', ' \\begin{adjustbox}{max width=\\textwidth}\n\\
 latex = gsub('\\end{tabular}', ' \\end{tabular}\n\\end{adjustbox}', latex, fixed = T)
 writeLines(latex, con = Filename)
 
+#Save month wise MSE as latex table
 Filename = '../Latex/tables/level_eval_full.tex'
 caption = 'Full results by testing month for each model in evaluation step'
 label = 'tab:level.eval.short'
