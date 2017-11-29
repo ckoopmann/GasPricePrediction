@@ -6,12 +6,34 @@ from sklearn.preprocessing import MinMaxScaler
 import argparse
 import os
 
-
+#Commentin according to PEP257 docstring
 # date-time parsing function for loading the dataset
 def parser(x):
     return datetime.strptime(x,'%Y-%m-%d')
 
 def data_preparation_level(df, input_vars, target_var, length,  max_days_left, return_y_sequence = False):
+    """Data Preparation Function for Price Level Prediction
+
+    This function converts the data as downloaded from Thomson Reuters Eikon and converts it into X, y np.arrays
+    which can be used to train keras models. The input variables are shifted by one timestep into the past such that
+    the prediction is made one day into the future.
+
+    Args:
+        df (pandas.DataFrame): The Thomson Reuters Data containing the columns 'Date', 'CLOSE' and 'name'
+        input_vars (list(str)): List of parameter names appearing in df.name to select input variables
+        target_var (str): Name of the target variable as it appears in df.name
+        length (int): Selecting the length of each sequence for the training of recurrent models in Keras
+        max_days_left (int): Maximum number of trading days to choose for each month
+        return_y_sequence (bool):
+
+
+    Returns:
+        X (np.ndarray): Array of input variables shifted by one
+        y (np.ndarray): Array of target variable values
+        all_data (pd.DataFrame): Input and target variables in one dataframe
+        reference_series (pd.Series): Reference prediction (Lagged Value)
+
+    """
     input_data = [df.loc[df['name'] == var].CLOSE for var in input_vars]
     input_data = concat(input_data, axis=1)
     input_data.columns = input_vars
