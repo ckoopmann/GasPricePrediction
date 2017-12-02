@@ -19491,3 +19491,22 @@ Fast-forward
  .../binary_multivar_par_tuning/predictions.csv     | 89280 ++++++++---------
  Python/BinaryPrediction/nohup.out                  |  1524 +
  4 files changed, 82284 insertions(+), 104760 deletions(-)
+Collecting keras==2.0.8
+  Downloading Keras-2.0.8-py2.py3-none-any.whl (276kB)
+Requirement already satisfied: six>=1.9.0 in /usr/lib/python3.4/dist-packages (from keras==2.0.8)
+Requirement already satisfied: scipy>=0.14 in /usr/lib64/python3.4/dist-packages (from keras==2.0.8)
+Requirement already satisfied: pyyaml in /usr/lib64/python3.4/dist-packages (from keras==2.0.8)
+Requirement already satisfied: numpy>=1.9.1 in /usr/lib64/python3.4/dist-packages (from keras==2.0.8)
+Installing collected packages: keras
+Successfully installed keras-2.0.8
+Collecting h5py
+  Downloading h5py-2.7.1-cp34-cp34m-manylinux1_x86_64.whl (5.4MB)
+Requirement already satisfied: six in /usr/lib/python3.4/dist-packages (from h5py)
+Requirement already satisfied: numpy>=1.7 in /usr/lib64/python3.4/dist-packages (from h5py)
+Installing collected packages: h5py
+Successfully installed h5py-2.7.1
+Traceback (most recent call last):
+  File "level_par_tuning_nocv.py", line 9, in <module>
+    from tensorflow import set_random_seed
+ModuleNotFoundError: No module named 'tensorflow'
+Bereits aktuell.
