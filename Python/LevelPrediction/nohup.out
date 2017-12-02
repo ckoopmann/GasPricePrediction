@@ -19532,3 +19532,25 @@ Traceback (most recent call last):
     from tensorflow import set_random_seed
 ModuleNotFoundError: No module named 'tensorflow'
 Bereits aktuell.
+[master 0e2781d] New AWS results - Level Var Selection
+ Committer: EC2 Default User <ec2-user@ip-172-31-24-155.us-west-2.compute.internal>
+Ihr Name und E-Mail Adresse wurden automatisch auf Basis
+Ihres Benutzer- und Rechnernamens konfiguriert. Bitte prüfen Sie, dass
+diese zutreffend sind. Sie können diese Meldung unterdrücken, indem Sie
+diese explizit setzen:
+
+    git config --global user.name "Ihr Name"
+    git config --global user.email ihre@emailadresse.de
+
+Nachdem Sie das getan haben, können Sie Ihre Identität für diesen Commit ändern:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 22 insertions(+)
+To https://github.com/ckoopmann/GasPricePrediction.git
+   6d2ae60..0e2781d  master -> master
+Traceback (most recent call last):
+  File "level_multivar_par_tuning_nocv.py", line 9, in <module>
+    from tensorflow import set_random_seed
+ModuleNotFoundError: No module named 'tensorflow'
+Bereits aktuell.
