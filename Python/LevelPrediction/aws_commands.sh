@@ -1,4 +1,5 @@
 sudo pip3 install keras==2.0.8
+sudo pip3 install tensorflow==1.4.0
 sudo pip3 install h5py
 python3 level_par_tuning_nocv.py
 git pull
