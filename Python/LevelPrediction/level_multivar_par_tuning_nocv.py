@@ -1,3 +1,9 @@
+"""Multivariate Parameter Tuning for the Price Level Prediction problem
+
+This script contains the code that was used to tune the hyper parameters of multivariate models in the price level prediction problem
+This should be the third script to run among the scripts in this directory
+
+"""
 from numpy.random import seed
 seed(1234)
 from tensorflow import set_random_seed
@@ -16,58 +22,59 @@ from keras.optimizers import RMSprop, SGD
 from keras import backend as K
 
 from sklearn.metrics import mean_absolute_error, mean_squared_error, log_loss, roc_auc_score
-
+#Dictonary containing loss functions to be chosen by string `loss`
 loss_functions_dict = {'mae':mean_absolute_error,  'mse': mean_squared_error, 'binary_crossentropy': log_loss, 'auc' : roc_auc_score}
+#Select paths for model output and input data
 output_path = "../../Data/Output/LevelPrediction/level_multivar_par_tuning"
 data_path = '../../Data/Input/InputData.csv'
+#Path of model output from previous step (variable selection) to select input variables
 variable_selection_path = "../../Data/Output/LevelPrediction/level_var_selection/evaluation.csv"
-
+#Select fixed hyper parameters
 length_passed = 20
 n_epochs = 300
 batch= 20
-scaling = True
-verbosity = 0
-max_days_left_passed=30
-regex_testmonth= '16'
-regex_trainmonths= '16|17'
 output_activation= 'tanh'
 loss='mse'
-
+scaling = True
+#Verbosity during model training
+verbosity = 0
+#Maximum days included for each month
+max_days_left_passed=30
+#Maximum days included for each month
+regex_testmonth= '16'
+#All years NOT matching this regex will be selected as training_months
+regex_trainmonths= '16|17'
+#Read in results from variable selection
 var_selection_df = read_csv(variable_selection_path,header=0)
 models = list(var_selection_df.Model.unique())
+#Select the variable combination with lowest error for each model based on the results from variable tuning step
 additional_input_vars_dict  = {model_name: var_selection_df.iloc[var_selection_df.loc[var_selection_df.Model == model_name, loss].idxmin()].Vars.split('_') for model_name in models}
 target_type  = 'TTF'
-
+#Select tuning grid
 learningrates = [0.0001,0.001, 0.01, 0.1]
 dropouts = [0, 0.25, 0.5]
 architectures = [[8],[16], [32]]
-
-
-
+#Create list of all parameter combinations
 par_combs = [( l, d, a)  for l in learningrates for d in dropouts for a in architectures]
 
-
 output = 1
-
+#Complete regex to match all monthly futures of the target type
 regex = target_type + '\d'
-
+#Read in input data
 df = read_csv(data_path,header=0, parse_dates=[0], index_col=0, squeeze=True, date_parser=parser)
-
+#Empty lists to store results
 eval_list = []
 pred_df_list = []
 hist_df_list = []
 loss_function = loss_functions_dict[loss]
 
-
-
 for model_name in models:
-
 
     months = [var for var in df.name.unique() if re.search(regex, var) is not None]
     test_months = [month for month in months if re.search(regex_testmonth, month) is not None]
     train_months_candidates = [month for month in months if re.search(regex_trainmonths, month) is None]
     train_months = []
-
+    # Adjust length parameter according to model type
     if 'ffnn' in model_name:
         length = 1
     else:
@@ -82,7 +89,7 @@ for model_name in models:
     y_sep = []
     ref_sep = []
     ref_series_list = []
-
+    # Create X and y arrays for each month separately (to avoid problem of changing delivery period at the turn of the month)
     for target_var in months:
         input_vars = [target_var] + additional_input_vars_dict[model_name]
         try:
@@ -123,6 +130,7 @@ for model_name in models:
     months_test_list = [repeat(train_months[i], len(ref_sep[i])) for i in test_selection]
     months_test = concatenate(months_test_list)
 
+    # If selected above scale input and target variables using MinMaxScaler
     if scaling:
         scaler_y = MinMaxScaler()
         y_train_scaled = scaler_y.fit_transform(y_train.reshape((-1, 1)))
@@ -141,7 +149,7 @@ for model_name in models:
         X_test_scaled = scaler_X.transform(X_test.reshape((-1, X_test.shape[-1])))
         X_test_scaled = X_test_scaled.reshape(X_test.shape)
         X_test = X_test_scaled
-
+    # Begin parameter tuning by looping through combinations
     for (learningrate, dropout, architecture) in par_combs:
         try:
             # Create the model
@@ -189,7 +197,7 @@ for model_name in models:
             new_eval = DataFrame.from_records(
                 [{'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(i) for i in architecture), 'Variables': '_'.join(str(i) for i in additional_input_vars_dict[model_name]), loss: mean_loss, loss+'ref': ref_loss, 'TrainObs': X_train.shape[0], 'TrainableParams': trainable_count}])
             eval_list.append(new_eval)
-
+            # Save training history
             new_hist = DataFrame(
                 {'Model': model_name, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout,
                  'Architecture': '_'.join(str(i) for i in architecture), 'Variables': '_'.join(str(i) for i in additional_input_vars_dict[model_name]),
