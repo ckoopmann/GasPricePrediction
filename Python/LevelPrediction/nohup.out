@@ -39,3 +39,30 @@ Traceback (most recent call last):
     from sklearn.preprocessing import MinMaxScaler
 ModuleNotFoundError: No module named 'sklearn'
 Bereits aktuell.
+[master 667af41] New AWS results - Level Var Selection
+ Committer: EC2 Default User <ec2-user@ip-172-31-24-155.us-west-2.compute.internal>
+Ihr Name und E-Mail Adresse wurden automatisch auf Basis
+Ihres Benutzer- und Rechnernamens konfiguriert. Bitte prüfen Sie, dass
+diese zutreffend sind. Sie können diese Meldung unterdrücken, indem Sie
+diese explizit setzen:
+
+    git config --global user.name "Ihr Name"
+    git config --global user.email ihre@emailadresse.de
+
+Nachdem Sie das getan haben, können Sie Ihre Identität für diesen Commit ändern:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 28 insertions(+)
+To https://github.com/ckoopmann/GasPricePrediction.git
+   25c75cf..667af41  master -> master
+/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
+  return f(*args, **kwds)
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "level_multivar_par_tuning_nocv.py", line 19, in <module>
+    from functions import *
+  File "/home/ec2-user/GasPricePrediction/Python/LevelPrediction/functions.py", line 11, in <module>
+    from sklearn.preprocessing import MinMaxScaler
+ModuleNotFoundError: No module named 'sklearn'
+Bereits aktuell.
