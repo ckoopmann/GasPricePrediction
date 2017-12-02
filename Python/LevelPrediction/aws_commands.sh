@@ -1,5 +1,5 @@
 source activate tensorflow_p36
-sudo pip3 install h5py
+conda install scikit-learn
 python3 level_par_tuning_nocv.py
 git pull
 git add --all
@@ -20,4 +20,3 @@ git pull
 git add --all
 git commit -m "New AWS results - Level Evaluation"
 git push
-sudo shutdown -h now
