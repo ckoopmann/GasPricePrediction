@@ -93,3 +93,32 @@ Traceback (most recent call last):
     from sklearn.preprocessing import MinMaxScaler
 ModuleNotFoundError: No module named 'sklearn'
 Bereits aktuell.
+[master f35fdc5] New AWS results - Level Evaluation
+ Committer: EC2 Default User <ec2-user@ip-172-31-24-155.us-west-2.compute.internal>
+Ihr Name und E-Mail Adresse wurden automatisch auf Basis
+Ihres Benutzer- und Rechnernamens konfiguriert. Bitte prüfen Sie, dass
+diese zutreffend sind. Sie können diese Meldung unterdrücken, indem Sie
+diese explizit setzen:
+
+    git config --global user.name "Ihr Name"
+    git config --global user.email ihre@emailadresse.de
+
+Nachdem Sie das getan haben, können Sie Ihre Identität für diesen Commit ändern:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 27 insertions(+)
+To https://github.com/ckoopmann/GasPricePrediction.git
+   a48425e..f35fdc5  master -> master
+Fetching package metadata ...........
+Solving package specifications: .
+
+# All requested packages already installed.
+# packages in environment at /home/ec2-user/anaconda3/envs/tensorflow_p36:
+#
+scikit-learn              0.19.1           py36h7aa7ec6_0  
+2017-12-04 15:47:46.057001: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2017-12-04 15:47:46.087805: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_UNKNOWN
+2017-12-04 15:47:46.087841: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:145] kernel driver does not appear to be running on this host (ip-172-31-24-155): /proc/driver/nvidia/version does not exist
+aws_commands.sh: Zeile 3:  3313 Beendet                 python level_par_tuning_nocv.py
+fatal: could not read Username for 'https://github.com': Kein passendes Gerät bzw. keine passende Adresse gefunden
