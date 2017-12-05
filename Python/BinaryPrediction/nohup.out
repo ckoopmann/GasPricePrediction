@@ -25555,3 +25555,73 @@ Traceback (most recent call last):
     from sklearn.preprocessing import MinMaxScaler
 ModuleNotFoundError: No module named 'sklearn'
 Bereits aktuell.
+[master 0ae5fec] New AWS results - Binary Evaluation
+ Committer: EC2 Default User <ec2-user@ip-172-31-25-144.us-west-2.compute.internal>
+Ihr Name und E-Mail Adresse wurden automatisch auf Basis
+Ihres Benutzer- und Rechnernamens konfiguriert. Bitte prüfen Sie, dass
+diese zutreffend sind. Sie können diese Meldung unterdrücken, indem Sie
+diese explizit setzen:
+
+    git config --global user.name "Ihr Name"
+    git config --global user.email ihre@emailadresse.de
+
+Nachdem Sie das getan haben, können Sie Ihre Identität für diesen Commit ändern:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 27 insertions(+)
+To https://github.com/ckoopmann/GasPricePrediction.git
+   406f0c0..0ae5fec  master -> master
+Fetching package metadata ...........
+Solving package specifications: .
+
+Package plan for installation in environment /home/ec2-user/anaconda3/envs/tensorflow_p36:
+
+The following NEW packages will be INSTALLED:
+
+    libgfortran-ng: 7.2.0-h9f7466a_2     
+    scikit-learn:   0.19.1-py36h7aa7ec6_0
+    scipy:          1.0.0-py36hbf646e7_0 
+
+Proceed ([y]/n)? 
+2017-12-05 15:14:20.374744: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2017-12-05 15:14:20.887996: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_UNKNOWN
+2017-12-05 15:14:20.888039: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:145] kernel driver does not appear to be running on this host (ip-172-31-25-144): /proc/driver/nvidia/version does not exist
+/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
+  return f(*args, **kwds)
+Using TensorFlow backend.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm_1 (LSTM)                (None, 8)                 352       
+_________________________________________________________________
+dense_1 (Dense)              (None, 1)                 9         
+=================================================================
+Total params: 361
+Trainable params: 361
+Non-trainable params: 0
+_________________________________________________________________
+None
+Traceback (most recent call last):
+  File "binary_par_tuning_nocv.py", line 164, in <module>
+    validation_data=(X_test, y_test), verbose=verbosity)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/keras/models.py", line 960, in fit
+    validation_steps=validation_steps)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/keras/engine/training.py", line 1648, in fit
+    validation_steps=validation_steps)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/keras/engine/training.py", line 1213, in _fit_loop
+    outs = f(ins_batch)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py", line 2352, in __call__
+    **self.session_kwargs)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 889, in run
+    run_metadata_ptr)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1120, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1317, in _do_run
+    options, run_metadata)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1323, in _do_call
+    return fn(*args)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1302, in _run_fn
+    status, run_metadata)
+KeyboardInterrupt
+Bereits aktuell.
