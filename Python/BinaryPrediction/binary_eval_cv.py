@@ -1,3 +1,9 @@
+"""Model evaluation for the Binary Prediction problem
+
+This script contains the code that was used to evaluate uni- and multivariate models in the binary prediction problem
+This should be the fourth and last script to run among the scripts in this directory
+
+"""
 from numpy.random import seed
 seed(1234)
 from tensorflow import set_random_seed
@@ -16,50 +22,51 @@ from keras.optimizers import RMSprop, SGD
 from keras import backend as K
 
 from sklearn.metrics import mean_absolute_error, mean_squared_error, log_loss, roc_auc_score
-
+#Dictonary containing loss functions to be chosen by string `loss`
 loss_functions_dict = {'mae':mean_absolute_error,  'mse': mean_squared_error, 'binary_crossentropy': log_loss, 'auc' : roc_auc_score}
+#Select paths for model output and input data
 output_path = "../../Data/Output/BinaryPrediction/binary_eval"
 data_path = '../../Data/Input/InputData.csv'
+#Path of model output from univariate parameter tuning step
 parameter_selection_path_univar = "../../Data/Output/BinaryPrediction/binary_par_tuning/evaluation.csv"
+#Path of model output from multivariate parameter tuning step
 parameter_selection_path_multivar = "../../Data/Output/BinaryPrediction/binary_multivar_par_tuning/evaluation.csv"
+#Select fixed hyper parameters
 length_passed = 20
 n_epochs = 300
 batch= 20
-scaling = True
-
-verbosity = 0
-max_days_left_passed=30
-regex_testmonth= '17'
 output_activation= 'sigmoid'
 loss='binary_crossentropy'
+scaling = True
+#Verbosity during model training
+verbosity = 0
+#Maximum days included for each month
+max_days_left_passed=30
+#All years matching this regex will be selected as test_months (Rolling prediction)
+regex_testmonth= '17'
 target_type  = 'TTF'
 
-
-par_selection_df_univar = read_csv(parameter_selection_path_univar,header=0).dropna(axis = 0)
+#Read in evaluation data from univariate tuning step
+par_selection_df_univar = read_csv(parameter_selection_path_univar,header=0)
 models = list(par_selection_df_univar.Model.unique())
-#Enter results of parameter tuning here
+#Select optimal parameter values for univariate models
 architecture_dict_univar = {model_name: [int(s) for s in str(par_selection_df_univar.iloc[par_selection_df_univar.loc[par_selection_df_univar.Model == model_name, loss].idxmin()].Architecture).split('_')] for model_name in models}
 learningrate_dict_univar = {model_name: par_selection_df_univar.iloc[par_selection_df_univar.loc[par_selection_df_univar.Model == model_name, loss].idxmin()].LearningRate for model_name in models}
 dropout_dict_univar = {model_name: par_selection_df_univar.iloc[par_selection_df_univar.loc[par_selection_df_univar.Model == model_name, loss].idxmin()].Dropout for model_name in models}
-
-
-par_selection_df_multivar= read_csv(parameter_selection_path_multivar,header=0).dropna(axis = 0)
-#Enter results of parameter tuning here
+#Read in evaluation data from multivariate tuning step
+par_selection_df_multivar= read_csv(parameter_selection_path_multivar,header=0)
+#Select optimal parameter values  and input variables for multivariate models
 architecture_dict_multivar = {model_name: [int(s) for s in str(par_selection_df_multivar.iloc[par_selection_df_multivar.loc[par_selection_df_multivar.Model == model_name, loss].idxmin()].Architecture).split('_')] for model_name in models}
 learningrate_dict_multivar = {model_name: par_selection_df_multivar.iloc[par_selection_df_multivar.loc[par_selection_df_multivar.Model == model_name, loss].idxmin()].LearningRate for model_name in models}
 dropout_dict_multivar = {model_name: par_selection_df_multivar.iloc[par_selection_df_multivar.loc[par_selection_df_multivar.Model == model_name, loss].idxmin()].Dropout for model_name in models}
 additional_input_vars_dict  = {model_name: par_selection_df_multivar.iloc[par_selection_df_multivar.loc[par_selection_df_multivar.Model == model_name, loss].idxmin()].Variables.split('_') for model_name in models}
 
-
-
 output = 1
-
-
-
+#Complete regex to match all monthly futures of the target type
 regex = target_type + '\d'
-
+#Read in input data
 df = read_csv(data_path,header=0, parse_dates=[0], index_col=0, squeeze=True, date_parser=parser)
-
+#Empty lists to store results
 eval_list = []
 pred_df_list = []
 hist_df_list = []
@@ -72,14 +79,14 @@ for type in ['univar', 'multivar']:
         test_months = [month for month in months if re.search(regex_testmonth, month) is not None]
         train_months = []
         train_months_sel = [month for month in months if re.search(regex_testmonth, month) is None]
-
+        # Adjust length parameter according to model type
         if 'ffnn' in model_name:
             length = 1
         else:
             length = length_passed
 
         max_days_left = max_days_left_passed + length
-
+        # Set hyper parameter depending on model type
         if type == 'univar':
             architecture = architecture_dict_univar[model_name]
             learningrate = learningrate_dict_univar[model_name]
@@ -97,7 +104,7 @@ for type in ['univar', 'multivar']:
         y_sep = []
         ref_sep = []
         ref_series_list = []
-
+        # Create X and y arrays for each month separately (to avoid problem of changing delivery period at the turn of the month)
         for target_var in months:
             input_vars = [target_var] + additional_input_vars
             try:
@@ -116,7 +123,9 @@ for type in ['univar', 'multivar']:
                 # print('Original Error Message:' + str(e))
                 pass
         test_months = sorted(test_months)
+        # Loop through Test month for rolling prediction and testing
         for test_month in test_months:
+            # Create lists to seperate test and train data
             test_selection = [months.index(test_month)]
             train_selection = [i for i in range(len(train_months)) if train_months[i] in train_months_sel or months[i] < test_month]
 
@@ -138,6 +147,7 @@ for type in ['univar', 'multivar']:
             months_test_list = [repeat(train_months[i], len(ref_sep[i])) for i in test_selection]
             months_test = concatenate(months_test_list)
 
+            # If selected above scale input variables using MinMaxScaler
             if scaling:
                 scaler_X = MinMaxScaler()
                 X_train_scaled = scaler_X.fit_transform(X_train.reshape((-1, X_train.shape[-1])))
@@ -190,7 +200,7 @@ for type in ['univar', 'multivar']:
             new_eval = DataFrame.from_records(
                 [{'Model': model_name, 'TestMonth': test_month, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout, 'Architecture': '_'.join(str(i) for i in architecture),'Variables':'_'.join(str(i) for i in additional_input_vars), loss: mean_loss, loss+'ref': ref_loss, 'TrainObs': X_train.shape[0], 'TrainableParams': trainable_count}])
             eval_list.append(new_eval)
-
+            # Save training history
             new_hist = DataFrame(
                 {'Model': model_name,'TestMonth': test_month, 'Batchsize': batch, 'Epochs': n_epochs, 'Length': length, 'LearningRate': learningrate, 'Dropout': dropout,
                  'Architecture': '_'.join(str(i) for i in architecture), 'Variables':'_'.join(str(i) for i in additional_input_vars),

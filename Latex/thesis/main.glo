@@ -1,0 +1,26 @@
+\glossaryentry{TTF?\glossaryentryfield{TTF}{\glsnamefont{TTF}}{Title Transfer Facility}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{HH?\glossaryentryfield{HH}{\glsnamefont{HH}}{Henry Hub}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{NBP?\glossaryentryfield{NBP}{\glsnamefont{NBP}}{National Balancing Point}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{NCG?\glossaryentryfield{NCG}{\glsnamefont{NCG}}{Netconnect Germany}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{TTFFM?\glossaryentryfield{TTFFM}{\glsnamefont{TTFFM}}{TTF Front Month Future Price}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{TTFDA?\glossaryentryfield{TTFDA}{\glsnamefont{TTFDA}}{TTF Day Ahead Spot Price}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{NBPFM?\glossaryentryfield{NBPFM}{\glsnamefont{NBPFM}}{NBP Front Month Future Price}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{OilFM?\glossaryentryfield{OilFM}{\glsnamefont{OilFM}}{Brent Oil Front Month Future Price}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{ElectricityBaseFM?\glossaryentryfield{ElectricityBaseFM}{\glsnamefont{ElectricityBaseFM}}{German Base Load (Phelix) Electricity Front Month Future Price}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{ElectricityPeakFM?\glossaryentryfield{ElectricityPeakFM}{\glsnamefont{ElectricityPeakFM}}{German Peak Load (Phelix) Electricity Front Month Future Price}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{ConLDZNL?\glossaryentryfield{ConLDZNL}{\glsnamefont{ConLDZNL}}{Daily LDZ Consumption Level in the Netherlands}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{ConNLDZNL?\glossaryentryfield{ConNLDZNL}{\glsnamefont{ConNLDZNL}}{Daily Non-LDZ Consumption Level in the Netherlands}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{ProdNL?\glossaryentryfield{ProdNL}{\glsnamefont{ProdNL}}{Total Daily Natural Gas Production in the Netherlands}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{ProdUKCS?\glossaryentryfield{ProdUKCS}{\glsnamefont{ProdUKCS}}{Total Daily Natural Gas Production from the British Continental Shelf}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{StorageNL?\glossaryentryfield{StorageNL}{\glsnamefont{StorageNL}}{Total Daily Natural Gas Storage Levels in the Netherlands}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{StorageUK?\glossaryentryfield{StorageUK}{\glsnamefont{StorageUK}}{Total Daily Natural Gas Storage Levels in the United Kingdom}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{TradeIUK?\glossaryentryfield{TradeIUK}{\glsnamefont{TradeIUK}}{Daily Natural Gas Flow (Trade) through the Interconnector Pipeline}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{TradeIUK?\glossaryentryfield{TradeBBL}{\glsnamefont{TradeIUK}}{Daily Natural Gas Flow (Trade) through the Balgzand-Bacton Pipeline}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{AR?\glossaryentryfield{AR}{\glsnamefont{AR}}{Autoregression}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{ARIMA?\glossaryentryfield{ARIMA}{\glsnamefont{ARIMA}}{Autoregression Integrated Moving Average}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{LR?\glossaryentryfield{LR}{\glsnamefont{LR}}{Linear Regression}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{FFNN?\glossaryentryfield{FFNN}{\glsnamefont{FFNN}}{Feed Forward Neural Network}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{RNN?\glossaryentryfield{RNN}{\glsnamefont{RNN}}{Recurrent Neural Network}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{LSTM?\glossaryentryfield{LSTM}{\glsnamefont{LSTM}}{Long-Short Term Memory Neural Network}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{LDZ?\glossaryentryfield{LDZ}{\glsnamefont{LDZ}}{Local Distribution Zone}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}
+\glossaryentry{WTI?\glossaryentryfield{WTI}{\glsnamefont{WTI}}{West Texas Intermediate}{\relax }|setentrycounter[]{page}\glsnumberformat}{1}

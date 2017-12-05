@@ -20,3 +20,4 @@ git pull
 git add --all
 git commit -m "New AWS results - Level Evaluation"
 git push
+sudo shutdown -h now
