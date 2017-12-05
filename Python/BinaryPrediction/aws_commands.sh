@@ -1,5 +1,5 @@
 source activate tensorflow_p36
-conda install scikit-learn
+yes |conda install scikit-learn
 python binary_par_tuning_nocv.py
 git pull
 git add --all
