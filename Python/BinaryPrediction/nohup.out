@@ -25396,3 +25396,81 @@ Traceback (most recent call last):
     from tensorflow import set_random_seed
 ModuleNotFoundError: No module named 'tensorflow'
 Already up-to-date.
+Fetching package metadata ...........
+Solving package specifications: .
+
+Package plan for installation in environment /home/ec2-user/anaconda3/envs/tensorflow_p36:
+
+The following NEW packages will be INSTALLED:
+
+    libgfortran-ng: 7.2.0-h9f7466a_2     
+    scikit-learn:   0.19.1-py36h7aa7ec6_0
+    scipy:          1.0.0-py36hbf646e7_0 
+
+Proceed ([y]/n)? An unexpected error has occurred.
+Please consider posting the following information to the
+conda GitHub issue tracker at:
+
+    https://github.com/conda/conda/issues
+
+
+
+Current conda install:
+
+               platform : linux-64
+          conda version : 4.3.30
+       conda is private : False
+      conda-env version : 4.3.30
+    conda-build version : 3.0.27
+         python version : 3.6.3.final.0
+       requests version : 2.18.4
+       root environment : /home/ec2-user/anaconda3  (writable)
+    default environment : /home/ec2-user/anaconda3/envs/tensorflow_p36
+       envs directories : /home/ec2-user/anaconda3/envs
+                          /home/ec2-user/.conda/envs
+          package cache : /home/ec2-user/anaconda3/pkgs
+                          /home/ec2-user/.conda/pkgs
+           channel URLs : https://repo.continuum.io/pkgs/main/linux-64
+                          https://repo.continuum.io/pkgs/main/noarch
+                          https://repo.continuum.io/pkgs/free/linux-64
+                          https://repo.continuum.io/pkgs/free/noarch
+                          https://repo.continuum.io/pkgs/r/linux-64
+                          https://repo.continuum.io/pkgs/r/noarch
+                          https://repo.continuum.io/pkgs/pro/linux-64
+                          https://repo.continuum.io/pkgs/pro/noarch
+            config file : None
+             netrc file : None
+           offline mode : False
+             user-agent : conda/4.3.30 requests/2.18.4 CPython/3.6.3 Linux/4.9.58-18.55.amzn1.x86_64 / glibc/2.18    
+                UID:GID : 500:500
+
+`$ /home/ec2-user/anaconda3/envs/tensorflow_p36/bin/conda install scikit-learn`
+
+
+
+
+    Traceback (most recent call last):
+      File "/home/ec2-user/anaconda3/lib/python3.6/site-packages/conda/exceptions.py", line 640, in conda_exception_handler
+        return_value = func(*args, **kwargs)
+      File "/home/ec2-user/anaconda3/lib/python3.6/site-packages/conda/cli/main.py", line 140, in _main
+        exit_code = args.func(args, p)
+      File "/home/ec2-user/anaconda3/lib/python3.6/site-packages/conda/cli/main_install.py", line 80, in execute
+        install(args, parser, 'install')
+      File "/home/ec2-user/anaconda3/lib/python3.6/site-packages/conda/cli/install.py", line 302, in install
+        common.confirm_yn(args)
+      File "/home/ec2-user/anaconda3/lib/python3.6/site-packages/conda/cli/common.py", line 458, in confirm_yn
+        default=default)
+      File "/home/ec2-user/anaconda3/lib/python3.6/site-packages/conda/cli/common.py", line 441, in confirm
+        user_choice = sys.stdin.readline().strip().lower()
+    OSError: [Errno 9] Bad file descriptor
+
+/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
+  return f(*args, **kwds)
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "binary_par_tuning_nocv.py", line 19, in <module>
+    from functions import *
+  File "/home/ec2-user/GasPricePrediction/Python/BinaryPrediction/functions.py", line 11, in <module>
+    from sklearn.preprocessing import MinMaxScaler
+ModuleNotFoundError: No module named 'sklearn'
+Bereits aktuell.
