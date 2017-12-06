@@ -67,10 +67,10 @@
 \contentsline {subsection}{\numberline {7.1.4}Evaluation}{51}{subsection.7.1.4}
 \contentsline {section}{\numberline {7.2}Binary Prediction}{54}{section.7.2}
 \contentsline {subsection}{\numberline {7.2.1}Univariate Parameter Tuning}{54}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Variable Selection}{54}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.2}Variable Selection}{55}{subsection.7.2.2}
 \contentsline {subsection}{\numberline {7.2.3}Multivariate Parameter Tuning}{55}{subsection.7.2.3}
-\contentsline {subsection}{\numberline {7.2.4}Evaluation}{55}{subsection.7.2.4}
-\contentsline {subsection}{\numberline {7.2.5}Trading Strategy}{57}{subsection.7.2.5}
+\contentsline {subsection}{\numberline {7.2.4}Evaluation}{56}{subsection.7.2.4}
+\contentsline {subsection}{\numberline {7.2.5}Trading Strategy}{58}{subsection.7.2.5}
 \contentsline {part}{VI\hspace {1em}Conclusions}{62}{part.6}
 \contentsline {xpart}{Conclusions}{63}{part.6}
 \contentsline {chapter}{\numberline {8}Conclusions}{63}{chapter.8}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.16)  5 DEC 2017 14:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.16)  6 DEC 2017 12:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1590,7 +1590,8 @@ Package pdftex.def Info: "../../Plots/level_evaluation_monthly_univar".png used
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<"../../Plots/level_predictions".png, id=1075, 2442.12375pt x 1499.6025pt>
+[52]
+<"../../Plots/level_predictions".png, id=1079, 2442.12375pt x 1499.6025pt>
 File: "../../Plots/level_predictions".png Graphic file (type png)
 
 <use "../../Plots/level_predictions".png>
@@ -1601,8 +1602,8 @@ Package pdftex.def Info: "../../Plots/level_predictions".png used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[52] [53 <../../Plots/level_evaluation_monthly_multivar.png> <../../Plots/level
-_evaluation_monthly_univar.png>] (../tables/binary_par_tuning_short.tex
+[53 <../../Plots/level_evaluation_monthly_multivar.png> <../../Plots/level_eval
+uation_monthly_univar.png>] (../tables/binary_par_tuning_short.tex
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1612,7 +1613,7 @@ png>]) (../tables/binary_multivar_par_tuning_short.tex
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ) (../tables/binary_eval_short.tex [55])
-<"../../Plots/binary_evaluation_monthly_multivar".png, id=1099, 2442.12375pt x 
+<"../../Plots/binary_evaluation_monthly_multivar".png, id=1098, 2442.12375pt x 
 1499.6025pt>
 File: "../../Plots/binary_evaluation_monthly_multivar".png Graphic file (type p
 ng)
@@ -1621,11 +1622,8 @@ Package pdftex.def Info: "../../Plots/binary_evaluation_monthly_multivar".png u
 sed on input line 59.
 (pdftex.def)             Requested size: 334.60422pt x 205.45804pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-<"../../Plots/binary_evaluation_monthly_univar".png, id=1100, 2442.12375pt x 14
+[56]
+<"../../Plots/binary_evaluation_monthly_univar".png, id=1104, 2442.12375pt x 14
 99.6025pt>
 File: "../../Plots/binary_evaluation_monthly_univar".png Graphic file (type png
 )
@@ -1633,12 +1631,8 @@ File: "../../Plots/binary_evaluation_monthly_univar".png Graphic file (type png
 Package pdftex.def Info: "../../Plots/binary_evaluation_monthly_univar".png use
 d on input line 65.
 (pdftex.def)             Requested size: 334.60422pt x 205.45804pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[56] [57 <../../Plots/binary_evaluation_monthly_multivar.png> <../../Plots/bina
-ry_evaluation_monthly_univar.png>] [58]
+ [57 <../../Plots/binary_evaluation_monthly_multivar.png> <../../Plots/binary_e
+valuation_monthly_univar.png>] [58]
 <"../../Plots/binary_trade_evaluation_monthly_multivar".png, id=1117, 2442.1237
 5pt x 1499.6025pt>
 File: "../../Plots/binary_trade_evaluation_monthly_multivar".png Graphic file (
@@ -1666,12 +1660,12 @@ ng used on input line 103.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(../tables/binary_trade_short.tex
+(../tables/binary_trade_short.tex [59]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [59] [60 <../../Plots/binary_trade_evaluation_monthly_multivar.png> <../../Pl
-ots/binary_trade_evaluation_monthly_univar.png>]) [61] [62
+) [60 <../../Plots/binary_trade_evaluation_monthly_multivar.png> <../../Plots/b
+inary_trade_evaluation_monthly_univar.png>]) [61] [62
 
 ] (./conc.tex
 Chapter 8.
@@ -1895,7 +1889,7 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2013/texmf
 ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on main.pdf (98 pages, 2768879 bytes).
+Output written on main.pdf (98 pages, 2784248 bytes).
 PDF statistics:
  1387 PDF objects out of 1440 (max. 8388607)
  1196 compressed objects within 12 object streams
