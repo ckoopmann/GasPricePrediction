@@ -4,10 +4,6 @@ This script contains the code that was used to evaluate uni- and multivariate mo
 This should be the fourth and last script to run among the scripts in this directory
 
 """
-from numpy.random import seed
-seed(1234)
-from tensorflow import set_random_seed
-set_random_seed(1234)
 import signal
 if hasattr(signal, 'SIGPIPE'):
     signal.signal(signal.SIGPIPE,signal.SIG_DFL)
