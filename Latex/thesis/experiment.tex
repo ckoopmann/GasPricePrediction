@@ -17,7 +17,7 @@ While designing an experiment to evaluate the performance of the LSTM model in c
 \end{itemize}
 \item Model evaluation \begin{itemize}
 \item Which data should be selected as test data by excluding it from parameter tuning and variable selection ?
-\item How should the selection process be designed ((Train / test split)? 
+\item How should the selection process be designed (Train / test split)? 
 \end{itemize}	
 \end{enumerate}
 
@@ -80,7 +80,7 @@ BCE &= -\frac{1}{n}\sum_{i=1}^{n}(y_i)log(\tilde{y_i}) + (1-y_i)log(1-\tilde{y_i
 \subsection{Tuning Parameters}
 In the parameter tuning stage each model was tuned over the following parameters
 \begin{description}
-\item[Learning Rate:] The learning rate is the value by which the gradient values in each iteration are multiplied to get the weight updates in the standard \textit{Stochastic Gradient Descent} method. This means that the weight value at epoch $n+1$ ($W_{ij, n+1}$ is calculated as $W_{ij, n+1} = W_{ij, n} - learningrate * \frac{dl(W_{ij, n})}{dW_{ij, n}}$. A lower learning rate slows down the learning process and increases the number of training epochs necessary to converge on a local minimum of the loss function. If the learning rate is too high on the other hand the gradient descent algorithm might not converge at all, constantly "over-shooting" the minimum.
+\item[Learning Rate:] The learning rate is the value by which the gradient values in each iteration are multiplied to get the weight updates in the standard \textit{Stochastic Gradient Descent} method. This means that the weight value $W_{ij}$ at epoch $n+1$ is calculated as $W_{ij, n+1} = W_{ij, n} - learningrate * \frac{dl(W_{ij, n})}{dW_{ij, n}}$. A lower learning rate slows down the learning process and increases the number of training epochs necessary to converge on a local minimum of the loss function. If the learning rate is too high on the other hand the gradient descent algorithm might not converge at all, constantly "over-shooting" the minimum.
 \item[Dropout:] One way to avoid the issue of over-fitting is to randomly drop different input variables at each time step. Using this approach the value of the dropout tuning parameter sets the probability with witch any individual input variable is dropped. Dropout is only tuned in multivariate models whereas in the univariate cases it is set to zero.
 \item[Hidden neurons:] This parameter sets the number of neurons in the hidden layer. In the case of the LSTM network it sets the number of neurons for every trainable layer in all gates. Therefore the total number of neurons in the hidden layer of the LSTM is four times that number.
 \end{description}

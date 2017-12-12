@@ -2,85 +2,85 @@
 \contentsline {xpart}{Introduction}{2}{part.1}
 \contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{2}{section.1.1}
-\contentsline {section}{\numberline {1.2}Prediction problems}{3}{section.1.2}
-\contentsline {section}{\numberline {1.3}Research questions}{3}{section.1.3}
+\contentsline {section}{\numberline {1.2}Prediction Problems}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Research Questions}{3}{section.1.3}
 \contentsline {section}{\numberline {1.4}Structure}{4}{section.1.4}
-\contentsline {part}{II\hspace {1em}The natural gas market}{5}{part.2}
-\contentsline {xpart}{The natural gas market}{6}{part.2}
-\contentsline {chapter}{\numberline {2}The natural gas market}{6}{chapter.2}
+\contentsline {part}{II\hspace {1em}The Natural Gas Market}{5}{part.2}
+\contentsline {xpart}{The Natural Gas Market}{6}{part.2}
+\contentsline {chapter}{\numberline {2}The Natural Gas Market}{6}{chapter.2}
 \contentsline {section}{\numberline {2.1}History}{6}{section.2.1}
-\contentsline {section}{\numberline {2.2}Types of natural gas trading}{8}{section.2.2}
-\contentsline {paragraph}{Bilateral negotiations}{8}{section*.5}
-\contentsline {paragraph}{Over-the-Counter}{9}{section*.6}
-\contentsline {paragraph}{Exchange trading}{9}{section*.7}
-\contentsline {section}{\numberline {2.3}Natural gas derivatives}{10}{section.2.3}
+\contentsline {section}{\numberline {2.2}Types of Natural Gas Trading}{8}{section.2.2}
+\contentsline {paragraph}{Bilateral negotiations}{8}{section*.7}
+\contentsline {paragraph}{Over-the-Counter}{9}{section*.8}
+\contentsline {paragraph}{Exchange trading}{9}{section*.9}
+\contentsline {section}{\numberline {2.3}Natural Gas Derivatives}{10}{section.2.3}
 \contentsline {part}{III\hspace {1em}Methodology}{11}{part.3}
 \contentsline {xpart}{Methodology}{12}{part.3}
-\contentsline {chapter}{\numberline {3}Recurrent neural networks}{12}{chapter.3}
-\contentsline {section}{\numberline {3.1}General concept}{12}{section.3.1}
-\contentsline {section}{\numberline {3.2}Simple RNN architecture}{13}{section.3.2}
-\contentsline {section}{\numberline {3.3}Vanishing gradient problem}{13}{section.3.3}
-\contentsline {section}{\numberline {3.4}LSTM architecture}{16}{section.3.4}
-\contentsline {part}{IV\hspace {1em}Literature review}{19}{part.4}
-\contentsline {xpart}{Literature review}{20}{part.4}
-\contentsline {chapter}{\numberline {4}Literature review}{20}{chapter.4}
-\contentsline {section}{\numberline {4.1}Electricity}{21}{section.4.1}
-\contentsline {paragraph}{Linear Models}{21}{section*.13}
-\contentsline {paragraph}{Feed Forward Neural Networks}{22}{section*.14}
-\contentsline {paragraph}{Recurrent Neural Networks}{23}{section*.15}
-\contentsline {section}{\numberline {4.2}Oil}{25}{section.4.2}
-\contentsline {paragraph}{Linear Models}{26}{section*.17}
-\contentsline {paragraph}{Feed Forward Neural Networks}{26}{section*.18}
-\contentsline {paragraph}{Recurrent Neural Networks}{27}{section*.19}
-\contentsline {section}{\numberline {4.3}Natural Gas}{28}{section.4.3}
-\contentsline {paragraph}{Linear Models}{29}{section*.21}
-\contentsline {paragraph}{Feed Forward Neural Networks}{29}{section*.22}
-\contentsline {paragraph}{Recurrent Neural Network}{30}{section*.23}
-\contentsline {section}{\numberline {4.4}Summary}{31}{section.4.4}
-\contentsline {part}{V\hspace {1em}Empirical study}{32}{part.5}
-\contentsline {xpart}{Empirical study}{33}{part.5}
-\contentsline {chapter}{\numberline {5}Data}{33}{chapter.5}
-\contentsline {section}{\numberline {5.1}Target Variable}{33}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Price Level Prediction}{33}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Binary Prediction}{35}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Input Variables}{37}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Energy Commodity Prices}{37}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Gas Market Fundamentals}{38}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Exchange Rates}{39}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Data Availability}{39}{subsection.5.2.4}
-\contentsline {chapter}{\numberline {6}Experimental Design}{41}{chapter.6}
-\contentsline {section}{\numberline {6.1}Preprocessing}{42}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Treatment of missing data}{43}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Feature scaling}{43}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Reference Models}{44}{section.6.2}
-\contentsline {section}{\numberline {6.3}Parameter Tuning}{45}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Fixed Hyper-Parameters}{45}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Tuning Parameters}{47}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Tuning Process}{47}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Variable Selection}{48}{section.6.4}
-\contentsline {section}{\numberline {6.5}Model Evaluation}{48}{section.6.5}
-\contentsline {chapter}{\numberline {7}Results}{49}{chapter.7}
-\contentsline {section}{\numberline {7.1}Price Level Prediction}{49}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Univariate Parameter Tuning}{49}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Variable Selection}{50}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Multivariate Parameter Tuning}{51}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Evaluation}{51}{subsection.7.1.4}
-\contentsline {section}{\numberline {7.2}Binary Prediction}{54}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Univariate Parameter Tuning}{54}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Variable Selection}{55}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Multivariate Parameter Tuning}{55}{subsection.7.2.3}
-\contentsline {subsection}{\numberline {7.2.4}Evaluation}{56}{subsection.7.2.4}
-\contentsline {subsection}{\numberline {7.2.5}Trading Strategy}{58}{subsection.7.2.5}
-\contentsline {part}{VI\hspace {1em}Conclusions}{62}{part.6}
-\contentsline {xpart}{Conclusions}{63}{part.6}
-\contentsline {chapter}{\numberline {8}Conclusions}{63}{chapter.8}
-\contentsline {section}{\numberline {8.1}Research Questions}{63}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Performance of recurrent neural networks}{63}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}Relative performance of LSTM}{64}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Business value}{65}{subsection.8.1.3}
-\contentsline {section}{\numberline {8.2}Other observations}{65}{section.8.2}
-\contentsline {section}{\numberline {8.3}Outlook}{66}{section.8.3}
-\contentsline {part}{VII\hspace {1em}Appendix}{74}{part.7}
-\contentsline {xpart}{Appendix}{75}{part.7}
-\contentsline {section}{\numberline {8.4}Figures}{75}{section.8.4}
-\contentsline {section}{\numberline {8.5}Tables}{85}{section.8.5}
+\contentsline {chapter}{\numberline {3}Recurrent Neural Networks}{12}{chapter.3}
+\contentsline {section}{\numberline {3.1}General Concept}{12}{section.3.1}
+\contentsline {section}{\numberline {3.2}Simple RNN Architecture}{13}{section.3.2}
+\contentsline {section}{\numberline {3.3}Vanishing Gradient Problem}{13}{section.3.3}
+\contentsline {section}{\numberline {3.4}LSTM Architecture}{16}{section.3.4}
+\contentsline {part}{IV\hspace {1em}Literature Review}{18}{part.4}
+\contentsline {xpart}{Literature Review}{19}{part.4}
+\contentsline {chapter}{\numberline {4}Literature Review}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Electricity}{20}{section.4.1}
+\contentsline {paragraph}{Linear Models}{20}{section*.15}
+\contentsline {paragraph}{Feed Forward Neural Networks}{21}{section*.16}
+\contentsline {paragraph}{Recurrent Neural Networks}{22}{section*.17}
+\contentsline {section}{\numberline {4.2}Oil}{24}{section.4.2}
+\contentsline {paragraph}{Linear Models}{25}{section*.19}
+\contentsline {paragraph}{Feed Forward Neural Networks}{25}{section*.20}
+\contentsline {paragraph}{Recurrent Neural Networks}{26}{section*.21}
+\contentsline {section}{\numberline {4.3}Natural Gas}{27}{section.4.3}
+\contentsline {paragraph}{Linear Models}{28}{section*.23}
+\contentsline {paragraph}{Feed Forward Neural Networks}{28}{section*.24}
+\contentsline {paragraph}{Recurrent Neural Network}{29}{section*.25}
+\contentsline {section}{\numberline {4.4}Summary}{30}{section.4.4}
+\contentsline {part}{V\hspace {1em}Empirical Study}{31}{part.5}
+\contentsline {xpart}{Empirical Study}{32}{part.5}
+\contentsline {chapter}{\numberline {5}Data}{32}{chapter.5}
+\contentsline {section}{\numberline {5.1}Target Variable}{32}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Price Level Prediction}{32}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Binary Prediction}{34}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Input Variables}{36}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Energy Commodity Prices}{36}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Gas Market Fundamentals}{37}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Exchange Rates}{38}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Data Availability}{38}{subsection.5.2.4}
+\contentsline {chapter}{\numberline {6}Experimental Design}{40}{chapter.6}
+\contentsline {section}{\numberline {6.1}Preprocessing}{41}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Treatment of missing data}{42}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Feature scaling}{42}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Reference Models}{43}{section.6.2}
+\contentsline {section}{\numberline {6.3}Parameter Tuning}{44}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Fixed Hyper-Parameters}{44}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Tuning Parameters}{46}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Tuning Process}{46}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Variable Selection}{47}{section.6.4}
+\contentsline {section}{\numberline {6.5}Model Evaluation}{47}{section.6.5}
+\contentsline {chapter}{\numberline {7}Results}{48}{chapter.7}
+\contentsline {section}{\numberline {7.1}Price Level Prediction}{48}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Univariate Parameter Tuning}{48}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Variable Selection}{49}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Multivariate Parameter Tuning}{50}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Evaluation}{50}{subsection.7.1.4}
+\contentsline {section}{\numberline {7.2}Binary Prediction}{53}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Univariate Parameter Tuning}{53}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Variable Selection}{54}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Multivariate Parameter Tuning}{54}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.4}Evaluation}{55}{subsection.7.2.4}
+\contentsline {subsection}{\numberline {7.2.5}Trading Strategy}{57}{subsection.7.2.5}
+\contentsline {part}{VI\hspace {1em}Conclusions}{61}{part.6}
+\contentsline {xpart}{Conclusions}{62}{part.6}
+\contentsline {chapter}{\numberline {8}Conclusions}{62}{chapter.8}
+\contentsline {section}{\numberline {8.1}Research Questions}{62}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Performance of Recurrent Neural Networks}{62}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Relative Performance of LSTM}{63}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Business Value}{64}{subsection.8.1.3}
+\contentsline {section}{\numberline {8.2}Other Observations}{64}{section.8.2}
+\contentsline {section}{\numberline {8.3}Outlook}{65}{section.8.3}
+\contentsline {part}{VII\hspace {1em}Appendix}{73}{part.7}
+\contentsline {xpart}{Appendix}{74}{part.7}
+\contentsline {section}{\numberline {8.4}Figures}{74}{section.8.4}
+\contentsline {section}{\numberline {8.5}Tables}{84}{section.8.5}
