@@ -4,6 +4,10 @@ This script contains the code that was used to tune the hyper parameters of univ
 This should be the first script to run among the scripts in this directory
 
 """
+from numpy.random import seed
+seed(1234)
+from tensorflow import set_random_seed
+set_random_seed(1234)
 import signal
 if hasattr(signal, 'SIGPIPE'):
     signal.signal(signal.SIGPIPE,signal.SIG_DFL)
